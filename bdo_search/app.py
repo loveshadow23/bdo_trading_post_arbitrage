@@ -40,13 +40,14 @@ def search_items_by_name(query, cache):
             })
     return results
 
+@app.template_filter('format_timestamp_ro')
 def format_timestamp_ro(timestamp):
     """Format a UNIX timestamp to Europe/Bucharest time."""
     try:
         timestamp = int(timestamp)
         tz = pytz.timezone('Europe/Bucharest')
         dt = datetime.fromtimestamp(timestamp, tz)
-        return dt.strftime("%Y-%m-%d %H:%M:%S")
+        return dt.strftime("%d-%m-%Y %H:%M:%S")
     except Exception as e:
         return f"Invalid timestamp: {timestamp}"
 
@@ -66,10 +67,10 @@ def get_market_info(item_id, region="EU"):
     except Exception as e:
         return None
 
-def get_orders_from_garmoth_cloudscraper(item_id, sub_key, region="eu", cache_time=10):
+def get_orders_from_garmoth_api(item_id, sub_key, region="eu", cache_time=10):
     """
     Fetch orders from Garmoth API for a given item_id and sub_key (enhancement level).
-    Returns dict: {"orders": [...], "fetch_time": ...}
+    Returns dict: {"orders": [...], "fetch_time": ..., "info": {...}}
     """
     key = f"{item_id}_{sub_key}"
     now = time.time()
@@ -85,7 +86,7 @@ def get_orders_from_garmoth_cloudscraper(item_id, sub_key, region="eu", cache_ti
         response = scraper.get(url, timeout=10)
         data = response.json()
     except Exception:
-        return {"orders": [], "fetch_time": -1}
+        return {"orders": [], "fetch_time": -1, "info": None}
     t1 = time.time()
 
     orders = []
@@ -99,10 +100,9 @@ def get_orders_from_garmoth_cloudscraper(item_id, sub_key, region="eu", cache_ti
                     "buyers": buyers
                 })
     fetch_time = round(t1 - t0, 3)
-    result = {"orders": orders, "fetch_time": fetch_time}
+    result = {"orders": orders, "info": data.get("info")}
     garmoth_cache[key] = {"data": result, "ts": now}
-    return result
-
+    return {**result, "fetch_time": fetch_time}
 
 def ensure_market_list(market_info):
     """
@@ -122,46 +122,37 @@ def index():
     query = ""
     matches = None
     total_items = 0
+    enhancement_details = None
 
-    # Handle POST (search form). On POST, ignore any item_id from GET!
+    cache = None
+    try:
+        cache = load_cache()
+    except FileNotFoundError:
+        error = "item_cache.json not found! Please generate or copy it first."
+        return render_template("index.html", result=None, error=error, query="", matches=None, total_items=0)
+
+    total_items = len(cache)
+
+    # POST: search
     if request.method == "POST":
         query = request.form.get("item_name", "").strip()
         if not query:
             error = "Please enter an item name."
         else:
-            try:
-                cache = load_cache()
-            except FileNotFoundError:
-                error = "item_cache.json not found! Please generate or copy it first."
-                return render_template("index.html", result=None, error=error, query=query, matches=None, total_items=0)
-            total_items = len(cache)
-            # Accept numeric ID as direct search
             if query.isdigit() and query in cache:
-                item_info = cache[query]
-                market_info = get_market_info(query)
+                item_id = query
+                item_info = cache[item_id]
+                market_info = get_market_info(item_id)
                 market_info = ensure_market_list(market_info)
                 if not market_info:
                     error = "Could not fetch market info."
                 else:
+                    # DOAR lista enhancement levels, fără orders
                     result = {
-                        "item_id": query,
+                        "item_id": item_id,
                         "item_name": item_info.get("name"),
                         "item_image": item_info.get("image"),
-                        "market": [
-                            {
-                                "Enhancement Range": f"{entry.get('minEnhance', 'N/A')} to {entry.get('maxEnhance', 'N/A')}",
-                                "Base Price": entry.get("basePrice", "N/A"),
-                                "Current Stock": entry.get("currentStock", "N/A"),
-                                "Total Trades": entry.get("totalTrades", "N/A"),
-                                "Price Cap (Min)": entry.get("priceMin", "N/A"),
-                                "Price Cap (Max)": entry.get("priceMax", "N/A"),
-                                "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
-                                "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
-                                "sid": entry.get("sid", "N/A"),
-                                "orders": get_orders_from_garmoth_cloudscraper(entry.get("id"), int(entry.get("sid")))
-                            }
-                            for entry in ensure_market_list(market_info)
-                        ]
+                        "market": market_info
                     }
             else:
                 found_items = search_items_by_name(query, cache)
@@ -179,66 +170,55 @@ def index():
                             "item_id": found_id,
                             "item_name": item_info.get("name"),
                             "item_image": item_info.get("image"),
-                            "market": [
-                                {
-                                    "Enhancement Range": f"{entry.get('minEnhance', 'N/A')} to {entry.get('maxEnhance', 'N/A')}",
-                                    "Base Price": entry.get("basePrice", "N/A"),
-                                    "Current Stock": entry.get("currentStock", "N/A"),
-                                    "Total Trades": entry.get("totalTrades", "N/A"),
-                                    "Price Cap (Min)": entry.get("priceMin", "N/A"),
-                                    "Price Cap (Max)": entry.get("priceMax", "N/A"),
-                                    "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
-                                    "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
-                                    "sid": entry.get("sid", "N/A"),
-                                    "orders": get_orders_from_garmoth_cloudscraper(entry.get("id"), int(entry.get("sid")))
-                                }
-                                for entry in ensure_market_list(market_info)
-                            ]
+                            "market": market_info
                         }
                 else:
                     matches = found_items
 
         return render_template("index.html", result=result, error=error, query=query, matches=matches, total_items=total_items)
 
-    # If GET with ?item_id=..., show details for that item
+    # GET cu item_id și sid (enhancement level)
     item_id_param = request.args.get("item_id")
-    if item_id_param:
-        try:
-            cache = load_cache()
-        except FileNotFoundError:
-            error = "item_cache.json not found! Please generate or copy it first."
-            return render_template("index.html", result=None, error=error, query="", matches=None, total_items=0)
-        total_items = len(cache)
+    sid_param = request.args.get("sid")
+    if item_id_param and sid_param:
         if item_id_param in cache:
             item_info = cache[item_id_param]
             market_info = get_market_info(item_id_param)
             market_info = ensure_market_list(market_info)
-            if not market_info:
-                error = "Could not fetch market info. Probably the item does not exist on Market right now."
-            else:
-                result = {
+            # Găsește enhancement-ul selectat
+            enhancement = None
+            for entry in market_info:
+                if str(entry.get("sid")) == str(sid_param):
+                    enhancement = entry
+                    break
+            if enhancement:
+                orders = get_orders_from_garmoth_api(item_id_param, int(sid_param))
+                enhancement_details = {
                     "item_id": item_id_param,
                     "item_name": item_info.get("name"),
                     "item_image": item_info.get("image"),
-                    "market": [
-                        {
-                            "Enhancement Range": f"{entry.get('minEnhance', 'N/A')} to {entry.get('maxEnhance', 'N/A')}",
-                            "Base Price": entry.get("basePrice", "N/A"),
-                            "Current Stock": entry.get("currentStock", "N/A"),
-                            "Total Trades": entry.get("totalTrades", "N/A"),
-                            "Price Cap (Min)": entry.get("priceMin", "N/A"),
-                            "Price Cap (Max)": entry.get("priceMax", "N/A"),
-                            "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
-                            "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
-                            "sid": entry.get("sid", "N/A"),
-                            "orders": get_orders_from_garmoth_cloudscraper(entry.get("id"), int(entry.get("sid")))
-                        }
-                        for entry in ensure_market_list(market_info)
-                    ]
+                    "enhancement": enhancement,
+                    "orders": orders
                 }
+            else:
+                error = "Enhancement level not found."
+        return render_template("index.html", enhancement_details=enhancement_details, error=error, query="", matches=None, total_items=total_items)
+
+    # GET cu doar item_id: afișează lista de enhancement-uri (fără orders)
+    if item_id_param:
+        if item_id_param in cache:
+            item_info = cache[item_id_param]
+            market_info = get_market_info(item_id_param)
+            market_info = ensure_market_list(market_info)
+            result = {
+                "item_id": item_id_param,
+                "item_name": item_info.get("name"),
+                "item_image": item_info.get("image"),
+                "market": market_info
+            }
         return render_template("index.html", result=result, error=error, query="", matches=None, total_items=total_items)
 
-    # If neither POST nor GET with item_id, show search form only
+    # Default: search form
     return render_template("index.html", result=None, error=error, query=query, matches=matches, total_items=total_items)
 
 if __name__ == "__main__":
