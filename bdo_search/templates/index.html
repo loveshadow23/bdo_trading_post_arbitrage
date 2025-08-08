@@ -79,38 +79,45 @@
                 <img src="{{ result.item_image }}" alt="Item image">
             {% endif %}
             <div style="margin-top:20px;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Enhancement Range</th>
-                            <th>Base Price</th>
-                            <th>Current Stock</th>
-                            <th>Last Sale Price</th>
-                            <th>See Orders</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    {% for row in result.market %}
-                        <tr>
-                            <td>
-                                {% if result.item_image %}
-                                    <img src="{{ result.item_image }}" alt="" style="max-width:28px;">
-                                {% endif %}
-                            </td>
-                            <td>{{ row.minEnhance|enh_name(row.maxEnhance, row.sid) }}</td>
-                            <td>{{ row.basePrice|format_number }}</td>
-                            <td>{{ row.currentStock|format_number }}</td>
-                            <td>{{ row.lastSoldPrice|format_number }}</td>
-                            <td>
-                                <a href="/?item_id={{ result.item_id }}&sid={{ row.sid }}">View Orders</a>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                    </tbody>
-                </table>
+                {% if result.market and result.market|length > 0 %}
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Enhancement Range</th>
+                                <th>Base Price</th>
+                                <th>Current Stock</th>
+                                <th>Last Sale Price</th>
+                                <th>See Orders</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for row in result.market %}
+                            <tr>
+                                <td>
+                                    {% if result.item_image %}
+                                        <img src="{{ result.item_image }}" alt="" style="max-width:28px;">
+                                    {% endif %}
+                                </td>
+                                <td>{{ row.minEnhance|enh_name(row.maxEnhance, row.sid) }}</td>
+                                <td>{{ row.basePrice|format_number }}</td>
+                                <td>{{ row.currentStock|format_number }}</td>
+                                <td>{{ row.lastSoldPrice|format_number }}</td>
+                                <td>
+                                    <a href="/?item_id={{ result.item_id }}&sid={{ row.sid }}">View Orders</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                {% else %}
+                    <div style="margin:30px 0 20px 0; color:#f88; font-size:1.2em;">
+                        No items found on the market right now.
+                    </div>
+                {% endif %}
             </div>
         {% endif %}
+
         {% if enhancement_details %}
             <h3>
                 {{ enhancement_details.item_name }} (ID: {{ enhancement_details.item_id }})<br>
