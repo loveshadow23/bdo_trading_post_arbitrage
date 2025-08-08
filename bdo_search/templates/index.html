@@ -113,6 +113,18 @@
                                     {% endfor %}
                                     </tbody>
                                 </table>
+                                {% if row.orders.fetch_time is defined %}
+                                    <div style="margin:8px 0 0 0; color:#aaa; font-size:0.98em;">
+                                        Fetch time: 
+                                        {% if row.orders.fetch_time == 0 %}
+                                            <span style="color:#6f6;">(cache)</span>
+                                        {% elif row.orders.fetch_time > 0 %}
+                                            {{ row.orders.fetch_time }} sec
+                                        {% else %}
+                                            <span style="color:#f66;">(error)</span>
+                                        {% endif %}
+                                    </div>
+                                {% endif %}
                             </div>
                         {% endif %}
                     </div>

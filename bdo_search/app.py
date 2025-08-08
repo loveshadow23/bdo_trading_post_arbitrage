@@ -3,8 +3,13 @@ import json
 import requests
 from datetime import datetime
 import pytz
+import time
+import cloudscraper
 
 CACHE_FILE = "item_cache.json"
+
+# Cache local pentru orders (item_id_sid: {data, ts})
+garmoth_cache = {}
 
 app = Flask(__name__)
 
@@ -61,21 +66,43 @@ def get_market_info(item_id, region="EU"):
     except Exception as e:
         return None
 
-def get_orders_info(item_id, sid, region="EU"):
-    """Query arsha.io for orders info for a given item_id and sid."""
-    region_map = {
-        "EU": "eu",
-        "NA": "na"
-    }
-    region_api = region_map.get(region.upper(), "eu")
-    url = f"https://api.arsha.io/v2/{region_api}/orders?id={item_id}&sid={sid}&lang=en"
+def get_orders_from_garmoth_cloudscraper(item_id, sub_key, region="eu", cache_time=10):
+    """
+    Fetch orders from Garmoth API for a given item_id and sub_key (enhancement level).
+    Returns dict: {"orders": [...], "fetch_time": ...}
+    """
+    key = f"{item_id}_{sub_key}"
+    now = time.time()
+    if key in garmoth_cache:
+        entry = garmoth_cache[key]
+        if now - entry["ts"] < cache_time:
+            return {**entry["data"], "fetch_time": 0}
+
+    url = f"https://garmoth.com/api/market/bidding-info-list?region={region}&main_key={item_id}&sub_key={sub_key}"
+    scraper = cloudscraper.create_scraper()
+    t0 = time.time()
     try:
-        response = requests.get(url)
-        response.raise_for_status()
+        response = scraper.get(url, timeout=10)
         data = response.json()
-        return data
-    except Exception as e:
-        return None
+    except Exception:
+        return {"orders": [], "fetch_time": -1}
+    t1 = time.time()
+
+    orders = []
+    if "bidding" in data and isinstance(data["bidding"], list):
+        for order in data["bidding"]:
+            if len(order) == 3:
+                sellers, price, buyers = order
+                orders.append({
+                    "sellers": sellers,
+                    "price": price,
+                    "buyers": buyers
+                })
+    fetch_time = round(t1 - t0, 3)
+    result = {"orders": orders, "fetch_time": fetch_time}
+    garmoth_cache[key] = {"data": result, "ts": now}
+    return result
+
 
 def ensure_market_list(market_info):
     """
@@ -131,7 +158,7 @@ def index():
                                 "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
                                 "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
                                 "sid": entry.get("sid", "N/A"),
-                                "orders": get_orders_info(entry.get("id"), entry.get("sid"))
+                                "orders": get_orders_from_garmoth_cloudscraper(entry.get("id"), int(entry.get("sid")))
                             }
                             for entry in ensure_market_list(market_info)
                         ]
@@ -163,7 +190,7 @@ def index():
                                     "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
                                     "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
                                     "sid": entry.get("sid", "N/A"),
-                                    "orders": get_orders_info(entry.get("id"), entry.get("sid"))
+                                    "orders": get_orders_from_garmoth_cloudscraper(entry.get("id"), int(entry.get("sid")))
                                 }
                                 for entry in ensure_market_list(market_info)
                             ]
@@ -204,7 +231,7 @@ def index():
                             "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
                             "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
                             "sid": entry.get("sid", "N/A"),
-                            "orders": get_orders_info(entry.get("id"), entry.get("sid"))
+                            "orders": get_orders_from_garmoth_cloudscraper(entry.get("id"), int(entry.get("sid")))
                         }
                         for entry in ensure_market_list(market_info)
                     ]
