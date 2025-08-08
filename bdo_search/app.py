@@ -147,13 +147,26 @@ def index():
                 if not market_info:
                     error = "Could not fetch market info."
                 else:
-                    # DOAR lista enhancement levels, fără orders
-                    result = {
-                        "item_id": item_id,
-                        "item_name": item_info.get("name"),
-                        "item_image": item_info.get("image"),
-                        "market": market_info
-                    }
+                    # Check if there's only one enhancement level with 0 to 0
+                    if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
+                        # Directly get orders for this enhancement level
+                        sid = market_info[0].get("sid")
+                        orders = get_orders_from_garmoth_api(item_id, sid)
+                        enhancement_details = {
+                            "item_id": item_id,
+                            "item_name": item_info.get("name"),
+                            "item_image": item_info.get("image"),
+                            "enhancement": market_info[0],
+                            "orders": orders
+                        }
+                    else:
+                        # Show the enhancement list as before
+                        result = {
+                            "item_id": item_id,
+                            "item_name": item_info.get("name"),
+                            "item_image": item_info.get("image"),
+                            "market": market_info
+                        }
             else:
                 found_items = search_items_by_name(query, cache)
                 if not found_items:
@@ -166,16 +179,30 @@ def index():
                     if not market_info:
                         error = "Could not fetch market info."
                     else:
-                        result = {
-                            "item_id": found_id,
-                            "item_name": item_info.get("name"),
-                            "item_image": item_info.get("image"),
-                            "market": market_info
-                        }
+                        # Check if there's only one enhancement level with 0 to 0
+                        if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
+                            # Directly get orders for this enhancement level
+                            sid = market_info[0].get("sid")
+                            orders = get_orders_from_garmoth_api(found_id, sid)
+                            enhancement_details = {
+                                "item_id": found_id,
+                                "item_name": item_info.get("name"),
+                                "item_image": item_info.get("image"),
+                                "enhancement": market_info[0],
+                                "orders": orders
+                            }
+                        else:
+                            # Show the enhancement list as before
+                            result = {
+                                "item_id": found_id,
+                                "item_name": item_info.get("name"),
+                                "item_image": item_info.get("image"),
+                                "market": market_info
+                            }
                 else:
                     matches = found_items
 
-        return render_template("index.html", result=result, error=error, query=query, matches=matches, total_items=total_items)
+        return render_template("index.html", result=result, error=error, query=query, matches=matches, total_items=total_items, enhancement_details=enhancement_details)
 
     # GET cu item_id și sid (enhancement level)
     item_id_param = request.args.get("item_id")
@@ -210,12 +237,28 @@ def index():
             item_info = cache[item_id_param]
             market_info = get_market_info(item_id_param)
             market_info = ensure_market_list(market_info)
-            result = {
-                "item_id": item_id_param,
-                "item_name": item_info.get("name"),
-                "item_image": item_info.get("image"),
-                "market": market_info
-            }
+            
+            # Check if there's only one enhancement level with 0 to 0
+            if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
+                # Directly get orders for this enhancement level
+                sid = market_info[0].get("sid")
+                orders = get_orders_from_garmoth_api(item_id_param, sid)
+                enhancement_details = {
+                    "item_id": item_id_param,
+                    "item_name": item_info.get("name"),
+                    "item_image": item_info.get("image"),
+                    "enhancement": market_info[0],
+                    "orders": orders
+                }
+                return render_template("index.html", enhancement_details=enhancement_details, error=error, query="", matches=None, total_items=total_items)
+            else:
+                # Show the enhancement list as before
+                result = {
+                    "item_id": item_id_param,
+                    "item_name": item_info.get("name"),
+                    "item_image": item_info.get("image"),
+                    "market": market_info
+                }
         return render_template("index.html", result=result, error=error, query="", matches=None, total_items=total_items)
 
     # Default: search form
