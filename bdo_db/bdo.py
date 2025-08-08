@@ -6,6 +6,8 @@ import sys
 from datetime import datetime
 import pytz
 import html
+import re
+
 
 CACHE_FILE = "item_cache.json"
 
@@ -18,6 +20,13 @@ def load_cache():
 def save_cache(cache):
     with open(CACHE_FILE, "w", encoding="utf-8") as f:
         json.dump(cache, f, ensure_ascii=False, indent=2)
+        
+def clean_json_ld(json_str):
+    # Elimină spațiile și \r de la începutul fiecărei linii
+    lines = json_str.splitlines()
+    lines = [line.lstrip(" \t\r") for line in lines]
+    json_str = ''.join(lines)
+    return json_str
 
 def update_codex_cache(item_id):
     cache = load_cache()
@@ -32,14 +41,21 @@ def update_codex_cache(item_id):
         response.raise_for_status()
         soup = BeautifulSoup(response.text, "html.parser")
         script = soup.find("script", type="application/ld+json")
+        info = None
         if script:
-            data = json.loads(script.string)
-            item_name = data.get("name", "").strip()
-            image = data.get("image", "").strip()
-            if image and image.startswith("/"):
-                image = "https://bdocodex.com" + image
-            info = {"name": item_name, "image": image}
-        else:
+            json_str = script.string
+            json_str = clean_json_ld(json_str)
+            try:
+                data = json.loads(json_str)
+                item_name = data.get("name", "").strip()
+                image = data.get("image", "").strip()
+                if image and image.startswith("/"):
+                    image = "https://bdocodex.com" + image
+                info = {"name": item_name, "image": image}
+            except Exception as e:
+                print(f"JSON parse error for item {item_id}: {e}")
+                print(f"JSON string was: {repr(json_str)}")
+        if not info:
             item_name = ""
             image = ""
             meta_og_title = soup.find("meta", property="og:title")
