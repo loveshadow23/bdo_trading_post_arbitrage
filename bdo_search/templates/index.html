@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BDO Item Search</title>
+    <style>
+        body { font-family: Arial; background: #222; color: #eee; }
+        .container { max-width: 600px; margin: 40px auto; background: #333; padding: 30px; border-radius: 8px; }
+        input[type="text"] { width: 90%; padding: 8px; font-size: 1.2em; }
+        input[type="submit"] { padding: 8px 18px; font-size: 1.1em; }
+        img { max-width: 80px; vertical-align: middle; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        td { padding: 4px 8px; border-bottom: 1px solid #444; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>BDO Item Market Search</h2>
+        <form method="post">
+            <input type="text" name="item_name" placeholder="Enter item name..." value="{{ query }}">
+            <input type="submit" value="Search">
+        </form>
+        {% if error %}
+            <p style="color: #ff6666;">{{ error }}</p>
+        {% endif %}
+        {% if result %}
+            <h3>Result for: {{ result.item_name }} (ID: {{ result.item_id }})</h3>
+            {% if result.item_image %}
+                <img src="{{ result.item_image }}" alt="Item image">
+            {% endif %}
+            <table>
+            {% for k, v in result.market.items() %}
+                <tr><td>{{ k }}</td><td>{{ v }}</td></tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+    </div>
+</body>
+</html>
