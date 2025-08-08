@@ -1,4 +1,9 @@
+
 {
+  "1": {
+    "name": "()",
+    "image": "https://s1.pearlcdn.com/NAEU/TradeMarket/Common/img/BDO/item/16001.png"
+  },
   "16001": {
     "name": "Black Stone",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00000008.webp"
@@ -408,7 +413,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000648.webp"
   },
   "713": {
-    "name": "Grim Soul Reaper&amp;#39;s Elixir",
+    "name": "Grim Soul Reaper's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000650.webp"
   },
   "714": {
@@ -452,19 +457,19 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000660.webp"
   },
   "724": {
-    "name": "Worker&amp;#39;s Elixir",
+    "name": "Worker's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000661.webp"
   },
   "725": {
-    "name": "Skilled Worker&amp;#39;s Elixir",
+    "name": "Skilled Worker's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000662.webp"
   },
   "726": {
-    "name": "Fisher&amp;#39;s Elixir",
+    "name": "Fisher's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000663.webp"
   },
   "727": {
-    "name": "Skilled Fisher&amp;#39;s Elixir",
+    "name": "Skilled Fisher's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000736.webp"
   },
   "728": {
@@ -496,11 +501,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00000735.webp"
   },
   "740": {
-    "name": "Griffon&amp;#39;s Elixir",
+    "name": "Griffon's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000744.webp"
   },
   "741": {
-    "name": "Strong Griffon&amp;#39;s Elixir",
+    "name": "Strong Griffon's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000745.webp"
   },
   "748": {
@@ -592,11 +597,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000791.webp"
   },
   "792": {
-    "name": "Beast&amp;#39;s Draught",
+    "name": "Beast's Draught",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000792.webp"
   },
   "793": {
-    "name": "Giant&amp;#39;s Draught",
+    "name": "Giant's Draught",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000793.webp"
   },
   "794": {
@@ -700,11 +705,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00001161.webp"
   },
   "1162": {
-    "name": "Immortal: Beast&amp;#39;s Draught",
+    "name": "Immortal: Beast's Draught",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00001162.webp"
   },
   "1163": {
-    "name": "Immortal: Giant&amp;#39;s Draught",
+    "name": "Immortal: Giant's Draught",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00001163.webp"
   },
   "1164": {
@@ -892,11 +897,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_i_dff_chest_01.webp"
   },
   "2022": {
-    "name": "O&amp;#39;draxxia High-quality Bedside Table",
+    "name": "O'draxxia High-quality Bedside Table",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_chest_02.webp"
   },
   "2023": {
-    "name": "O&amp;#39;draxxia Drawers",
+    "name": "O'draxxia Drawers",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_cabinet_01.webp"
   },
   "2102": {
@@ -960,11 +965,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_i_dff_sidetable_01.webp"
   },
   "2223": {
-    "name": "O&amp;#39;draxxia Hardwood Dining Table",
+    "name": "O'draxxia Hardwood Dining Table",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_table03.webp"
   },
   "2224": {
-    "name": "O&amp;#39;draxxia Fragrant Octagonal Dining Table",
+    "name": "O'draxxia Fragrant Octagonal Dining Table",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_table04.webp"
   },
   "2302": {
@@ -1008,7 +1013,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_i_dff_sofa_01.webp"
   },
   "2381": {
-    "name": "Kamasylvian Commander&amp;#39;s Chair",
+    "name": "Kamasylvian Commander's Chair",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/in_cam_furniture_chair_02.webp"
   },
   "2382": {
@@ -1060,7 +1065,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/in_cam_furniture_bench_01.webp"
   },
   "712": {
-    "name": "Grim Reaper&amp;#39;s Elixir",
+    "name": "Grim Reaper's Elixir",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00000649.webp"
   },
   "2396": {
@@ -1080,7 +1085,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/in_cam_furniture_chair_01.webp"
   },
   "2400": {
-    "name": "O&amp;#39;draxxia Hardwood Armchair",
+    "name": "O'draxxia Hardwood Armchair",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_chair_03.webp"
   },
   "2408": {
@@ -1172,7 +1177,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_bookset_07.webp"
   },
   "2520": {
-    "name": "Bookshelf with Knowledge on Monsters at Marni&amp;#39;s House",
+    "name": "Bookshelf with Knowledge on Monsters at Marni's House",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_bookset_01.webp"
   },
   "2521": {
@@ -1228,15 +1233,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_bookset_03.webp"
   },
   "2534": {
-    "name": "Falasi&amp;#39;s Bookshelf with Knowledge on Sailing",
+    "name": "Falasi's Bookshelf with Knowledge on Sailing",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_bookset_03.webp"
   },
   "2535": {
-    "name": "Falasi&amp;#39;s Bookshelf with Knowledge on Excavation",
+    "name": "Falasi's Bookshelf with Knowledge on Excavation",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_bookset_04.webp"
   },
   "2536": {
-    "name": "Falasi&amp;#39;s Bookshelf with Knowledge on Hunting",
+    "name": "Falasi's Bookshelf with Knowledge on Hunting",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_bookset_05.webp"
   },
   "2702": {
@@ -1288,7 +1293,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goblinbosshead_01.webp"
   },
   "3013": {
-    "name": "Imp Boss&amp;#39;s Knife",
+    "name": "Imp Boss's Knife",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_impbosssword_01.webp"
   },
   "3017": {
@@ -1312,11 +1317,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_altarimpflag.webp"
   },
   "3022": {
-    "name": "Knight&amp;#39;s Greatsword Ornament",
+    "name": "Knight's Greatsword Ornament",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_shadowknightsword.webp"
   },
   "3023": {
-    "name": "Jack-O&amp;#39;-Lantern Ornament",
+    "name": "Jack-O'-Lantern Ornament",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_pumpkinhead_01.webp"
   },
   "3024": {
@@ -1328,23 +1333,23 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_nagahalberd_01.webp"
   },
   "3026": {
-    "name": "Scrapper&amp;#39;s Gloves Ornament",
+    "name": "Scrapper's Gloves Ornament",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_redorcglove_01.webp"
   },
   "3037": {
-    "name": "Bheg&amp;#39;s Shining Helmet",
+    "name": "Bheg's Shining Helmet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boss_cowardlybeg_01.webp"
   },
   "3038": {
-    "name": "Karanda&amp;#39;s Plume Ornament",
+    "name": "Karanda's Plume Ornament",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boss_harpy_01.webp"
   },
   "3039": {
-    "name": "Witch&amp;#39;s Shoulder Piece",
+    "name": "Witch's Shoulder Piece",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boss_hexemori_01.webp"
   },
   "3040": {
-    "name": "Muskan&amp;#39;s Bloody Steel Helmet",
+    "name": "Muskan's Bloody Steel Helmet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boss_muscan_01.webp"
   },
   "3041": {
@@ -1352,7 +1357,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boss_stupidwoodspirit_01.webp"
   },
   "3042": {
-    "name": "Khalk&amp;#39;s Wings",
+    "name": "Khalk's Wings",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boss_calk_01.webp"
   },
   "3051": {
@@ -1636,195 +1641,195 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/rot_island_writingtool_02_b.webp"
   },
   "3401": {
-    "name": "Artisan&amp;#39;s Stuffed Bear Head",
+    "name": "Artisan's Stuffed Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearhead_01.webp"
   },
   "3402": {
-    "name": "Artisan&amp;#39;s Bear Hide Carpet",
+    "name": "Artisan's Bear Hide Carpet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearskin_01.webp"
   },
   "3405": {
-    "name": "Artisan&amp;#39;s Stuffed Fox Head",
+    "name": "Artisan's Stuffed Fox Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_foxhead_01.webp"
   },
   "3406": {
-    "name": "Artisan&amp;#39;s Stuffed Weasel",
+    "name": "Artisan's Stuffed Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_01.webp"
   },
   "3407": {
-    "name": "Artisan&amp;#39;s Stuffed Gray Wolf Head",
+    "name": "Artisan's Stuffed Gray Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_01.webp"
   },
   "3408": {
-    "name": "Artisan&amp;#39;s Stuffed Wolf Head",
+    "name": "Artisan's Stuffed Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_02.webp"
   },
   "3409": {
-    "name": "Artisan&amp;#39;s Stuffed Giant Boar Head",
+    "name": "Artisan's Stuffed Giant Boar Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boar_02.webp"
   },
   "3410": {
-    "name": "Artisan&amp;#39;s Stuffed Elk Head",
+    "name": "Artisan's Stuffed Elk Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_deer_01.webp"
   },
   "3411": {
-    "name": "Artisan&amp;#39;s Stuffed Valencia Mountain Sheep Head",
+    "name": "Artisan's Stuffed Valencia Mountain Sheep Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goralhead_01.webp"
   },
   "3412": {
-    "name": "Artisan&amp;#39;s Stuffed Giant Lion Head",
+    "name": "Artisan's Stuffed Giant Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_01.webp"
   },
   "3413": {
-    "name": "Artisan&amp;#39;s Stuffed Valencian Lioness Head",
+    "name": "Artisan's Stuffed Valencian Lioness Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_02.webp"
   },
   "3416": {
-    "name": "Artisan&amp;#39;s Stuffed Drieghan Male Goat Head",
+    "name": "Artisan's Stuffed Drieghan Male Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_01.webp"
   },
   "3417": {
-    "name": "Artisan&amp;#39;s Stuffed Drieghan Female Goat Head",
+    "name": "Artisan's Stuffed Drieghan Female Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_02.webp"
   },
   "3418": {
-    "name": "Artisan&amp;#39;s Stuffed Yak Head",
+    "name": "Artisan's Stuffed Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_horncow_01.webp"
   },
   "3419": {
-    "name": "Artisan&amp;#39;s Stuffed Llama",
+    "name": "Artisan's Stuffed Llama",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_alpaca_01.webp"
   },
   "3501": {
-    "name": "Master&amp;#39;s Stuffed Bear Head",
+    "name": "Master's Stuffed Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearhead_01.webp"
   },
   "3502": {
-    "name": "Master&amp;#39;s Bear Hide Carpet",
+    "name": "Master's Bear Hide Carpet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearskin_01.webp"
   },
   "3505": {
-    "name": "Master&amp;#39;s Stuffed Fox Head",
+    "name": "Master's Stuffed Fox Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_foxhead_01.webp"
   },
   "3506": {
-    "name": "Master&amp;#39;s Stuffed Weasel",
+    "name": "Master's Stuffed Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_01.webp"
   },
   "3507": {
-    "name": "Master&amp;#39;s Stuffed Gray Wolf Head",
+    "name": "Master's Stuffed Gray Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_01.webp"
   },
   "3508": {
-    "name": "Master&amp;#39;s Stuffed Wolf Head",
+    "name": "Master's Stuffed Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_02.webp"
   },
   "3509": {
-    "name": "Master&amp;#39;s Stuffed Giant Boar Head",
+    "name": "Master's Stuffed Giant Boar Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boar_02.webp"
   },
   "3510": {
-    "name": "Master&amp;#39;s Stuffed Elk Head",
+    "name": "Master's Stuffed Elk Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_deer_01.webp"
   },
   "3511": {
-    "name": "Master&amp;#39;s Stuffed Valencia Mountain Sheep Head",
+    "name": "Master's Stuffed Valencia Mountain Sheep Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goralhead_01.webp"
   },
   "3512": {
-    "name": "Master&amp;#39;s Stuffed Giant Lion Head",
+    "name": "Master's Stuffed Giant Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_01.webp"
   },
   "3513": {
-    "name": "Master&amp;#39;s Stuffed Valencian Lioness Head",
+    "name": "Master's Stuffed Valencian Lioness Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_02.webp"
   },
   "3516": {
-    "name": "Master&amp;#39;s Stuffed Drieghan Male Goat Head",
+    "name": "Master's Stuffed Drieghan Male Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_01.webp"
   },
   "3517": {
-    "name": "Master&amp;#39;s Stuffed Drieghan Female Goat Head",
+    "name": "Master's Stuffed Drieghan Female Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_02.webp"
   },
   "3518": {
-    "name": "Master&amp;#39;s Stuffed Yak Head",
+    "name": "Master's Stuffed Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_horncow_01.webp"
   },
   "3519": {
-    "name": "Master&amp;#39;s Stuffed Llama",
+    "name": "Master's Stuffed Llama",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_alpaca_01.webp"
   },
   "3520": {
-    "name": "Artisan&amp;#39;s Stuffed Belladonna Elephant Head",
+    "name": "Artisan's Stuffed Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_01.webp"
   },
   "3521": {
-    "name": "Artisan&amp;#39;s Stuffed Baby Belladonna Elephant Head",
+    "name": "Artisan's Stuffed Baby Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_02.webp"
   },
   "3522": {
-    "name": "Artisan&amp;#39;s Stuffed Gazelle Head",
+    "name": "Artisan's Stuffed Gazelle Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_gazellehead_01.webp"
   },
   "3523": {
-    "name": "Artisan&amp;#39;s Stuffed Black Leopard Head",
+    "name": "Artisan's Stuffed Black Leopard Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blackhead_01.webp"
   },
   "3524": {
-    "name": "Artisan&amp;#39;s Stuffed Feather Wolf Head",
+    "name": "Artisan's Stuffed Feather Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_featherwolfhead_01.webp"
   },
   "3525": {
-    "name": "Artisan&amp;#39;s Stuffed Phnyl Head",
+    "name": "Artisan's Stuffed Phnyl Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_fnillhead_01.webp"
   },
   "3526": {
-    "name": "Artisan&amp;#39;s Stuffed Ferrica Head",
+    "name": "Artisan's Stuffed Ferrica Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferica_01.webp"
   },
   "3527": {
-    "name": "Artisan&amp;#39;s Stuffed Ferrina Head",
+    "name": "Artisan's Stuffed Ferrina Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferina_01.webp"
   },
   "3528": {
-    "name": "Artisan&amp;#39;s Stuffed Kamasylvia Weasel",
+    "name": "Artisan's Stuffed Kamasylvia Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_02.webp"
   },
   "3529": {
-    "name": "Master&amp;#39;s Stuffed Belladonna Elephant Head",
+    "name": "Master's Stuffed Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_01.webp"
   },
   "3530": {
-    "name": "Master&amp;#39;s Stuffed Baby Belladonna Elephant Head",
+    "name": "Master's Stuffed Baby Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_02.webp"
   },
   "3531": {
-    "name": "Master&amp;#39;s Stuffed Gazelle Head",
+    "name": "Master's Stuffed Gazelle Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_gazellehead_01.webp"
   },
   "3532": {
-    "name": "Master&amp;#39;s Stuffed Black Leopard Head",
+    "name": "Master's Stuffed Black Leopard Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blackhead_01.webp"
   },
   "3533": {
-    "name": "Master&amp;#39;s Stuffed Feather Wolf Head",
+    "name": "Master's Stuffed Feather Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_featherwolfhead_01.webp"
   },
   "3534": {
-    "name": "Master&amp;#39;s Stuffed Phnyl Head",
+    "name": "Master's Stuffed Phnyl Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_fnillhead_01.webp"
   },
   "3535": {
-    "name": "Master&amp;#39;s Stuffed Ferrica Head",
+    "name": "Master's Stuffed Ferrica Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferica_01.webp"
   },
   "3536": {
-    "name": "Master&amp;#39;s Stuffed Ferrina Head",
+    "name": "Master's Stuffed Ferrina Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferina_01.webp"
   },
   "3537": {
-    "name": "Master&amp;#39;s Stuffed Kamasylvia Weasel",
+    "name": "Master's Stuffed Kamasylvia Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_02.webp"
   },
   "3538": {
@@ -1852,83 +1857,83 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknessleopardhead_01.webp"
   },
   "3545": {
-    "name": "Artisan&amp;#39;s Stuffed Grass Rhino Head",
+    "name": "Artisan's Stuffed Grass Rhino Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_rhinohead_01.webp"
   },
   "3546": {
-    "name": "Artisan&amp;#39;s Stuffed Verdure Buck",
+    "name": "Artisan's Stuffed Verdure Buck",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_maledeer_01.webp"
   },
   "3547": {
-    "name": "Artisan&amp;#39;s Stuffed Verdure Doe",
+    "name": "Artisan's Stuffed Verdure Doe",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_femaledeer_01.webp"
   },
   "3548": {
-    "name": "Artisan&amp;#39;s Stuffed Shadow Wolf Head",
+    "name": "Artisan's Stuffed Shadow Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknesswolfhead_01.webp"
   },
   "3549": {
-    "name": "Artisan&amp;#39;s Stuffed Shadow Lion Head",
+    "name": "Artisan's Stuffed Shadow Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknessleopardhead_01.webp"
   },
   "3550": {
-    "name": "Master&amp;#39;s Stuffed Grass Rhino Head",
+    "name": "Master's Stuffed Grass Rhino Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_rhinohead_01.webp"
   },
   "3551": {
-    "name": "Master&amp;#39;s Stuffed Verdure Buck",
+    "name": "Master's Stuffed Verdure Buck",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_maledeer_01.webp"
   },
   "3552": {
-    "name": "Master&amp;#39;s Stuffed Verdure Doe",
+    "name": "Master's Stuffed Verdure Doe",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_femaledeer_01.webp"
   },
   "3553": {
-    "name": "Master&amp;#39;s Stuffed Shadow Wolf Head",
+    "name": "Master's Stuffed Shadow Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknesswolfhead_01.webp"
   },
   "3554": {
-    "name": "Master&amp;#39;s Stuffed Shadow Lion Head",
+    "name": "Master's Stuffed Shadow Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknessleopardhead_01.webp"
   },
   "3555": {
-    "name": "Artisan&amp;#39;s Special Stuffed Grass Rhino Head",
+    "name": "Artisan's Special Stuffed Grass Rhino Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_rhinohead_01.webp"
   },
   "3556": {
-    "name": "Artisan&amp;#39;s Special Stuffed Verdure Buck",
+    "name": "Artisan's Special Stuffed Verdure Buck",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_maledeer_01.webp"
   },
   "3557": {
-    "name": "Artisan&amp;#39;s Special Stuffed Verdure Doe",
+    "name": "Artisan's Special Stuffed Verdure Doe",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_femaledeer_01.webp"
   },
   "3558": {
-    "name": "Artisan&amp;#39;s Special Stuffed Shadow Wolf Head",
+    "name": "Artisan's Special Stuffed Shadow Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknesswolfhead_01.webp"
   },
   "3559": {
-    "name": "Artisan&amp;#39;s Special Stuffed Shadow Lion Head",
+    "name": "Artisan's Special Stuffed Shadow Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknessleopardhead_01.webp"
   },
   "3560": {
-    "name": "Master&amp;#39;s Special Stuffed Grass Rhino Head",
+    "name": "Master's Special Stuffed Grass Rhino Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_rhinohead_01.webp"
   },
   "3561": {
-    "name": "Master&amp;#39;s Special Stuffed Verdure Buck",
+    "name": "Master's Special Stuffed Verdure Buck",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_maledeer_01.webp"
   },
   "3562": {
-    "name": "Master&amp;#39;s Special Stuffed Verdure Doe",
+    "name": "Master's Special Stuffed Verdure Doe",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_femaledeer_01.webp"
   },
   "3563": {
-    "name": "Master&amp;#39;s Special Stuffed Shadow Wolf Head",
+    "name": "Master's Special Stuffed Shadow Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknesswolfhead_01.webp"
   },
   "3564": {
-    "name": "Master&amp;#39;s Special Stuffed Shadow Lion Head",
+    "name": "Master's Special Stuffed Shadow Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blacknessleopardhead_01.webp"
   },
   "3565": {
@@ -1972,7 +1977,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpw_bookcase_01.webp"
   },
   "3591": {
-    "name": "[Manor] Aal&amp;#39;s Sanctuary Wall Candle Stand",
+    "name": "[Manor] Aal's Sanctuary Wall Candle Stand",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpw_candlelamp_01.webp"
   },
   "3595": {
@@ -1980,7 +1985,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_lamp_01.webp"
   },
   "3596": {
-    "name": "[Manor] Skabiosa&amp;#39;s Gazebo",
+    "name": "[Manor] Skabiosa's Gazebo",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_gazebo_01.webp"
   },
   "3604": {
@@ -2008,7 +2013,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_pond_01.webp"
   },
   "3620": {
-    "name": "[Manor] Lion&amp;#39;s Reach Fountain",
+    "name": "[Manor] Lion's Reach Fountain",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_drinkingfountain_01.webp"
   },
   "3625": {
@@ -2016,7 +2021,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_flowerpot_02.webp"
   },
   "3626": {
-    "name": "[Manor] Stella&amp;#39;s Hope Ornament",
+    "name": "[Manor] Stella's Hope Ornament",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_flowerpot_01.webp"
   },
   "3627": {
@@ -2076,7 +2081,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_lamp_03.webp"
   },
   "3805": {
-    "name": "[Manor] Morning Mist&amp;#39;s Embrace",
+    "name": "[Manor] Morning Mist's Embrace",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_bath_01.webp"
   },
   "3815": {
@@ -3036,7 +3041,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00005004.webp"
   },
   "5007": {
-    "name": "Monk&amp;#39;s Branch",
+    "name": "Monk's Branch",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00005007.webp"
   },
   "5008": {
@@ -3212,7 +3217,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00005005.webp"
   },
   "5006": {
-    "name": "Spirit&amp;#39;s Leaf",
+    "name": "Spirit's Leaf",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00005006.webp"
   },
   "5010": {
@@ -3800,7 +3805,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00005865.webp"
   },
   "5870": {
-    "name": "Enlightened One&amp;#39;s Cotton Fabric",
+    "name": "Enlightened One's Cotton Fabric",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00005870.webp"
   },
   "5960": {
@@ -4160,23 +4165,23 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00006201.webp"
   },
   "6351": {
-    "name": "Legendary Beast&amp;#39;s Blood",
+    "name": "Legendary Beast's Blood",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00006351.webp"
   },
   "6352": {
-    "name": "Tyrant&amp;#39;s Blood",
+    "name": "Tyrant's Blood",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00006352.webp"
   },
   "6353": {
-    "name": "Clown&amp;#39;s Blood",
+    "name": "Clown's Blood",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00006353.webp"
   },
   "6354": {
-    "name": "Sinner&amp;#39;s Blood",
+    "name": "Sinner's Blood",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00006354.webp"
   },
   "6355": {
-    "name": "Wise Man&amp;#39;s Blood",
+    "name": "Wise Man's Blood",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00006355.webp"
   },
   "6356": {
@@ -5436,7 +5441,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00008414.webp"
   },
   "8417": {
-    "name": "Cup of Earth&amp;#39;s Sorrows",
+    "name": "Cup of Earth's Sorrows",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00008417.webp"
   },
   "8421": {
@@ -6964,11 +6969,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009458.webp"
   },
   "9459": {
-    "name": "Hunter&amp;#39;s Salad",
+    "name": "Hunter's Salad",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009459.webp"
   },
   "9460": {
-    "name": "Fresh Hunter&amp;#39;s Salad",
+    "name": "Fresh Hunter's Salad",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009460.webp"
   },
   "9461": {
@@ -6988,11 +6993,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009464.webp"
   },
   "9469": {
-    "name": "Khalk&amp;#39;s Fermented Wine",
+    "name": "Khalk's Fermented Wine",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009469.webp"
   },
   "9470": {
-    "name": "Khalk&amp;#39;s Strong Fermented Wine",
+    "name": "Khalk's Strong Fermented Wine",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009470.webp"
   },
   "9471": {
@@ -7152,11 +7157,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009637.webp"
   },
   "9638": {
-    "name": "O&amp;#39;dyllita Meal",
+    "name": "O'dyllita Meal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009638.webp"
   },
   "9639": {
-    "name": "Special O&amp;#39;dyllita Meal",
+    "name": "Special O'dyllita Meal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009639.webp"
   },
   "9640": {
@@ -7232,15 +7237,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009733.webp"
   },
   "9735": {
-    "name": "Fugitive Khalk&amp;#39;s Horn",
+    "name": "Fugitive Khalk's Horn",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009735.webp"
   },
   "9736": {
-    "name": "Fugitive Khalk&amp;#39;s Skin",
+    "name": "Fugitive Khalk's Skin",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009736.webp"
   },
   "9737": {
-    "name": "Fugitive Khalk&amp;#39;s Shiny Claw",
+    "name": "Fugitive Khalk's Shiny Claw",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009737.webp"
   },
   "9741": {
@@ -7260,11 +7265,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009748.webp"
   },
   "9751": {
-    "name": "Hesed&amp;#39;s Crystal",
+    "name": "Hesed's Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009751.webp"
   },
   "9768": {
-    "name": "Garmoth&amp;#39;s Scale",
+    "name": "Garmoth's Scale",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009768.webp"
   },
   "9771": {
@@ -7272,7 +7277,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009771.webp"
   },
   "9773": {
-    "name": "Intact Griffon&amp;#39;s Beak",
+    "name": "Intact Griffon's Beak",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009773.webp"
   },
   "9774": {
@@ -7296,7 +7301,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009791.webp"
   },
   "9792": {
-    "name": "Starlit Jade&amp;#39;s Breath",
+    "name": "Starlit Jade's Breath",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00009792.webp"
   },
   "9793": {
@@ -7356,7 +7361,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010013.webp"
   },
   "10086": {
-    "name": "Offin Tett&amp;#39;s Radiant Longsword",
+    "name": "Offin Tett's Radiant Longsword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010086.webp"
   },
   "10102": {
@@ -7440,7 +7445,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010213.webp"
   },
   "10286": {
-    "name": "Offin Tett&amp;#39;s Radiant Longbow",
+    "name": "Offin Tett's Radiant Longbow",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010286.webp"
   },
   "10303": {
@@ -7524,7 +7529,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010413.webp"
   },
   "10486": {
-    "name": "Offin Tett&amp;#39;s Radiant Amulet",
+    "name": "Offin Tett's Radiant Amulet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010486.webp"
   },
   "10503": {
@@ -7608,7 +7613,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010613.webp"
   },
   "10686": {
-    "name": "Offin Tett&amp;#39;s Radiant Axe",
+    "name": "Offin Tett's Radiant Axe",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00010686.webp"
   },
   "10703": {
@@ -7756,71 +7761,71 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00010940.webp"
   },
   "11001": {
-    "name": "Hercules&amp;#39; Might Helmet",
+    "name": "Hercules' Might Helmet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/13_hel/00011001.webp"
   },
   "11002": {
-    "name": "Hercules&amp;#39; Might Armor",
+    "name": "Hercules' Might Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00011002.webp"
   },
   "11003": {
-    "name": "Hercules&amp;#39; Might Gloves",
+    "name": "Hercules' Might Gloves",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00011003.webp"
   },
   "11004": {
-    "name": "Hercules&amp;#39; Might Shoes",
+    "name": "Hercules' Might Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00011004.webp"
   },
   "11005": {
-    "name": "Heve&amp;#39;s Strength Helmet",
+    "name": "Heve's Strength Helmet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/13_hel/00011005.webp"
   },
   "11006": {
-    "name": "Heve&amp;#39;s Strength Armor",
+    "name": "Heve's Strength Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00011006.webp"
   },
   "11007": {
-    "name": "Heve&amp;#39;s Strength Gloves",
+    "name": "Heve's Strength Gloves",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00011007.webp"
   },
   "11008": {
-    "name": "Heve&amp;#39;s Strength Shoes",
+    "name": "Heve's Strength Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00011008.webp"
   },
   "11009": {
-    "name": "Helmet of Fortuna&amp;#39;s Luck",
+    "name": "Helmet of Fortuna's Luck",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/13_hel/00011009.webp"
   },
   "11010": {
-    "name": "Fortuna&amp;#39;s Luck Armor",
+    "name": "Fortuna's Luck Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00011010.webp"
   },
   "11011": {
-    "name": "Gloves of Fortuna&amp;#39;s Luck",
+    "name": "Gloves of Fortuna's Luck",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00011011.webp"
   },
   "11012": {
-    "name": "Fortuna&amp;#39;s Luck Shoes",
+    "name": "Fortuna's Luck Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00011012.webp"
   },
   "11013": {
-    "name": "Giath&amp;#39;s Helmet",
+    "name": "Giath's Helmet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/13_hel/00011013.webp"
   },
   "11014": {
-    "name": "Red Nose&amp;#39;s Armor",
+    "name": "Red Nose's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00011014.webp"
   },
   "11015": {
-    "name": "Bheg&amp;#39;s Gloves",
+    "name": "Bheg's Gloves",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00011015.webp"
   },
   "11016": {
-    "name": "Muskan&amp;#39;s Shoes",
+    "name": "Muskan's Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00011016.webp"
   },
   "11017": {
-    "name": "Dim Tree Spirit&amp;#39;s Armor",
+    "name": "Dim Tree Spirit's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00011017.webp"
   },
   "11070": {
@@ -7840,15 +7845,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00011073.webp"
   },
   "11101": {
-    "name": "Griffon&amp;#39;s Helmet",
+    "name": "Griffon's Helmet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/13_hel/00011101.webp"
   },
   "11102": {
-    "name": "Leebur&amp;#39;s Gloves",
+    "name": "Leebur's Gloves",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00011102.webp"
   },
   "11103": {
-    "name": "Urugon&amp;#39;s Shoes",
+    "name": "Urugon's Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00011103.webp"
   },
   "11203": {
@@ -7904,7 +7909,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00011211.webp"
   },
   "11287": {
-    "name": "Offin Tett&amp;#39;s Radiant Gauntlet",
+    "name": "Offin Tett's Radiant Gauntlet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00011287.webp"
   },
   "11303": {
@@ -7988,7 +7993,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00011372.webp"
   },
   "11436": {
-    "name": "Offin Tett&amp;#39;s Radiant Kriegsmesser",
+    "name": "Offin Tett's Radiant Kriegsmesser",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00011436.webp"
   },
   "11601": {
@@ -8028,19 +8033,19 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011610.webp"
   },
   "11611": {
-    "name": "Bensho&amp;#39;s Necklace",
+    "name": "Bensho's Necklace",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011611.webp"
   },
   "11613": {
-    "name": "Ancient Guardian&amp;#39;s Seal",
+    "name": "Ancient Guardian's Seal",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011613.webp"
   },
   "11625": {
-    "name": "Sicil&amp;#39;s Necklace",
+    "name": "Sicil's Necklace",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011625.webp"
   },
   "11628": {
-    "name": "Serap&amp;#39;s Necklace",
+    "name": "Serap's Necklace",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011628.webp"
   },
   "11629": {
@@ -8048,7 +8053,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011629.webp"
   },
   "11630": {
-    "name": "Laytenn&amp;#39;s Power Stone",
+    "name": "Laytenn's Power Stone",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/15_necklace/00011630.webp"
   },
   "11631": {
@@ -8220,7 +8225,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/17_earring/00011807.webp"
   },
   "11808": {
-    "name": "Witch&amp;#39;s Earring",
+    "name": "Witch's Earring",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/17_earring/00011808.webp"
   },
   "11810": {
@@ -8244,7 +8249,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/17_earring/00011817.webp"
   },
   "11827": {
-    "name": "Fugitive Khalk&amp;#39;s Earring",
+    "name": "Fugitive Khalk's Earring",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/17_earring/00011827.webp"
   },
   "11828": {
@@ -8268,7 +8273,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/17_earring/00011856.webp"
   },
   "11875": {
-    "name": "Vaha&amp;#39;s Dawn",
+    "name": "Vaha's Dawn",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/17_earring/00011875.webp"
   },
   "11882": {
@@ -8388,7 +8393,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/16_ring/00012011.webp"
   },
   "12012": {
-    "name": "Outlaw&amp;#39;s Ring",
+    "name": "Outlaw's Ring",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/16_ring/00012012.webp"
   },
   "12017": {
@@ -8540,7 +8545,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012229.webp"
   },
   "12230": {
-    "name": "Basilisk&amp;#39;s Belt",
+    "name": "Basilisk's Belt",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012230.webp"
   },
   "12236": {
@@ -8552,11 +8557,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012237.webp"
   },
   "12251": {
-    "name": "Orkinrad&amp;#39;s Belt",
+    "name": "Orkinrad's Belt",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012251.webp"
   },
   "12257": {
-    "name": "Turo&amp;#39;s Belt",
+    "name": "Turo's Belt",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012257.webp"
   },
   "12276": {
@@ -8564,7 +8569,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012276.webp"
   },
   "12282": {
-    "name": "Taebaek&amp;#39;s Belt",
+    "name": "Taebaek's Belt",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00012282.webp"
   },
   "12285": {
@@ -8732,11 +8737,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014286.webp"
   },
   "12563": {
-    "name": "[Dark Knight] Orwen&amp;#39;s Travel Wear",
+    "name": "[Dark Knight] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12564": {
-    "name": "[Dark Knight] Jarette&amp;#39;s Armor",
+    "name": "[Dark Knight] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12565": {
@@ -8748,35 +8753,35 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012503.webp"
   },
   "12574": {
-    "name": "[Sorceress] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Sorceress] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12575": {
-    "name": "[Ranger] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Ranger] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12576": {
-    "name": "[Tamer] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Tamer] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12577": {
-    "name": "[Valkyrie] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Valkyrie] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12578": {
-    "name": "[Witch] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Witch] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12579": {
-    "name": "[Kunoichi] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Kunoichi] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12580": {
-    "name": "[Maehwa] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Maehwa] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12581": {
-    "name": "[Dark Knight] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Dark Knight] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12590": {
@@ -8896,11 +8901,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12649": {
-    "name": "[Striker] Edan&amp;#39;s Travel Wear",
+    "name": "[Striker] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "12650": {
-    "name": "[Striker] Jordine&amp;#39;s Casual Wear",
+    "name": "[Striker] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "12651": {
@@ -8944,15 +8949,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12673": {
-    "name": "[Mystic] Orwen&amp;#39;s Travel Wear",
+    "name": "[Mystic] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12674": {
-    "name": "[Mystic] Jarette&amp;#39;s Armor",
+    "name": "[Mystic] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12675": {
-    "name": "[Mystic] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Mystic] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12676": {
@@ -8976,11 +8981,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12700": {
-    "name": "[Archer] Edan&amp;#39;s Travel Wear",
+    "name": "[Archer] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "12701": {
-    "name": "[Archer] Jordine&amp;#39;s Casual Wear",
+    "name": "[Archer] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "12702": {
@@ -9024,15 +9029,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12723": {
-    "name": "[Lahn] Orwen&amp;#39;s Travel Wear",
+    "name": "[Lahn] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12724": {
-    "name": "[Lahn] Jarette&amp;#39;s Armor",
+    "name": "[Lahn] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12725": {
-    "name": "[Lahn] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Lahn] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12726": {
@@ -9064,15 +9069,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12740": {
-    "name": "[Guardian] Orwen&amp;#39;s Travel Wear",
+    "name": "[Guardian] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12741": {
-    "name": "[Guardian] Jarette&amp;#39;s Armor",
+    "name": "[Guardian] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12742": {
-    "name": "[Guardian] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Guardian] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12743": {
@@ -9096,11 +9101,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12760": {
-    "name": "[Hashashin] Edan&amp;#39;s Travel Wear",
+    "name": "[Hashashin] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "12761": {
-    "name": "[Hashashin] Jordine&amp;#39;s Casual Wear",
+    "name": "[Hashashin] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "12762": {
@@ -9144,15 +9149,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12784": {
-    "name": "[Nova] Orwen&amp;#39;s Travel Wear",
+    "name": "[Nova] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12785": {
-    "name": "[Nova] Jarette&amp;#39;s Armor",
+    "name": "[Nova] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12786": {
-    "name": "[Nova] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Nova] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12787": {
@@ -9164,7 +9169,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012590.webp"
   },
   "12831": {
-    "name": "Crio&amp;#39;s Fishing Chair",
+    "name": "Crio's Fishing Chair",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/00_etc/00012831.webp"
   },
   "12848": {
@@ -9180,11 +9185,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12851": {
-    "name": "[Sage] Edan&amp;#39;s Travel Wear",
+    "name": "[Sage] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "12852": {
-    "name": "[Sage] Jordine&amp;#39;s Casual Wear",
+    "name": "[Sage] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "12853": {
@@ -9228,11 +9233,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12876": {
-    "name": "[Corsair] Orwen&amp;#39;s Travel Wear",
+    "name": "[Corsair] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12877": {
-    "name": "[Corsair] Jarette&amp;#39;s Armor",
+    "name": "[Corsair] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12878": {
@@ -9268,15 +9273,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12912": {
-    "name": "[Drakania] Orwen&amp;#39;s Travel Wear",
+    "name": "[Drakania] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12913": {
-    "name": "[Drakania] Jarette&amp;#39;s Armor",
+    "name": "[Drakania] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12914": {
-    "name": "[Drakania] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Drakania] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12915": {
@@ -9308,15 +9313,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12944": {
-    "name": "[Woosa] Orwen&amp;#39;s Travel Wear",
+    "name": "[Woosa] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12945": {
-    "name": "[Woosa] Jarette&amp;#39;s Armor",
+    "name": "[Woosa] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12946": {
-    "name": "[Woosa] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Woosa] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12947": {
@@ -9348,15 +9353,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "12967": {
-    "name": "[Maegu] Orwen&amp;#39;s Travel Wear",
+    "name": "[Maegu] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "12968": {
-    "name": "[Maegu] Jarette&amp;#39;s Armor",
+    "name": "[Maegu] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "12969": {
-    "name": "[Maegu] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Maegu] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "12970": {
@@ -9476,7 +9481,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013207.webp"
   },
   "13286": {
-    "name": "Offin Tett&amp;#39;s Radiant Shortsword",
+    "name": "Offin Tett's Radiant Shortsword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013286.webp"
   },
   "13290": {
@@ -9492,11 +9497,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "13293": {
-    "name": "[Wukong] Edan&amp;#39;s Travel Wear",
+    "name": "[Wukong] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "13294": {
-    "name": "[Wukong] Jordine&amp;#39;s Casual Wear",
+    "name": "[Wukong] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "13295": {
@@ -9568,7 +9573,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013304.webp"
   },
   "13386": {
-    "name": "Offin Tett&amp;#39;s Radiant Blade",
+    "name": "Offin Tett's Radiant Blade",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013386.webp"
   },
   "13403": {
@@ -9624,7 +9629,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013411.webp"
   },
   "13487": {
-    "name": "Offin Tett&amp;#39;s Radiant Crescent Pendulum",
+    "name": "Offin Tett's Radiant Crescent Pendulum",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013487.webp"
   },
   "13503": {
@@ -9668,11 +9673,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "13656": {
-    "name": "[Dosa] Edan&amp;#39;s Travel Wear",
+    "name": "[Dosa] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "13657": {
-    "name": "[Dosa] Jordine&amp;#39;s Casual Wear",
+    "name": "[Dosa] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "13658": {
@@ -9752,35 +9757,35 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013723.webp"
   },
   "13786": {
-    "name": "Offin Tett&amp;#39;s Radiant Crossbow",
+    "name": "Offin Tett's Radiant Crossbow",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013786.webp"
   },
   "13803": {
-    "name": "Bhatu Ra&amp;#39;ghon",
+    "name": "Bhatu Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013803.webp"
   },
   "13804": {
-    "name": "Ganatte Ra&amp;#39;ghon",
+    "name": "Ganatte Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013804.webp"
   },
   "13805": {
-    "name": "Sharos Ra&amp;#39;ghon",
+    "name": "Sharos Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013805.webp"
   },
   "13824": {
-    "name": "Krea Ra&amp;#39;ghon",
+    "name": "Krea Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013824.webp"
   },
   "13825": {
-    "name": "Rosar Ra&amp;#39;ghon",
+    "name": "Rosar Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013825.webp"
   },
   "13838": {
-    "name": "Nouver Ra&amp;#39;ghon",
+    "name": "Nouver Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013838.webp"
   },
   "13840": {
-    "name": "Kutum Ra&amp;#39;ghon",
+    "name": "Kutum Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00013840.webp"
   },
   "13901": {
@@ -9796,47 +9801,47 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00013903.webp"
   },
   "14019": {
-    "name": "Silver Embroidered Cook&amp;#39;s Clothes",
+    "name": "Silver Embroidered Cook's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014007.webp"
   },
   "14020": {
-    "name": "Silver Embroidered Fisher&amp;#39;s Clothes",
+    "name": "Silver Embroidered Fisher's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014069.webp"
   },
   "14021": {
-    "name": "Silver Embroidered Trader&amp;#39;s Clothes",
+    "name": "Silver Embroidered Trader's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014016.webp"
   },
   "14022": {
-    "name": "Silver Embroidered Gatherer&amp;#39;s Clothes",
+    "name": "Silver Embroidered Gatherer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014048.webp"
   },
   "14023": {
-    "name": "Silver Embroidered Trainer&amp;#39;s Clothes",
+    "name": "Silver Embroidered Trainer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014010.webp"
   },
   "14024": {
-    "name": "Silver Embroidered Hunter&amp;#39;s Clothes",
+    "name": "Silver Embroidered Hunter's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014013.webp"
   },
   "14025": {
-    "name": "Silver Embroidered Alchemist&amp;#39;s Clothes",
+    "name": "Silver Embroidered Alchemist's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014001.webp"
   },
   "14026": {
-    "name": "Silver Embroidered Craftsman&amp;#39;s Clothes",
+    "name": "Silver Embroidered Craftsman's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014004.webp"
   },
   "14027": {
-    "name": "Fine Horse Trainer&amp;#39;s Clothes",
+    "name": "Fine Horse Trainer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014027.webp"
   },
   "14028": {
-    "name": "Silver Embroidered Farmer&amp;#39;s Clothes",
+    "name": "Silver Embroidered Farmer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014028.webp"
   },
   "14029": {
-    "name": "Silver Embroidered Sailor&amp;#39;s Clothes",
+    "name": "Silver Embroidered Sailor's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014029.webp"
   },
   "14101": {
@@ -9992,23 +9997,23 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014284.webp"
   },
   "14296": {
-    "name": "[Warrior] Jordine&amp;#39;s Casual Wear",
+    "name": "[Warrior] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "14297": {
-    "name": "[Berserker] Jordine&amp;#39;s Casual Wear",
+    "name": "[Berserker] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "14298": {
-    "name": "[Sorceress] Orwen&amp;#39;s Travel Wear",
+    "name": "[Sorceress] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14299": {
-    "name": "[Tamer] Orwen&amp;#39;s Travel Wear",
+    "name": "[Tamer] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14300": {
-    "name": "[Ranger] Orwen&amp;#39;s Travel Wear",
+    "name": "[Ranger] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14339": {
@@ -10084,7 +10089,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014413.webp"
   },
   "14486": {
-    "name": "Offin Tett&amp;#39;s Radiant Staff",
+    "name": "Offin Tett's Radiant Staff",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014486.webp"
   },
   "14503": {
@@ -10144,7 +10149,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00014640.webp"
   },
   "14701": {
-    "name": "Mercenary&amp;#39;s Steel Greatsword",
+    "name": "Mercenary's Steel Greatsword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014701.webp"
   },
   "14702": {
@@ -10152,7 +10157,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014702.webp"
   },
   "14703": {
-    "name": "Mercenary&amp;#39;s Greatsword",
+    "name": "Mercenary's Greatsword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014703.webp"
   },
   "14711": {
@@ -10180,7 +10185,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014723.webp"
   },
   "14731": {
-    "name": "Heiress&amp;#39;s Kamasylven Sword",
+    "name": "Heiress's Kamasylven Sword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014731.webp"
   },
   "14732": {
@@ -10188,7 +10193,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014732.webp"
   },
   "14733": {
-    "name": "Small Tree Spirit&amp;#39;s Kamasylven Sword",
+    "name": "Small Tree Spirit's Kamasylven Sword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014733.webp"
   },
   "14741": {
@@ -10252,7 +10257,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014783.webp"
   },
   "14791": {
-    "name": "Oeki&amp;#39;s Sah Chakram",
+    "name": "Oeki's Sah Chakram",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014791.webp"
   },
   "14792": {
@@ -10324,79 +10329,79 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00014831.webp"
   },
   "14838": {
-    "name": "[Musa] Jordine&amp;#39;s Casual Wear",
+    "name": "[Musa] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "14839": {
-    "name": "[Valkyrie] Orwen&amp;#39;s Travel Wear",
+    "name": "[Valkyrie] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14840": {
-    "name": "[Maehwa] Orwen&amp;#39;s Travel Wear",
+    "name": "[Maehwa] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14841": {
-    "name": "[Wizard] Jordine&amp;#39;s Casual Wear",
+    "name": "[Wizard] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "14842": {
-    "name": "[Witch] Orwen&amp;#39;s Travel Wear",
+    "name": "[Witch] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14843": {
-    "name": "[Kunoichi] Orwen&amp;#39;s Travel Wear",
+    "name": "[Kunoichi] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "14844": {
-    "name": "[Ninja] Jordine&amp;#39;s Casual Wear",
+    "name": "[Ninja] Jordine's Casual Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014296.webp"
   },
   "14845": {
-    "name": "[Warrior] Edan&amp;#39;s Travel Wear",
+    "name": "[Warrior] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "14846": {
-    "name": "[Berserker] Edan&amp;#39;s Travel Wear",
+    "name": "[Berserker] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "14847": {
-    "name": "[Sorceress] Jarette&amp;#39;s Armor",
+    "name": "[Sorceress] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14848": {
-    "name": "[Tamer] Jarette&amp;#39;s Armor",
+    "name": "[Tamer] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14849": {
-    "name": "[Ranger] Jarette&amp;#39;s Armor",
+    "name": "[Ranger] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14850": {
-    "name": "[Musa] Edan&amp;#39;s Travel Wear",
+    "name": "[Musa] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "14851": {
-    "name": "[Valkyrie] Jarette&amp;#39;s Armor",
+    "name": "[Valkyrie] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14852": {
-    "name": "[Maehwa] Jarette&amp;#39;s Armor",
+    "name": "[Maehwa] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14853": {
-    "name": "[Wizard] Edan&amp;#39;s Travel Wear",
+    "name": "[Wizard] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "14854": {
-    "name": "[Witch] Jarette&amp;#39;s Armor",
+    "name": "[Witch] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14855": {
-    "name": "[Kunoichi] Jarette&amp;#39;s Armor",
+    "name": "[Kunoichi] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "14856": {
-    "name": "[Ninja] Edan&amp;#39;s Travel Wear",
+    "name": "[Ninja] Edan's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014845.webp"
   },
   "14869": {
@@ -10716,15 +10721,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015263_1.webp"
   },
   "15264": {
-    "name": "JIN Dawn Crystal - Black Spirit&amp;#39;s Rage",
+    "name": "JIN Dawn Crystal - Black Spirit's Rage",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015264_1.webp"
   },
   "15265": {
-    "name": "BON Dawn Crystal - Black Spirit&amp;#39;s Rage",
+    "name": "BON Dawn Crystal - Black Spirit's Rage",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015265_1.webp"
   },
   "15266": {
-    "name": "WON Dawn Crystal - Black Spirit&amp;#39;s Rage",
+    "name": "WON Dawn Crystal - Black Spirit's Rage",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015266_1.webp"
   },
   "15267": {
@@ -10764,7 +10769,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015275_1.webp"
   },
   "15279": {
-    "name": "Crystal of Void - Ah&amp;#39;krad",
+    "name": "Crystal of Void - Ah'krad",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015279_1.webp"
   },
   "15280": {
@@ -10820,7 +10825,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00045051_2.webp"
   },
   "15627": {
-    "name": "Awakened Spirit&amp;#39;s Crystal",
+    "name": "Awakened Spirit's Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015627_2.webp"
   },
   "15628": {
@@ -10888,7 +10893,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015638_1.webp"
   },
   "15654": {
-    "name": "Valtarra Spirit&amp;#39;s Crystal",
+    "name": "Valtarra Spirit's Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015654_2.webp"
   },
   "15662": {
@@ -10932,11 +10937,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015674.webp"
   },
   "15675": {
-    "name": "Ah&amp;#39;krad Crystal",
+    "name": "Ah'krad Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015675.webp"
   },
   "15676": {
-    "name": "Olucas&amp;#39; Crystal",
+    "name": "Olucas' Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015676.webp"
   },
   "15677": {
@@ -10956,7 +10961,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015689_5.webp"
   },
   "15690": {
-    "name": "Glorious Crystal of Gallantry - Ah&amp;#39;krad",
+    "name": "Glorious Crystal of Gallantry - Ah'krad",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015691.webp"
   },
   "15691": {
@@ -10980,39 +10985,39 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015637_8.webp"
   },
   "15720": {
-    "name": "Bonghwang&amp;#39;s Tear",
+    "name": "Bonghwang's Tear",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/000820025_2.webp"
   },
   "15729": {
-    "name": "Bonghwang&amp;#39;s Fragment",
+    "name": "Bonghwang's Fragment",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015229_1.webp"
   },
   "15730": {
-    "name": "Bonghwang&amp;#39;s Crystal",
+    "name": "Bonghwang's Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015230_1.webp"
   },
   "15731": {
-    "name": "Haetae&amp;#39;s Fragment",
+    "name": "Haetae's Fragment",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015231_3.webp"
   },
   "15732": {
-    "name": "Haetae&amp;#39;s Crystal",
+    "name": "Haetae's Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015232_3.webp"
   },
   "15733": {
-    "name": "Haetae&amp;#39;s Tear",
+    "name": "Haetae's Tear",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/000820025_1.webp"
   },
   "15734": {
-    "name": "Girin&amp;#39;s Fragment",
+    "name": "Girin's Fragment",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015237_3.webp"
   },
   "15735": {
-    "name": "Girin&amp;#39;s Crystal",
+    "name": "Girin's Crystal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015238_3.webp"
   },
   "15736": {
-    "name": "Girin&amp;#39;s Tear",
+    "name": "Girin's Tear",
     "image": "https://bdocodex.com/items/new_icon/03_etc/11_enchant_material/00015239_3.webp"
   },
   "15740": {
@@ -11096,7 +11101,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/03_etc/12_doapplydirectlyitem/00000018.webp"
   },
   "16017": {
-    "name": "Traveler&amp;#39;s Map",
+    "name": "Traveler's Map",
     "image": "https://bdocodex.com/items/new_icon/03_etc/00016017.webp"
   },
   "16102": {
@@ -11296,7 +11301,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017316.webp"
   },
   "17321": {
-    "name": "Merv&amp;#39;s Palette (15 Days)",
+    "name": "Merv's Palette (15 Days)",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017319.webp"
   },
   "17354": {
@@ -11400,7 +11405,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017910.webp"
   },
   "17928": {
-    "name": "Trainer&amp;#39;s Flute (30 Days)",
+    "name": "Trainer's Flute (30 Days)",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017917.webp"
   },
   "17939": {
@@ -11516,7 +11521,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017972.webp"
   },
   "17973": {
-    "name": "Trainer&amp;#39;s Flute (Permanent)",
+    "name": "Trainer's Flute (Permanent)",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017917.webp"
   },
   "17974": {
@@ -11536,15 +11541,15 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00017977.webp"
   },
   "18001": {
-    "name": "Calpheon Chargers&amp;#39; Champron",
+    "name": "Calpheon Chargers' Champron",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018001.webp"
   },
   "18002": {
-    "name": "Knight&amp;#39;s Champron",
+    "name": "Knight's Champron",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018002.webp"
   },
   "18003": {
-    "name": "Commander&amp;#39;s Champron",
+    "name": "Commander's Champron",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018003.webp"
   },
   "18004": {
@@ -11628,15 +11633,15 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018100.webp"
   },
   "18101": {
-    "name": "Calpheon Chargers&amp;#39; Barding",
+    "name": "Calpheon Chargers' Barding",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018101.webp"
   },
   "18102": {
-    "name": "Knight&amp;#39;s Barding",
+    "name": "Knight's Barding",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018102.webp"
   },
   "18103": {
-    "name": "Commander&amp;#39;s Barding",
+    "name": "Commander's Barding",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018103.webp"
   },
   "18104": {
@@ -11692,15 +11697,15 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018119.webp"
   },
   "18201": {
-    "name": "Calpheon Chargers&amp;#39; Saddle",
+    "name": "Calpheon Chargers' Saddle",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018201.webp"
   },
   "18202": {
-    "name": "Knight&amp;#39;s Saddle",
+    "name": "Knight's Saddle",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018202.webp"
   },
   "18203": {
-    "name": "Commander&amp;#39;s Saddle",
+    "name": "Commander's Saddle",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018203.webp"
   },
   "18204": {
@@ -11756,15 +11761,15 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018219.webp"
   },
   "18301": {
-    "name": "Calpheon Chargers&amp;#39; Stirrups",
+    "name": "Calpheon Chargers' Stirrups",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018301.webp"
   },
   "18302": {
-    "name": "Knight&amp;#39;s Stirrups",
+    "name": "Knight's Stirrups",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018302.webp"
   },
   "18303": {
-    "name": "Commander&amp;#39;s Stirrups",
+    "name": "Commander's Stirrups",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00018303.webp"
   },
   "18304": {
@@ -13660,11 +13665,11 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00019143.webp"
   },
   "21001": {
-    "name": "Knight&amp;#39;s Horse Gear Set",
+    "name": "Knight's Horse Gear Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021001.webp"
   },
   "21002": {
-    "name": "Commander&amp;#39;s Horse Gear Set",
+    "name": "Commander's Horse Gear Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021001.webp"
   },
   "21003": {
@@ -13684,7 +13689,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021001.webp"
   },
   "21007": {
-    "name": "Calpheon Chargers&amp;#39; Horse Gear Set",
+    "name": "Calpheon Chargers' Horse Gear Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021001.webp"
   },
   "21008": {
@@ -14212,7 +14217,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "21185": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Classic Set",
+    "name": "[Wizard] Inquirer's Destiny Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "21186": {
@@ -18136,19 +18141,19 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00022799.webp"
   },
   "22801": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Hat",
+    "name": "[Wizard] Inquirer's Destiny Hat",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00022801.webp"
   },
   "22802": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Robe",
+    "name": "[Wizard] Inquirer's Destiny Robe",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00022802.webp"
   },
   "22803": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Gloves",
+    "name": "[Wizard] Inquirer's Destiny Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00022803.webp"
   },
   "22804": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Shoes",
+    "name": "[Wizard] Inquirer's Destiny Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00022804.webp"
   },
   "22816": {
@@ -18292,7 +18297,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00022860.webp"
   },
   "22871": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Staff",
+    "name": "[Wizard] Inquirer's Destiny Staff",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00022871.webp"
   },
   "22874": {
@@ -18332,7 +18337,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00022885.webp"
   },
   "22886": {
-    "name": "[Wizard] Inquirer&amp;#39;s Destiny Dagger",
+    "name": "[Wizard] Inquirer's Destiny Dagger",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00022886.webp"
   },
   "22889": {
@@ -19504,7 +19509,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_etc_calpheon_ancientpot_01.webp"
   },
   "24217": {
-    "name": "Loria&amp;#39;s Hand Mirror",
+    "name": "Loria's Hand Mirror",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_x_dpfo_cal_mirror_03.webp"
   },
   "24218": {
@@ -19604,7 +19609,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_candlestick_01_light.webp"
   },
   "24257": {
-    "name": "O&amp;#39;draxxia Candle Stand",
+    "name": "O'draxxia Candle Stand",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_candlestick_03_light.webp"
   },
   "24259": {
@@ -19676,7 +19681,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_furry_lamp_01.webp"
   },
   "24535": {
-    "name": "Vatu&amp;#39;s High-quality Dining Table",
+    "name": "Vatu's High-quality Dining Table",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/mansion_dpf_furry_table_02.webp"
   },
   "24536": {
@@ -19716,7 +19721,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_cultivate_bottle_sunflower_01_wall.webp"
   },
   "24625": {
-    "name": "Jack-O&amp;#39;-Lantern Wall Ornament",
+    "name": "Jack-O'-Lantern Wall Ornament",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_cultivate_pumpkinhead_01_wall.webp"
   },
   "24626": {
@@ -19732,7 +19737,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_etc_calpheon_ancientmural_01.webp"
   },
   "24661": {
-    "name": "O&amp;#39;draxxian Tapestry",
+    "name": "O'draxxian Tapestry",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_carpetdeco_01.webp"
   },
   "24662": {
@@ -19932,7 +19937,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/in_cam_prop_winebox_11.webp"
   },
   "24878": {
-    "name": "O&amp;#39;draxxia Glamorous Patterned Carpet",
+    "name": "O'draxxia Glamorous Patterned Carpet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_odl_capet_01.webp"
   },
   "25002": {
@@ -19956,35 +19961,35 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_goraldeco_01.webp"
   },
   "25105": {
-    "name": "Artisan&amp;#39;s Stuffed Winter Bear Head",
+    "name": "Artisan's Stuffed Winter Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_beardeco_01.webp"
   },
   "25106": {
-    "name": "Artisan&amp;#39;s Stuffed Snowfield Yak Head",
+    "name": "Artisan's Stuffed Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_01.webp"
   },
   "25107": {
-    "name": "Artisan&amp;#39;s Stuffed Black Snowfield Yak Head",
+    "name": "Artisan's Stuffed Black Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_02.webp"
   },
   "25108": {
-    "name": "Artisan&amp;#39;s Stuffed Snowfield Markhor Head",
+    "name": "Artisan's Stuffed Snowfield Markhor Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_goraldeco_01.webp"
   },
   "25109": {
-    "name": "Master&amp;#39;s Stuffed Winter Bear Head",
+    "name": "Master's Stuffed Winter Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_beardeco_01.webp"
   },
   "25110": {
-    "name": "Master&amp;#39;s Stuffed Snowfield Yak Head",
+    "name": "Master's Stuffed Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_01.webp"
   },
   "25111": {
-    "name": "Master&amp;#39;s Stuffed Black Snowfield Yak Head",
+    "name": "Master's Stuffed Black Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_02.webp"
   },
   "25112": {
-    "name": "Master&amp;#39;s Stuffed Snowfield Markhor Head",
+    "name": "Master's Stuffed Snowfield Markhor Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_goraldeco_01.webp"
   },
   "25113": {
@@ -19992,11 +19997,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_wolfdeco_01.webp"
   },
   "25114": {
-    "name": "Artisan&amp;#39;s Stuffed Frost Wolf",
+    "name": "Artisan's Stuffed Frost Wolf",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_wolfdeco_01.webp"
   },
   "25115": {
-    "name": "Master&amp;#39;s Stuffed Frost Wolf",
+    "name": "Master's Stuffed Frost Wolf",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_wolfdeco_01.webp"
   },
   "25116": {
@@ -20004,11 +20009,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_liondeco_01.webp"
   },
   "25117": {
-    "name": "Artisan&amp;#39;s Stuffed Snow Leopard",
+    "name": "Artisan's Stuffed Snow Leopard",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_liondeco_01.webp"
   },
   "25118": {
-    "name": "Master&amp;#39;s Stuffed Snow Leopard",
+    "name": "Master's Stuffed Snow Leopard",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_liondeco_01.webp"
   },
   "25119": {
@@ -20016,259 +20021,259 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_marmotdeco_01.webp"
   },
   "25120": {
-    "name": "Artisan&amp;#39;s Stuffed Snowfield Ili Pika",
+    "name": "Artisan's Stuffed Snowfield Ili Pika",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_marmotdeco_01.webp"
   },
   "25121": {
-    "name": "Master&amp;#39;s Stuffed Snowfield Ili Pika",
+    "name": "Master's Stuffed Snowfield Ili Pika",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_marmotdeco_01.webp"
   },
   "25122": {
-    "name": "Artisan&amp;#39;s Special Stuffed Winter Bear Head",
+    "name": "Artisan's Special Stuffed Winter Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_beardeco_01.webp"
   },
   "25123": {
-    "name": "Artisan&amp;#39;s Special Stuffed Snowfield Yak Head",
+    "name": "Artisan's Special Stuffed Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_01.webp"
   },
   "25124": {
-    "name": "Artisan&amp;#39;s Special Stuffed Black Snowfield Yak Head",
+    "name": "Artisan's Special Stuffed Black Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_02.webp"
   },
   "25125": {
-    "name": "Artisan&amp;#39;s Special Stuffed Snowfield Markhor Head",
+    "name": "Artisan's Special Stuffed Snowfield Markhor Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_goraldeco_01.webp"
   },
   "25126": {
-    "name": "Artisan&amp;#39;s Special Stuffed Frost Wolf",
+    "name": "Artisan's Special Stuffed Frost Wolf",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_wolfdeco_01.webp"
   },
   "25128": {
-    "name": "Artisan&amp;#39;s Special Stuffed Bear Head",
+    "name": "Artisan's Special Stuffed Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearhead_01.webp"
   },
   "25129": {
-    "name": "Artisan&amp;#39;s Special Bear Hide Carpet",
+    "name": "Artisan's Special Bear Hide Carpet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearskin_01.webp"
   },
   "25131": {
-    "name": "Artisan&amp;#39;s Special Stuffed Fox Head",
+    "name": "Artisan's Special Stuffed Fox Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_foxhead_01.webp"
   },
   "25132": {
-    "name": "Artisan&amp;#39;s Special Stuffed Weasel",
+    "name": "Artisan's Special Stuffed Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_01.webp"
   },
   "25133": {
-    "name": "Artisan&amp;#39;s Special Stuffed Gray Wolf Head",
+    "name": "Artisan's Special Stuffed Gray Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_01.webp"
   },
   "25134": {
-    "name": "Artisan&amp;#39;s Special Stuffed Wolf Head",
+    "name": "Artisan's Special Stuffed Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_02.webp"
   },
   "25135": {
-    "name": "Artisan&amp;#39;s Special Stuffed Giant Boar Head",
+    "name": "Artisan's Special Stuffed Giant Boar Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boar_02.webp"
   },
   "25136": {
-    "name": "Artisan&amp;#39;s Special Stuffed Elk Head",
+    "name": "Artisan's Special Stuffed Elk Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_deer_01.webp"
   },
   "25137": {
-    "name": "Artisan&amp;#39;s Special Stuffed Valencia Mountain Sheep Head",
+    "name": "Artisan's Special Stuffed Valencia Mountain Sheep Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goralhead_01.webp"
   },
   "25138": {
-    "name": "Artisan&amp;#39;s Special Stuffed Giant Lion Head",
+    "name": "Artisan's Special Stuffed Giant Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_01.webp"
   },
   "25139": {
-    "name": "Artisan&amp;#39;s Special Stuffed Valencian Lioness Head",
+    "name": "Artisan's Special Stuffed Valencian Lioness Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_02.webp"
   },
   "25140": {
-    "name": "Artisan&amp;#39;s Special Stuffed Drieghan Male Goat Head",
+    "name": "Artisan's Special Stuffed Drieghan Male Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_01.webp"
   },
   "25141": {
-    "name": "Artisan&amp;#39;s Special Stuffed Drieghan Female Goat Head",
+    "name": "Artisan's Special Stuffed Drieghan Female Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_02.webp"
   },
   "25142": {
-    "name": "Artisan&amp;#39;s Special Stuffed Yak Head",
+    "name": "Artisan's Special Stuffed Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_horncow_01.webp"
   },
   "25143": {
-    "name": "Artisan&amp;#39;s Special Stuffed Llama",
+    "name": "Artisan's Special Stuffed Llama",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_alpaca_01.webp"
   },
   "25144": {
-    "name": "Artisan&amp;#39;s Special Stuffed Belladonna Elephant Head",
+    "name": "Artisan's Special Stuffed Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_01.webp"
   },
   "25145": {
-    "name": "Artisan&amp;#39;s Special Stuffed Baby Belladonna Elephant Head",
+    "name": "Artisan's Special Stuffed Baby Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_02.webp"
   },
   "25146": {
-    "name": "Artisan&amp;#39;s Special Stuffed Gazelle Head",
+    "name": "Artisan's Special Stuffed Gazelle Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_gazellehead_01.webp"
   },
   "25147": {
-    "name": "Artisan&amp;#39;s Special Stuffed Black Leopard Head",
+    "name": "Artisan's Special Stuffed Black Leopard Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blackhead_01.webp"
   },
   "25148": {
-    "name": "Artisan&amp;#39;s Special Stuffed Feather Wolf Head",
+    "name": "Artisan's Special Stuffed Feather Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_featherwolfhead_01.webp"
   },
   "25149": {
-    "name": "Artisan&amp;#39;s Special Stuffed Phnyl Head",
+    "name": "Artisan's Special Stuffed Phnyl Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_fnillhead_01.webp"
   },
   "25150": {
-    "name": "Artisan&amp;#39;s Special Stuffed Ferrica Head",
+    "name": "Artisan's Special Stuffed Ferrica Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferica_01.webp"
   },
   "25151": {
-    "name": "Artisan&amp;#39;s Special Stuffed Ferrina Head",
+    "name": "Artisan's Special Stuffed Ferrina Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferina_01.webp"
   },
   "25152": {
-    "name": "Artisan&amp;#39;s Special Stuffed Kamasylvia Weasel",
+    "name": "Artisan's Special Stuffed Kamasylvia Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_02.webp"
   },
   "25153": {
-    "name": "Master&amp;#39;s Special Stuffed Winter Bear Head",
+    "name": "Master's Special Stuffed Winter Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_beardeco_01.webp"
   },
   "25154": {
-    "name": "Master&amp;#39;s Special Stuffed Snowfield Yak Head",
+    "name": "Master's Special Stuffed Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_01.webp"
   },
   "25155": {
-    "name": "Master&amp;#39;s Special Stuffed Black Snowfield Yak Head",
+    "name": "Master's Special Stuffed Black Snowfield Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_yakdeco_02.webp"
   },
   "25156": {
-    "name": "Master&amp;#39;s Special Stuffed Snowfield Markhor Head",
+    "name": "Master's Special Stuffed Snowfield Markhor Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_goraldeco_01.webp"
   },
   "25157": {
-    "name": "Master&amp;#39;s Special Stuffed Frost Wolf",
+    "name": "Master's Special Stuffed Frost Wolf",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_wolfdeco_01.webp"
   },
   "25158": {
-    "name": "Master&amp;#39;s Special Stuffed Bear Head",
+    "name": "Master's Special Stuffed Bear Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearhead_01.webp"
   },
   "25159": {
-    "name": "Master&amp;#39;s Special Bear Hide Carpet",
+    "name": "Master's Special Bear Hide Carpet",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_bearskin_01.webp"
   },
   "25161": {
-    "name": "Master&amp;#39;s Special Stuffed Fox Head",
+    "name": "Master's Special Stuffed Fox Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_foxhead_01.webp"
   },
   "25162": {
-    "name": "Master&amp;#39;s Special Stuffed Weasel",
+    "name": "Master's Special Stuffed Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_01.webp"
   },
   "25163": {
-    "name": "Master&amp;#39;s Special Stuffed Gray Wolf Head",
+    "name": "Master's Special Stuffed Gray Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_01.webp"
   },
   "25164": {
-    "name": "Master&amp;#39;s Special Stuffed Wolf Head",
+    "name": "Master's Special Stuffed Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_wolfhead_02.webp"
   },
   "25165": {
-    "name": "Master&amp;#39;s Special Stuffed Giant Boar Head",
+    "name": "Master's Special Stuffed Giant Boar Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_boar_02.webp"
   },
   "25166": {
-    "name": "Master&amp;#39;s Special Stuffed Elk Head",
+    "name": "Master's Special Stuffed Elk Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_deer_01.webp"
   },
   "25167": {
-    "name": "Master&amp;#39;s Special Stuffed Valencia Mountain Sheep Head",
+    "name": "Master's Special Stuffed Valencia Mountain Sheep Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goralhead_01.webp"
   },
   "25168": {
-    "name": "Master&amp;#39;s Special Stuffed Giant Lion Head",
+    "name": "Master's Special Stuffed Giant Lion Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_01.webp"
   },
   "25169": {
-    "name": "Master&amp;#39;s Special Stuffed Valencian Lioness Head",
+    "name": "Master's Special Stuffed Valencian Lioness Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_lionhead_02.webp"
   },
   "25170": {
-    "name": "Master&amp;#39;s Special Stuffed Drieghan Male Goat Head",
+    "name": "Master's Special Stuffed Drieghan Male Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_01.webp"
   },
   "25171": {
-    "name": "Master&amp;#39;s Special Stuffed Drieghan Female Goat Head",
+    "name": "Master's Special Stuffed Drieghan Female Goat Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_goat_02.webp"
   },
   "25172": {
-    "name": "Master&amp;#39;s Special Stuffed Yak Head",
+    "name": "Master's Special Stuffed Yak Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_horncow_01.webp"
   },
   "25173": {
-    "name": "Master&amp;#39;s Special Stuffed Llama",
+    "name": "Master's Special Stuffed Llama",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_alpaca_01.webp"
   },
   "25174": {
-    "name": "Master&amp;#39;s Special Stuffed Belladonna Elephant Head",
+    "name": "Master's Special Stuffed Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_01.webp"
   },
   "25175": {
-    "name": "Master&amp;#39;s Special Stuffed Baby Belladonna Elephant Head",
+    "name": "Master's Special Stuffed Baby Belladonna Elephant Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_elephanthead_02.webp"
   },
   "25176": {
-    "name": "Master&amp;#39;s Special Stuffed Gazelle Head",
+    "name": "Master's Special Stuffed Gazelle Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_gazellehead_01.webp"
   },
   "25177": {
-    "name": "Master&amp;#39;s Special Stuffed Black Leopard Head",
+    "name": "Master's Special Stuffed Black Leopard Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_blackhead_01.webp"
   },
   "25178": {
-    "name": "Master&amp;#39;s Special Stuffed Feather Wolf Head",
+    "name": "Master's Special Stuffed Feather Wolf Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_featherwolfhead_01.webp"
   },
   "25179": {
-    "name": "Master&amp;#39;s Special Stuffed Phnyl Head",
+    "name": "Master's Special Stuffed Phnyl Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_fnillhead_01.webp"
   },
   "25180": {
-    "name": "Master&amp;#39;s Special Stuffed Ferrica Head",
+    "name": "Master's Special Stuffed Ferrica Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferica_01.webp"
   },
   "25181": {
-    "name": "Master&amp;#39;s Special Stuffed Ferrina Head",
+    "name": "Master's Special Stuffed Ferrina Head",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_ferina_01.webp"
   },
   "25182": {
-    "name": "Master&amp;#39;s Special Stuffed Kamasylvia Weasel",
+    "name": "Master's Special Stuffed Kamasylvia Weasel",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_weasel_02.webp"
   },
   "25183": {
-    "name": "Artisan&amp;#39;s Special Stuffed Snow Leopard",
+    "name": "Artisan's Special Stuffed Snow Leopard",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_liondeco_01.webp"
   },
   "25184": {
-    "name": "Artisan&amp;#39;s Special Stuffed Snowfield Ili Pika",
+    "name": "Artisan's Special Stuffed Snowfield Ili Pika",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_marmotdeco_01.webp"
   },
   "25185": {
-    "name": "Master&amp;#39;s Special Stuffed Snow Leopard",
+    "name": "Master's Special Stuffed Snow Leopard",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_liondeco_01.webp"
   },
   "25186": {
-    "name": "Master&amp;#39;s Special Stuffed Snowfield Ili Pika",
+    "name": "Master's Special Stuffed Snowfield Ili Pika",
     "image": "https://bdocodex.com/items/new_icon/03_etc/06_housing/inhouse_z_booty_dri_marmotdeco_01.webp"
   },
   "25197": {
@@ -21560,35 +21565,35 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "29141": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Helmet",
+    "name": "[Musa] Nouse's Shard Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00029141.webp"
   },
   "29142": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Armor",
+    "name": "[Musa] Nouse's Shard Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00029142.webp"
   },
   "29143": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Blade",
+    "name": "[Musa] Nouse's Shard Blade",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00029143.webp"
   },
   "29144": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Horn Bow",
+    "name": "[Musa] Nouse's Shard Horn Bow",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00029144.webp"
   },
   "29145": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Crescent Blade",
+    "name": "[Musa] Nouse's Shard Crescent Blade",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00029145.webp"
   },
   "29146": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Classic Set",
+    "name": "[Musa] Nouse's Shard Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "29147": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Premium Set",
+    "name": "[Musa] Nouse's Shard Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "29148": {
-    "name": "[Musa] Nouse&amp;#39;s Shard Awakening Set",
+    "name": "[Musa] Nouse's Shard Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "29152": {
@@ -22160,35 +22165,35 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "29607": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Hat",
+    "name": "[Wizard] Sage's Memory Hat",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00029607.webp"
   },
   "29608": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Clothes",
+    "name": "[Wizard] Sage's Memory Clothes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00029608.webp"
   },
   "29609": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Staff",
+    "name": "[Wizard] Sage's Memory Staff",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00029609.webp"
   },
   "29610": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Dagger",
+    "name": "[Wizard] Sage's Memory Dagger",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00029610.webp"
   },
   "29611": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Godr Sphera",
+    "name": "[Wizard] Sage's Memory Godr Sphera",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00029611.webp"
   },
   "29612": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Classic Set",
+    "name": "[Wizard] Sage's Memory Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "29613": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Premium Set",
+    "name": "[Wizard] Sage's Memory Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "29614": {
-    "name": "[Wizard] Sage&amp;#39;s Memory Awakening Set",
+    "name": "[Wizard] Sage's Memory Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "29615": {
@@ -22780,7 +22785,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/03_quest_item/00040228.webp"
   },
   "40258": {
-    "name": "Black Spirit&amp;#39;s Claw Piece",
+    "name": "Black Spirit's Claw Piece",
     "image": "https://bdocodex.com/items/new_icon/03_etc/03_quest_item/00040258.webp"
   },
   "40383": {
@@ -22792,15 +22797,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/03_quest_item/00040543.webp"
   },
   "40545": {
-    "name": "Ancient Creature&amp;#39;s Scale",
+    "name": "Ancient Creature's Scale",
     "image": "https://bdocodex.com/items/new_icon/03_etc/03_quest_item/00040545.webp"
   },
   "40770": {
-    "name": "Ornette&amp;#39;s Spirit Essence",
+    "name": "Ornette's Spirit Essence",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00040712.webp"
   },
   "40771": {
-    "name": "Odore&amp;#39;s Spirit Essence",
+    "name": "Odore's Spirit Essence",
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00040713.webp"
   },
   "43786": {
@@ -22824,15 +22829,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00044195.webp"
   },
   "44286": {
-    "name": "Part for Explorer&amp;#39;s Compass",
+    "name": "Part for Explorer's Compass",
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00044286.webp"
   },
   "44332": {
-    "name": "Vell&amp;#39;s Fine Powder",
+    "name": "Vell's Fine Powder",
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00044332.webp"
   },
   "44335": {
-    "name": "Vell&amp;#39;s Concentrated Magic",
+    "name": "Vell's Concentrated Magic",
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00044335.webp"
   },
   "44336": {
@@ -22840,7 +22845,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00044336.webp"
   },
   "44362": {
-    "name": "Garmoth&amp;#39;s Heart",
+    "name": "Garmoth's Heart",
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00044362.webp"
   },
   "44364": {
@@ -23304,7 +23309,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00045302.webp"
   },
   "45332": {
-    "name": "Vell&amp;#39;s Heart",
+    "name": "Vell's Heart",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00045332.webp"
   },
   "45334": {
@@ -23356,15 +23361,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00045345.webp"
   },
   "45503": {
-    "name": "Khan&amp;#39;s Heart: Destruction",
+    "name": "Khan's Heart: Destruction",
     "image": "https://bdocodex.com/items/new_icon/03_etc/00045503.webp"
   },
   "45513": {
-    "name": "Khan&amp;#39;s Heart: Protection",
+    "name": "Khan's Heart: Protection",
     "image": "https://bdocodex.com/items/new_icon/03_etc/00045513.webp"
   },
   "45514": {
-    "name": "Khan&amp;#39;s Heart: Life",
+    "name": "Khan's Heart: Life",
     "image": "https://bdocodex.com/items/new_icon/03_etc/00045514.webp"
   },
   "45820": {
@@ -24024,71 +24029,71 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049732.webp"
   },
   "49733": {
-    "name": "Epheria Frigate: Nor&amp;#39;easter Sail",
+    "name": "Epheria Frigate: Nor'easter Sail",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049733.webp"
   },
   "49746": {
-    "name": "Epheria Carrack: Advance (Chiro&amp;#39;s Cannon)",
+    "name": "Epheria Carrack: Advance (Chiro's Cannon)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049746.webp"
   },
   "49747": {
-    "name": "Epheria Carrack: Advance (Chiro&amp;#39;s Sail)",
+    "name": "Epheria Carrack: Advance (Chiro's Sail)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049747.webp"
   },
   "49748": {
-    "name": "Epheria Carrack: Advance (Chiro&amp;#39;s Figurehead)",
+    "name": "Epheria Carrack: Advance (Chiro's Figurehead)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049748.webp"
   },
   "49749": {
-    "name": "Epheria Carrack: Advance (Chiro&amp;#39;s Black Plating)",
+    "name": "Epheria Carrack: Advance (Chiro's Black Plating)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049749.webp"
   },
   "49762": {
-    "name": "Epheria Carrack: Balance (Chiro&amp;#39;s Cannon)",
+    "name": "Epheria Carrack: Balance (Chiro's Cannon)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049762.webp"
   },
   "49763": {
-    "name": "Epheria Carrack: Balance (Chiro&amp;#39;s Sail)",
+    "name": "Epheria Carrack: Balance (Chiro's Sail)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049763.webp"
   },
   "49764": {
-    "name": "Epheria Carrack: Balance (Chiro&amp;#39;s Figurehead)",
+    "name": "Epheria Carrack: Balance (Chiro's Figurehead)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049764.webp"
   },
   "49765": {
-    "name": "Epheria Carrack: Balance (Chiro&amp;#39;s Black Plating)",
+    "name": "Epheria Carrack: Balance (Chiro's Black Plating)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049765.webp"
   },
   "49766": {
-    "name": "Epheria Carrack: Volante (Chiro&amp;#39;s Cannon)",
+    "name": "Epheria Carrack: Volante (Chiro's Cannon)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049766.webp"
   },
   "49767": {
-    "name": "Epheria Carrack: Volante (Chiro&amp;#39;s Sail)",
+    "name": "Epheria Carrack: Volante (Chiro's Sail)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049767.webp"
   },
   "49768": {
-    "name": "Epheria Carrack: Volante (Chiro&amp;#39;s Figurehead)",
+    "name": "Epheria Carrack: Volante (Chiro's Figurehead)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049768.webp"
   },
   "49769": {
-    "name": "Epheria Carrack: Volante (Chiro&amp;#39;s Black Plating)",
+    "name": "Epheria Carrack: Volante (Chiro's Black Plating)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049769.webp"
   },
   "49770": {
-    "name": "Epheria Carrack: Valor (Chiro&amp;#39;s Cannon)",
+    "name": "Epheria Carrack: Valor (Chiro's Cannon)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049770.webp"
   },
   "49771": {
-    "name": "Epheria Carrack: Valor (Chiro&amp;#39;s Sail)",
+    "name": "Epheria Carrack: Valor (Chiro's Sail)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049771.webp"
   },
   "49772": {
-    "name": "Epheria Carrack: Valor (Chiro&amp;#39;s Figurehead)",
+    "name": "Epheria Carrack: Valor (Chiro's Figurehead)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049772.webp"
   },
   "49773": {
-    "name": "Epheria Carrack: Valor (Chiro&amp;#39;s Black Plating)",
+    "name": "Epheria Carrack: Valor (Chiro's Black Plating)",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00049773.webp"
   },
   "49804": {
@@ -24112,7 +24117,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00050006.webp"
   },
   "50801": {
-    "name": "Krogdalo&amp;#39;s Origin Stone",
+    "name": "Krogdalo's Origin Stone",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00050801.webp"
   },
   "50802": {
@@ -24204,15 +24209,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052506.webp"
   },
   "52509": {
-    "name": "Krogdalo&amp;#39;s Champron - Earth",
+    "name": "Krogdalo's Champron - Earth",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052509.webp"
   },
   "52512": {
-    "name": "Krogdalo&amp;#39;s Champron - Wind",
+    "name": "Krogdalo's Champron - Wind",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052512.webp"
   },
   "52515": {
-    "name": "Krogdalo&amp;#39;s Champron - Sea",
+    "name": "Krogdalo's Champron - Sea",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052515.webp"
   },
   "52518": {
@@ -24232,7 +24237,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052521.webp"
   },
   "52522": {
-    "name": "[Donkey] Krogdalo&amp;#39;s Champron",
+    "name": "[Donkey] Krogdalo's Champron",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052522.webp"
   },
   "52601": {
@@ -24260,15 +24265,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052606.webp"
   },
   "52609": {
-    "name": "Krogdalo&amp;#39;s Barding - Earth",
+    "name": "Krogdalo's Barding - Earth",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052609.webp"
   },
   "52612": {
-    "name": "Krogdalo&amp;#39;s Barding - Wind",
+    "name": "Krogdalo's Barding - Wind",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052612.webp"
   },
   "52615": {
-    "name": "Krogdalo&amp;#39;s Barding - Sea",
+    "name": "Krogdalo's Barding - Sea",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052615.webp"
   },
   "52618": {
@@ -24288,7 +24293,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052621.webp"
   },
   "52622": {
-    "name": "[Donkey] Krogdalo&amp;#39;s Barding",
+    "name": "[Donkey] Krogdalo's Barding",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052622.webp"
   },
   "52701": {
@@ -24316,15 +24321,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052706.webp"
   },
   "52709": {
-    "name": "Krogdalo&amp;#39;s Saddle - Earth",
+    "name": "Krogdalo's Saddle - Earth",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052709.webp"
   },
   "52712": {
-    "name": "Krogdalo&amp;#39;s Saddle - Wind",
+    "name": "Krogdalo's Saddle - Wind",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052712.webp"
   },
   "52715": {
-    "name": "Krogdalo&amp;#39;s Saddle - Sea",
+    "name": "Krogdalo's Saddle - Sea",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052715.webp"
   },
   "52718": {
@@ -24344,7 +24349,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052721.webp"
   },
   "52722": {
-    "name": "[Donkey] Krogdalo&amp;#39;s Saddle",
+    "name": "[Donkey] Krogdalo's Saddle",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052722.webp"
   },
   "52801": {
@@ -24372,15 +24377,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052806.webp"
   },
   "52809": {
-    "name": "Krogdalo&amp;#39;s Stirrups - Earth",
+    "name": "Krogdalo's Stirrups - Earth",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052809.webp"
   },
   "52812": {
-    "name": "Krogdalo&amp;#39;s Stirrups - Wind",
+    "name": "Krogdalo's Stirrups - Wind",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052812.webp"
   },
   "52815": {
-    "name": "Krogdalo&amp;#39;s Stirrups - Sea",
+    "name": "Krogdalo's Stirrups - Sea",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052815.webp"
   },
   "52818": {
@@ -24400,7 +24405,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052821.webp"
   },
   "52822": {
-    "name": "[Donkey] Krogdalo&amp;#39;s Stirrups",
+    "name": "[Donkey] Krogdalo's Stirrups",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052822.webp"
   },
   "52901": {
@@ -24428,15 +24433,15 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052906.webp"
   },
   "52909": {
-    "name": "Krogdalo&amp;#39;s Horseshoe - Earth",
+    "name": "Krogdalo's Horseshoe - Earth",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052909.webp"
   },
   "52912": {
-    "name": "Krogdalo&amp;#39;s Horseshoe - Wind",
+    "name": "Krogdalo's Horseshoe - Wind",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052912.webp"
   },
   "52915": {
-    "name": "Krogdalo&amp;#39;s Horseshoe - Sea",
+    "name": "Krogdalo's Horseshoe - Sea",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052915.webp"
   },
   "52918": {
@@ -24456,7 +24461,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052921.webp"
   },
   "52922": {
-    "name": "[Donkey] Krogdalo&amp;#39;s Horseshoe",
+    "name": "[Donkey] Krogdalo's Horseshoe",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00052922.webp"
   },
   "53401": {
@@ -25972,11 +25977,11 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00059306.webp"
   },
   "59307": {
-    "name": "Brady&amp;#39;s Nutritious Feed",
+    "name": "Brady's Nutritious Feed",
     "image": "https://bdocodex.com/items/new_icon/03_etc/09_petitem/00059307.webp"
   },
   "59881": {
-    "name": "Kabua&amp;#39;s Fragment",
+    "name": "Kabua's Fragment",
     "image": "https://bdocodex.com/items/new_icon/03_etc/04_dropitem/00059881.webp"
   },
   "65212": {
@@ -26032,7 +26037,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00331008.webp"
   },
   "331050": {
-    "name": "[Pet] Shudad&amp;#39;s Courier",
+    "name": "[Pet] Shudad's Courier",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00331050.webp"
   },
   "331058": {
@@ -28296,35 +28301,35 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00019350.webp"
   },
   "510003": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Helmet",
+    "name": "[Ninja] Nouse's Shard Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/000530030.webp"
   },
   "510004": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Armor",
+    "name": "[Ninja] Nouse's Shard Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/000530031.webp"
   },
   "510005": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Shortsword",
+    "name": "[Ninja] Nouse's Shard Shortsword",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00510005.webp"
   },
   "510006": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Kunai",
+    "name": "[Ninja] Nouse's Shard Kunai",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00510006.webp"
   },
   "510007": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Sura Katana",
+    "name": "[Ninja] Nouse's Shard Sura Katana",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00510007.webp"
   },
   "510008": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Classic Set",
+    "name": "[Ninja] Nouse's Shard Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "510009": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Premium Set",
+    "name": "[Ninja] Nouse's Shard Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "510010": {
-    "name": "[Ninja] Nouse&amp;#39;s Shard Awakening Set",
+    "name": "[Ninja] Nouse's Shard Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "510011": {
@@ -28764,35 +28769,35 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "530030": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Helmet",
+    "name": "[Striker] Nouse's Shard Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/000530030.webp"
   },
   "530031": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Armor",
+    "name": "[Striker] Nouse's Shard Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/000530031.webp"
   },
   "530032": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Gauntlet",
+    "name": "[Striker] Nouse's Shard Gauntlet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/000530032.webp"
   },
   "530033": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Vambrace",
+    "name": "[Striker] Nouse's Shard Vambrace",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/000530033.webp"
   },
   "530034": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Gardbrace",
+    "name": "[Striker] Nouse's Shard Gardbrace",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/000530034.webp"
   },
   "530035": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Classic Set",
+    "name": "[Striker] Nouse's Shard Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "530036": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Premium Set",
+    "name": "[Striker] Nouse's Shard Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "530037": {
-    "name": "[Striker] Nouse&amp;#39;s Shard Awakening Set",
+    "name": "[Striker] Nouse's Shard Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "530038": {
@@ -29824,7 +29829,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560005.webp"
   },
   "560006": {
-    "name": "[Archer] Gierach Ra&amp;#39;ghon",
+    "name": "[Archer] Gierach Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560006.webp"
   },
   "560007": {
@@ -29848,7 +29853,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560040.webp"
   },
   "560041": {
-    "name": "[Archer] Canape Ra&amp;#39;ghon",
+    "name": "[Archer] Canape Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560041.webp"
   },
   "560042": {
@@ -29884,7 +29889,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560068.webp"
   },
   "560069": {
-    "name": "[Archer] Luanwulf Ra&amp;#39;ghon",
+    "name": "[Archer] Luanwulf Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560069.webp"
   },
   "560070": {
@@ -29916,7 +29921,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560077.webp"
   },
   "560078": {
-    "name": "[Archer] Karlstein Ra&amp;#39;ghon",
+    "name": "[Archer] Karlstein Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560078.webp"
   },
   "560079": {
@@ -29972,7 +29977,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560094.webp"
   },
   "560095": {
-    "name": "[Archer] Kibelius Ra&amp;#39;ghon",
+    "name": "[Archer] Kibelius Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560095.webp"
   },
   "560096": {
@@ -30056,7 +30061,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560129.webp"
   },
   "560130": {
-    "name": "[Archer] Corvicanus Ra&amp;#39;ghon",
+    "name": "[Archer] Corvicanus Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560130.webp"
   },
   "560131": {
@@ -30092,7 +30097,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560138.webp"
   },
   "560139": {
-    "name": "[Archer] Derictus Ra&amp;#39;ghon",
+    "name": "[Archer] Derictus Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560139.webp"
   },
   "560140": {
@@ -30928,7 +30933,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00590424.webp"
   },
   "590425": {
-    "name": "[Archer] Glorious Shudad Ra&amp;#39;ghon",
+    "name": "[Archer] Glorious Shudad Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00590425.webp"
   },
   "590426": {
@@ -31164,7 +31169,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00590487.webp"
   },
   "590488": {
-    "name": "[Archer] Ignis Ra&amp;#39;ghon",
+    "name": "[Archer] Ignis Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00590488.webp"
   },
   "590489": {
@@ -31204,15 +31209,15 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "590539": {
-    "name": "[Maehwa] Te&amp;#39;enah Headpiece",
+    "name": "[Maehwa] Te'enah Headpiece",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00590539.webp"
   },
   "590540": {
-    "name": "[Maehwa] Te&amp;#39;enah Clothes",
+    "name": "[Maehwa] Te'enah Clothes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00590540.webp"
   },
   "590541": {
-    "name": "[Maehwa] Te&amp;#39;enah Classic Set",
+    "name": "[Maehwa] Te'enah Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "590569": {
@@ -31640,7 +31645,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00600124.webp"
   },
   "600125": {
-    "name": "[Maehwa] Te&amp;#39;enah Blade",
+    "name": "[Maehwa] Te'enah Blade",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00600125.webp"
   },
   "600126": {
@@ -31704,7 +31709,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00600141.webp"
   },
   "600142": {
-    "name": "[Maehwa] Te&amp;#39;enah Horn Bow",
+    "name": "[Maehwa] Te'enah Horn Bow",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00600142.webp"
   },
   "600143": {
@@ -33072,7 +33077,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00601340.webp"
   },
   "601341": {
-    "name": "[Archer] Shudad Black Ra&amp;#39;ghon",
+    "name": "[Archer] Shudad Black Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00601341.webp"
   },
   "601342": {
@@ -36184,7 +36189,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00607146.webp"
   },
   "607147": {
-    "name": "[Archer] Duskherald Ra&amp;#39;ghon",
+    "name": "[Archer] Duskherald Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00607147.webp"
   },
   "607148": {
@@ -37812,7 +37817,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00608289.webp"
   },
   "608290": {
-    "name": "[Archer] Nightwarden Ra&amp;#39;ghon",
+    "name": "[Archer] Nightwarden Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00608290.webp"
   },
   "608291": {
@@ -40112,179 +40117,179 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611013": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Helmet",
+    "name": "[Witch] Orzeca's Rose Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611013.webp"
   },
   "611014": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Armor",
+    "name": "[Witch] Orzeca's Rose Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611014.webp"
   },
   "611015": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Gloves",
+    "name": "[Witch] Orzeca's Rose Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611015.webp"
   },
   "611016": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Shoes",
+    "name": "[Witch] Orzeca's Rose Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611016.webp"
   },
   "611017": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Staff",
+    "name": "[Witch] Orzeca's Rose Staff",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611017.webp"
   },
   "611018": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Dagger",
+    "name": "[Witch] Orzeca's Rose Dagger",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611018.webp"
   },
   "611019": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Aad Sphera",
+    "name": "[Witch] Orzeca's Rose Aad Sphera",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611019.webp"
   },
   "611020": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Classic Set",
+    "name": "[Witch] Orzeca's Rose Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611021": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Premium Set",
+    "name": "[Witch] Orzeca's Rose Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611022": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Awakening Set",
+    "name": "[Witch] Orzeca's Rose Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611023": {
-    "name": "[Witch] Orzeca&amp;#39;s Rose Outfit Set",
+    "name": "[Witch] Orzeca's Rose Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611024": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Helmet",
+    "name": "[Maegu] Orzeca's Rose Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611024.webp"
   },
   "611025": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Armor",
+    "name": "[Maegu] Orzeca's Rose Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611025.webp"
   },
   "611026": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Gloves",
+    "name": "[Maegu] Orzeca's Rose Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611026.webp"
   },
   "611027": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Shoes",
+    "name": "[Maegu] Orzeca's Rose Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611027.webp"
   },
   "611028": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Foxspirit Charm",
+    "name": "[Maegu] Orzeca's Rose Foxspirit Charm",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611028.webp"
   },
   "611029": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Binyeo Knife",
+    "name": "[Maegu] Orzeca's Rose Binyeo Knife",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611029.webp"
   },
   "611030": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Foxtail Fans",
+    "name": "[Maegu] Orzeca's Rose Foxtail Fans",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611030.webp"
   },
   "611031": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Classic Set",
+    "name": "[Maegu] Orzeca's Rose Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611032": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Premium Set",
+    "name": "[Maegu] Orzeca's Rose Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611033": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Awakening Set",
+    "name": "[Maegu] Orzeca's Rose Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611034": {
-    "name": "[Maegu] Orzeca&amp;#39;s Rose Outfit Set",
+    "name": "[Maegu] Orzeca's Rose Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611035": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Helmet",
+    "name": "[Woosa] Orzeca's Rose Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611035.webp"
   },
   "611036": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Armor",
+    "name": "[Woosa] Orzeca's Rose Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611036.webp"
   },
   "611037": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Gloves",
+    "name": "[Woosa] Orzeca's Rose Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611037.webp"
   },
   "611038": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Shoes",
+    "name": "[Woosa] Orzeca's Rose Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611038.webp"
   },
   "611039": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Swallowtail Fan",
+    "name": "[Woosa] Orzeca's Rose Swallowtail Fan",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611039.webp"
   },
   "611040": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Do Stave",
+    "name": "[Woosa] Orzeca's Rose Do Stave",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611040.webp"
   },
   "611041": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Soul Tome",
+    "name": "[Woosa] Orzeca's Rose Soul Tome",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611041.webp"
   },
   "611042": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Classic Set",
+    "name": "[Woosa] Orzeca's Rose Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611043": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Premium Set",
+    "name": "[Woosa] Orzeca's Rose Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611044": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Awakening Set",
+    "name": "[Woosa] Orzeca's Rose Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611045": {
-    "name": "[Woosa] Orzeca&amp;#39;s Rose Outfit Set",
+    "name": "[Woosa] Orzeca's Rose Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611046": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Helmet",
+    "name": "[Sorceress] Orzeca's Rose Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611046.webp"
   },
   "611047": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Armor",
+    "name": "[Sorceress] Orzeca's Rose Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611047.webp"
   },
   "611048": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Gloves",
+    "name": "[Sorceress] Orzeca's Rose Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611048.webp"
   },
   "611049": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Shoes",
+    "name": "[Sorceress] Orzeca's Rose Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611049.webp"
   },
   "611050": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Amulet",
+    "name": "[Sorceress] Orzeca's Rose Amulet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611050.webp"
   },
   "611051": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Talisman",
+    "name": "[Sorceress] Orzeca's Rose Talisman",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611051.webp"
   },
   "611052": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Scythe",
+    "name": "[Sorceress] Orzeca's Rose Scythe",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611052.webp"
   },
   "611053": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Classic Set",
+    "name": "[Sorceress] Orzeca's Rose Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611054": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Premium Set",
+    "name": "[Sorceress] Orzeca's Rose Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611055": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Awakening Set",
+    "name": "[Sorceress] Orzeca's Rose Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611056": {
-    "name": "[Sorceress] Orzeca&amp;#39;s Rose Outfit Set",
+    "name": "[Sorceress] Orzeca's Rose Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611058": {
@@ -40612,83 +40617,83 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611302": {
-    "name": "[Drakania] Lath&amp;#39;rakan Helmet",
+    "name": "[Drakania] Lath'rakan Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611302.webp"
   },
   "611303": {
-    "name": "[Drakania] Lath&amp;#39;rakan Armor",
+    "name": "[Drakania] Lath'rakan Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611303.webp"
   },
   "611304": {
-    "name": "[Drakania] Lath&amp;#39;rakan Gloves",
+    "name": "[Drakania] Lath'rakan Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611304.webp"
   },
   "611305": {
-    "name": "[Drakania] Lath&amp;#39;rakan Shoes",
+    "name": "[Drakania] Lath'rakan Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611305.webp"
   },
   "611306": {
-    "name": "[Drakania] Lath&amp;#39;rakan Outfit Set",
+    "name": "[Drakania] Lath'rakan Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611307": {
-    "name": "[Nova] Lath&amp;#39;rakan Helmet",
+    "name": "[Nova] Lath'rakan Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611307.webp"
   },
   "611308": {
-    "name": "[Nova] Lath&amp;#39;rakan Armor",
+    "name": "[Nova] Lath'rakan Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611308.webp"
   },
   "611309": {
-    "name": "[Nova] Lath&amp;#39;rakan Gloves",
+    "name": "[Nova] Lath'rakan Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611309.webp"
   },
   "611310": {
-    "name": "[Nova] Lath&amp;#39;rakan Shoes",
+    "name": "[Nova] Lath'rakan Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611310.webp"
   },
   "611311": {
-    "name": "[Nova] Lath&amp;#39;rakan Outfit Set",
+    "name": "[Nova] Lath'rakan Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611312": {
-    "name": "[Guardian] Lath&amp;#39;rakan Helmet",
+    "name": "[Guardian] Lath'rakan Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611312.webp"
   },
   "611313": {
-    "name": "[Guardian] Lath&amp;#39;rakan Armor",
+    "name": "[Guardian] Lath'rakan Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611313.webp"
   },
   "611314": {
-    "name": "[Guardian] Lath&amp;#39;rakan Gloves",
+    "name": "[Guardian] Lath'rakan Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611314.webp"
   },
   "611315": {
-    "name": "[Guardian] Lath&amp;#39;rakan Shoes",
+    "name": "[Guardian] Lath'rakan Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611315.webp"
   },
   "611316": {
-    "name": "[Guardian] Lath&amp;#39;rakan Outfit Set",
+    "name": "[Guardian] Lath'rakan Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611317": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Helmet",
+    "name": "[Valkyrie] Lath'rakan Helmet",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/06_hel/00611317.webp"
   },
   "611318": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Armor",
+    "name": "[Valkyrie] Lath'rakan Armor",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/03_upperbody/00611318.webp"
   },
   "611319": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Gloves",
+    "name": "[Valkyrie] Lath'rakan Gloves",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/04_hand/00611319.webp"
   },
   "611320": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Shoes",
+    "name": "[Valkyrie] Lath'rakan Shoes",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/05_foot/00611320.webp"
   },
   "611321": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Outfit Set",
+    "name": "[Valkyrie] Lath'rakan Outfit Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611343": {
@@ -40760,99 +40765,99 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021007.webp"
   },
   "611360": {
-    "name": "[Drakania] Lath&amp;#39;rakan Slayer",
+    "name": "[Drakania] Lath'rakan Slayer",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611360.webp"
   },
   "611361": {
-    "name": "[Drakania] Lath&amp;#39;rakan Shard",
+    "name": "[Drakania] Lath'rakan Shard",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611361.webp"
   },
   "611362": {
-    "name": "[Drakania] Lath&amp;#39;rakan Trion",
+    "name": "[Drakania] Lath'rakan Trion",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611362.webp"
   },
   "611363": {
-    "name": "[Drakania] Lath&amp;#39;rakan Classic Set",
+    "name": "[Drakania] Lath'rakan Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611364": {
-    "name": "[Drakania] Lath&amp;#39;rakan Premium Set",
+    "name": "[Drakania] Lath'rakan Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611365": {
-    "name": "[Drakania] Lath&amp;#39;rakan Awakening Set",
+    "name": "[Drakania] Lath'rakan Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611366": {
-    "name": "[Nova] Lath&amp;#39;rakan Morning Star",
+    "name": "[Nova] Lath'rakan Morning Star",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611366.webp"
   },
   "611367": {
-    "name": "[Nova] Lath&amp;#39;rakan Quoratum",
+    "name": "[Nova] Lath'rakan Quoratum",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611367.webp"
   },
   "611368": {
-    "name": "[Nova] Lath&amp;#39;rakan Sting",
+    "name": "[Nova] Lath'rakan Sting",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611368.webp"
   },
   "611369": {
-    "name": "[Nova] Lath&amp;#39;rakan Classic Set",
+    "name": "[Nova] Lath'rakan Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611370": {
-    "name": "[Nova] Lath&amp;#39;rakan Premium Set",
+    "name": "[Nova] Lath'rakan Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611371": {
-    "name": "[Nova] Lath&amp;#39;rakan Awakening Set",
+    "name": "[Nova] Lath'rakan Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611372": {
-    "name": "[Guardian] Lath&amp;#39;rakan Battle Axe",
+    "name": "[Guardian] Lath'rakan Battle Axe",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611372.webp"
   },
   "611373": {
-    "name": "[Guardian] Lath&amp;#39;rakan Shield",
+    "name": "[Guardian] Lath'rakan Shield",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611373.webp"
   },
   "611374": {
-    "name": "[Guardian] Lath&amp;#39;rakan Jordun",
+    "name": "[Guardian] Lath'rakan Jordun",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611374.webp"
   },
   "611375": {
-    "name": "[Guardian] Lath&amp;#39;rakan Classic Set",
+    "name": "[Guardian] Lath'rakan Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611376": {
-    "name": "[Guardian] Lath&amp;#39;rakan Premium Set",
+    "name": "[Guardian] Lath'rakan Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611377": {
-    "name": "[Guardian] Lath&amp;#39;rakan Awakening Set",
+    "name": "[Guardian] Lath'rakan Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611378": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Longsword",
+    "name": "[Valkyrie] Lath'rakan Longsword",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611378.webp"
   },
   "611379": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Shield",
+    "name": "[Valkyrie] Lath'rakan Shield",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00611379.webp"
   },
   "611380": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Lancia",
+    "name": "[Valkyrie] Lath'rakan Lancia",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00611380.webp"
   },
   "611381": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Classic Set",
+    "name": "[Valkyrie] Lath'rakan Classic Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021003.webp"
   },
   "611382": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Premium Set",
+    "name": "[Valkyrie] Lath'rakan Premium Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021005.webp"
   },
   "611383": {
-    "name": "[Valkyrie] Lath&amp;#39;rakan Awakening Set",
+    "name": "[Valkyrie] Lath'rakan Awakening Set",
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021004.webp"
   },
   "611612": {
@@ -46860,7 +46865,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00616777.webp"
   },
   "616778": {
-    "name": "[Deadeye] Kibelius Lil&amp;#39; Devil",
+    "name": "[Deadeye] Kibelius Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00616778.webp"
   },
   "616779": {
@@ -46916,7 +46921,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00616791.webp"
   },
   "616792": {
-    "name": "[Deadeye] Glorious Shudad Lil&amp;#39; Devil",
+    "name": "[Deadeye] Glorious Shudad Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00616792.webp"
   },
   "616793": {
@@ -46952,7 +46957,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00616800.webp"
   },
   "616801": {
-    "name": "[Deadeye] Shudad Black Lil&amp;#39; Devil",
+    "name": "[Deadeye] Shudad Black Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00616801.webp"
   },
   "616802": {
@@ -47840,7 +47845,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021006.webp"
   },
   "651678": {
-    "name": "[Deadeye] High Noon Lil&amp;#39; Devil",
+    "name": "[Deadeye] High Noon Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00615648.webp"
   },
   "651679": {
@@ -47904,7 +47909,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00690516.webp"
   },
   "690541": {
-    "name": "Offin Tett&amp;#39;s Radiant Battle Axe",
+    "name": "Offin Tett's Radiant Battle Axe",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00690541.webp"
   },
   "690563": {
@@ -47976,7 +47981,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00692006.webp"
   },
   "692039": {
-    "name": "Offin Tett&amp;#39;s Radiant Shamshir",
+    "name": "Offin Tett's Radiant Shamshir",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00692039.webp"
   },
   "692045": {
@@ -48028,7 +48033,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00692812.webp"
   },
   "692813": {
-    "name": "Hughol&amp;#39;s Dual Glaives",
+    "name": "Hughol's Dual Glaives",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00692813.webp"
   },
   "701011": {
@@ -48112,67 +48117,67 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702516.webp"
   },
   "702517": {
-    "name": "Hughol&amp;#39;s Greatsword",
+    "name": "Hughol's Greatsword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702517.webp"
   },
   "702518": {
-    "name": "Hughol&amp;#39;s Scythe",
+    "name": "Hughol's Scythe",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702518.webp"
   },
   "702519": {
-    "name": "Hughol&amp;#39;s Iron Buster",
+    "name": "Hughol's Iron Buster",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702519.webp"
   },
   "702520": {
-    "name": "Hughol&amp;#39;s Kamasylven Sword",
+    "name": "Hughol's Kamasylven Sword",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702520.webp"
   },
   "702521": {
-    "name": "Hughol&amp;#39;s Celestial Bo Staff",
+    "name": "Hughol's Celestial Bo Staff",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702521.webp"
   },
   "702522": {
-    "name": "Hughol&amp;#39;s Lancia",
+    "name": "Hughol's Lancia",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702522.webp"
   },
   "702523": {
-    "name": "Hughol&amp;#39;s Crescent Blade",
+    "name": "Hughol's Crescent Blade",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702523.webp"
   },
   "702524": {
-    "name": "Hughol&amp;#39;s Kerispear",
+    "name": "Hughol's Kerispear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702524.webp"
   },
   "702525": {
-    "name": "Hughol&amp;#39;s Sura Katana",
+    "name": "Hughol's Sura Katana",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702525.webp"
   },
   "702526": {
-    "name": "Hughol&amp;#39;s Sah Chakram",
+    "name": "Hughol's Sah Chakram",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702526.webp"
   },
   "702527": {
-    "name": "Hughol&amp;#39;s Aad Sphera",
+    "name": "Hughol's Aad Sphera",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702527.webp"
   },
   "702528": {
-    "name": "Hughol&amp;#39;s Godr Sphera",
+    "name": "Hughol's Godr Sphera",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702528.webp"
   },
   "702529": {
-    "name": "Hughol&amp;#39;s Vediant",
+    "name": "Hughol's Vediant",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702529.webp"
   },
   "702530": {
-    "name": "Hughol&amp;#39;s Gardbrace",
+    "name": "Hughol's Gardbrace",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702530.webp"
   },
   "702531": {
-    "name": "Hughol&amp;#39;s Cestus",
+    "name": "Hughol's Cestus",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702531.webp"
   },
   "702532": {
-    "name": "Hughol&amp;#39;s Crimson Glaives",
+    "name": "Hughol's Crimson Glaives",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/000702532.webp"
   },
   "702533": {
@@ -48180,7 +48185,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00702533.webp"
   },
   "702534": {
-    "name": "Hughol&amp;#39;s Greatbow",
+    "name": "Hughol's Greatbow",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00702534.webp"
   },
   "702535": {
@@ -48188,79 +48193,79 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00702535.webp"
   },
   "702536": {
-    "name": "Hughol&amp;#39;s Jordun",
+    "name": "Hughol's Jordun",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00702536.webp"
   },
   "705015": {
-    "name": "Manos Trainer&amp;#39;s Clothes",
+    "name": "Manos Trainer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705015_1.webp"
   },
   "705022": {
-    "name": "Manos Hunter&amp;#39;s Clothes",
+    "name": "Manos Hunter's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705022.webp"
   },
   "705032": {
-    "name": "Manos Sailor&amp;#39;s Clothes",
+    "name": "Manos Sailor's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705032.webp"
   },
   "705037": {
-    "name": "Manos Cook&amp;#39;s Clothes",
+    "name": "Manos Cook's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705037.webp"
   },
   "705047": {
-    "name": "Manos Alchemist&amp;#39;s Clothes",
+    "name": "Manos Alchemist's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705047.webp"
   },
   "705052": {
-    "name": "Manos Fisher&amp;#39;s Clothes",
+    "name": "Manos Fisher's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705052.webp"
   },
   "705074": {
-    "name": "Crio Fisher&amp;#39;s Clothes",
+    "name": "Crio Fisher's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705074.webp"
   },
   "705075": {
-    "name": "Srulk Sailor&amp;#39;s Clothes",
+    "name": "Srulk Sailor's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705075.webp"
   },
   "705076": {
-    "name": "Robeau Hunter&amp;#39;s Clothes",
+    "name": "Robeau Hunter's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705076.webp"
   },
   "705081": {
-    "name": "Gorgath Alchemist&amp;#39;s Clothes",
+    "name": "Gorgath Alchemist's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705081.webp"
   },
   "705086": {
-    "name": "Roroju Cook&amp;#39;s Clothes",
+    "name": "Roroju Cook's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705086.webp"
   },
   "705107": {
-    "name": "Loggia Fisher&amp;#39;s Clothes",
+    "name": "Loggia Fisher's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705074.webp"
   },
   "705108": {
-    "name": "Loggia Sailor&amp;#39;s Clothes",
+    "name": "Loggia Sailor's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705075.webp"
   },
   "705109": {
-    "name": "Loggia Hunter&amp;#39;s Clothes",
+    "name": "Loggia Hunter's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705076.webp"
   },
   "705114": {
-    "name": "Loggia Alchemist&amp;#39;s Clothes",
+    "name": "Loggia Alchemist's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705081.webp"
   },
   "705119": {
-    "name": "Loggia Cook&amp;#39;s Clothes",
+    "name": "Loggia Cook's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705086.webp"
   },
   "705148": {
-    "name": "Loggia Trainer&amp;#39;s Clothes",
+    "name": "Loggia Trainer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705148.webp"
   },
   "705153": {
-    "name": "Izaro Trainer&amp;#39;s Clothes",
+    "name": "Izaro Trainer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705153.webp"
   },
   "705154": {
@@ -48324,27 +48329,27 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/18_belt/00705004.webp"
   },
   "705513": {
-    "name": "Loggia Gatherer&amp;#39;s Clothes",
+    "name": "Loggia Gatherer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705060.webp"
   },
   "705514": {
-    "name": "Loggia Craftsman&amp;#39;s Clothes",
+    "name": "Loggia Craftsman's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705069.webp"
   },
   "705515": {
-    "name": "Carta Gatherer&amp;#39;s Clothes",
+    "name": "Carta Gatherer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705059.webp"
   },
   "705516": {
-    "name": "Carta Craftsman&amp;#39;s Clothes",
+    "name": "Carta Craftsman's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705073.webp"
   },
   "705517": {
-    "name": "Manos Gatherer&amp;#39;s Clothes",
+    "name": "Manos Gatherer's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00705010_1.webp"
   },
   "705518": {
-    "name": "Manos Craftsman&amp;#39;s Clothes",
+    "name": "Manos Craftsman's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014082.webp"
   },
   "705533": {
@@ -48368,7 +48373,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/00_etc/00705537.webp"
   },
   "705538": {
-    "name": "Crio Fisher&amp;#39;s Chair",
+    "name": "Crio Fisher's Chair",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/00_etc/00705538.webp"
   },
   "705539": {
@@ -48508,7 +48513,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00718513.webp"
   },
   "718586": {
-    "name": "Offin Tett&amp;#39;s Radiant Florang",
+    "name": "Offin Tett's Radiant Florang",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00718586.webp"
   },
   "718616": {
@@ -48544,11 +48549,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00719040.webp"
   },
   "719525": {
-    "name": "[Shai] Kanna&amp;#39;s Naga Disguise",
+    "name": "[Shai] Kanna's Naga Disguise",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00719525.webp"
   },
   "719544": {
-    "name": "[Shai] Florin Cook&amp;#39;s Clothes",
+    "name": "[Shai] Florin Cook's Clothes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00719544.webp"
   },
   "719545": {
@@ -48564,19 +48569,19 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00719547.webp"
   },
   "719897": {
-    "name": "Labreska&amp;#39;s Helmet",
+    "name": "Labreska's Helmet",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/13_hel/00719897.webp"
   },
   "719898": {
-    "name": "Fallen God&amp;#39;s Armor",
+    "name": "Fallen God's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00719898.webp"
   },
   "719899": {
-    "name": "Dahn&amp;#39;s Gloves",
+    "name": "Dahn's Gloves",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00719899.webp"
   },
   "719900": {
-    "name": "Ator&amp;#39;s Shoes",
+    "name": "Ator's Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00719900.webp"
   },
   "719901": {
@@ -48596,11 +48601,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00720004.webp"
   },
   "719955": {
-    "name": "Dahn&amp;#39;s Gloves",
+    "name": "Dahn's Gloves",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/11_hand/00719955.webp"
   },
   "719956": {
-    "name": "Ator&amp;#39;s Shoes",
+    "name": "Ator's Shoes",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/12_foot/00719956.webp"
   },
   "720508": {
@@ -48700,7 +48705,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00730517.webp"
   },
   "730539": {
-    "name": "Offin Tett&amp;#39;s Radiant Morning Star",
+    "name": "Offin Tett's Radiant Morning Star",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00730539.webp"
   },
   "730564": {
@@ -48752,7 +48757,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00730913.webp"
   },
   "730914": {
-    "name": "Hughol&amp;#39;s Sting",
+    "name": "Hughol's Sting",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00730914.webp"
   },
   "731101": {
@@ -48864,7 +48869,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00731127.webp"
   },
   "731128": {
-    "name": "Blackstar Lil&amp;#39; Devil",
+    "name": "Blackstar Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00731128.webp"
   },
   "731129": {
@@ -48924,7 +48929,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00732266.webp"
   },
   "732288": {
-    "name": "Offin Tett&amp;#39;s Radiant Kyve",
+    "name": "Offin Tett's Radiant Kyve",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00732288.webp"
   },
   "732313": {
@@ -48948,7 +48953,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00732662.webp"
   },
   "732663": {
-    "name": "Hughol&amp;#39;s Kibelius",
+    "name": "Hughol's Kibelius",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00732663.webp"
   },
   "733003": {
@@ -49004,7 +49009,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00733016.webp"
   },
   "733038": {
-    "name": "Offin Tett&amp;#39;s Radiant Serenaca",
+    "name": "Offin Tett's Radiant Serenaca",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00733038.webp"
   },
   "733063": {
@@ -49056,7 +49061,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00733412.webp"
   },
   "733413": {
-    "name": "Hughol&amp;#39;s Patraca",
+    "name": "Hughol's Patraca",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00733413.webp"
   },
   "735001": {
@@ -49100,7 +49105,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00735010.webp"
   },
   "735011": {
-    "name": "Blackstar Ra&amp;#39;ghon",
+    "name": "Blackstar Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00735011.webp"
   },
   "735012": {
@@ -49200,7 +49205,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00735416.webp"
   },
   "735438": {
-    "name": "Offin Tett&amp;#39;s Radiant Slayer",
+    "name": "Offin Tett's Radiant Slayer",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00733972.webp"
   },
   "735463": {
@@ -49236,7 +49241,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00733973.webp"
   },
   "735801": {
-    "name": "Kha&amp;#39;lath Trion",
+    "name": "Kha'lath Trion",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00735801.webp"
   },
   "735802": {
@@ -49244,7 +49249,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00735802.webp"
   },
   "735803": {
-    "name": "Ka Yith&amp;#39;ka Trion",
+    "name": "Ka Yith'ka Trion",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00735803.webp"
   },
   "735812": {
@@ -49252,7 +49257,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00735812.webp"
   },
   "735813": {
-    "name": "Hughol&amp;#39;s Trion",
+    "name": "Hughol's Trion",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00735813.webp"
   },
   "736015": {
@@ -49460,7 +49465,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00736141.webp"
   },
   "736142": {
-    "name": "Godr-Ayed Lil&amp;#39; Devil",
+    "name": "Godr-Ayed Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00736142.webp"
   },
   "736143": {
@@ -49508,7 +49513,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00738210.webp"
   },
   "738211": {
-    "name": "Godr-Ayed Ra&amp;#39;ghon",
+    "name": "Godr-Ayed Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00738211.webp"
   },
   "738212": {
@@ -49608,7 +49613,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00739416.webp"
   },
   "739438": {
-    "name": "Offin Tett&amp;#39;s Radiant Swallowtail Fan",
+    "name": "Offin Tett's Radiant Swallowtail Fan",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00739438.webp"
   },
   "739463": {
@@ -49660,7 +49665,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00740412.webp"
   },
   "740413": {
-    "name": "Hughol&amp;#39;s Soul Tome",
+    "name": "Hughol's Soul Tome",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00740413.webp"
   },
   "740703": {
@@ -49716,7 +49721,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00740716.webp"
   },
   "740738": {
-    "name": "Offin Tett&amp;#39;s Radiant Foxspirit Charm",
+    "name": "Offin Tett's Radiant Foxspirit Charm",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00740738.webp"
   },
   "740763": {
@@ -49768,11 +49773,11 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00741712.webp"
   },
   "741713": {
-    "name": "Hughol&amp;#39;s Foxtail Fans",
+    "name": "Hughol's Foxtail Fans",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00741713.webp"
   },
   "742269": {
-    "name": "Kabua&amp;#39;s Artifact",
+    "name": "Kabua's Artifact",
     "image": "https://bdocodex.com/items/new_icon/03_etc/00757242.webp"
   },
   "742303": {
@@ -49828,7 +49833,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00742311.webp"
   },
   "742338": {
-    "name": "Offin Tett&amp;#39;s Radiant Hammers",
+    "name": "Offin Tett's Radiant Hammers",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00742338.webp"
   },
   "742363": {
@@ -49880,7 +49885,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00742712.webp"
   },
   "742713": {
-    "name": "Hughol&amp;#39;s Sledgehammer",
+    "name": "Hughol's Sledgehammer",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00742713.webp"
   },
   "745002": {
@@ -49904,15 +49909,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "745008": {
-    "name": "[Scholar] Orwen&amp;#39;s Travel Wear",
+    "name": "[Scholar] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "745009": {
-    "name": "[Scholar] Jarette&amp;#39;s Armor",
+    "name": "[Scholar] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "745010": {
-    "name": "[Scholar] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Scholar] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "745011": {
@@ -49944,15 +49949,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014989.webp"
   },
   "745031": {
-    "name": "[Deadeye] Orwen&amp;#39;s Travel Wear",
+    "name": "[Deadeye] Orwen's Travel Wear",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014298.webp"
   },
   "745032": {
-    "name": "[Deadeye] Jarette&amp;#39;s Armor",
+    "name": "[Deadeye] Jarette's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00014847.webp"
   },
   "745033": {
-    "name": "[Deadeye] Ahon Kirus&amp;#39;s Armor",
+    "name": "[Deadeye] Ahon Kirus's Armor",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/09_upperbody/00012574.webp"
   },
   "745034": {
@@ -50016,7 +50021,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00746612.webp"
   },
   "746638": {
-    "name": "Offin Tett&amp;#39;s Radiant Hwando",
+    "name": "Offin Tett's Radiant Hwando",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00746638.webp"
   },
   "746661": {
@@ -50068,15 +50073,15 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00747010.webp"
   },
   "747011": {
-    "name": "Hughol&amp;#39;s Enlightened Blade",
+    "name": "Hughol's Enlightened Blade",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00747011.webp"
   },
   "748021": {
-    "name": "Dehkia&amp;#39;s Artifact - All Damage Reduction",
+    "name": "Dehkia's Artifact - All Damage Reduction",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/00_etc/00748021.webp"
   },
   "748022": {
-    "name": "Dehkia&amp;#39;s Artifact - All Evasion",
+    "name": "Dehkia's Artifact - All Evasion",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/00_etc/00748022.webp"
   },
   "749203": {
@@ -50132,7 +50137,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749211.webp"
   },
   "749238": {
-    "name": "Offin Tett&amp;#39;s Radiant Revolvers",
+    "name": "Offin Tett's Radiant Revolvers",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749238.webp"
   },
   "749261": {
@@ -50168,23 +50173,23 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/08_subweapon/00749415.webp"
   },
   "749601": {
-    "name": "Tormente Lil&amp;#39; Devil",
+    "name": "Tormente Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749601.webp"
   },
   "749602": {
-    "name": "Dandelion Lil&amp;#39; Devil",
+    "name": "Dandelion Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749602.webp"
   },
   "749603": {
-    "name": "Mueri Lil&amp;#39; Devil",
+    "name": "Mueri Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749603.webp"
   },
   "749610": {
-    "name": "Dragon Slayer Lil&amp;#39; Devil",
+    "name": "Dragon Slayer Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749610.webp"
   },
   "749611": {
-    "name": "Hughol&amp;#39;s Lil&amp;#39; Devil",
+    "name": "Hughol's Lil' Devil",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749611.webp"
   },
   "749639": {
@@ -50240,7 +50245,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749647.webp"
   },
   "749674": {
-    "name": "Offin Tett&amp;#39;s Radiant Power Pole",
+    "name": "Offin Tett's Radiant Power Pole",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749674.webp"
   },
   "749697": {
@@ -50264,7 +50269,7 @@
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749737.webp"
   },
   "749738": {
-    "name": "Hughol&amp;#39;s Jade Pillar",
+    "name": "Hughol's Jade Pillar",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/01_weapon/00749738.webp"
   },
   "749766": {
@@ -50608,7 +50613,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/01_weapon/00560077.webp"
   },
   "754078": {
-    "name": "[Archer] Karlstein Ra&amp;#39;ghon",
+    "name": "[Archer] Karlstein Ra'ghon",
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00560078.webp"
   },
   "754085": {
@@ -50716,7 +50721,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/08_potion/00757031.webp"
   },
   "757032": {
-    "name": "Stonetail Wind&amp;#39;s Meal",
+    "name": "Stonetail Wind's Meal",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00757032.webp"
   },
   "757561": {
@@ -50984,7 +50989,7 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/00021008.webp"
   },
   "767091": {
-    "name": "Dehkia&amp;#39;s Fragment",
+    "name": "Dehkia's Fragment",
     "image": "https://bdocodex.com/items/new_icon/03_etc/00767091.webp"
   },
   "767102": {
@@ -51176,15 +51181,15 @@
     "image": "https://bdocodex.com/items/new_icon/09_cash/01_equip/02_subweapon/00614069.webp"
   },
   "768922": {
-    "name": "Fughar&amp;#39;s Fishing Rod",
+    "name": "Fughar's Fishing Rod",
     "image": "https://bdocodex.com/items/new_icon/06_pc_equipitem/00_common/00_etc/00016162.webp"
   },
   "820017": {
-    "name": "Rawr-Rawr&amp;#39;s Heart",
+    "name": "Rawr-Rawr's Heart",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/000820017.webp"
   },
   "820018": {
-    "name": "Gauche Rawr-Rawr&amp;#39;s Heart",
+    "name": "Gauche Rawr-Rawr's Heart",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/000820018.webp"
   },
   "820022": {
@@ -51416,7 +51421,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00820538.webp"
   },
   "820539": {
-    "name": "Dried Ransonnet&amp;#39;s Surfperch",
+    "name": "Dried Ransonnet's Surfperch",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00820539.webp"
   },
   "820540": {
@@ -51644,7 +51649,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/000820958.webp"
   },
   "820963": {
-    "name": "Reforge Stone - Black Spirit&amp;#39;s Rage Recovery",
+    "name": "Reforge Stone - Black Spirit's Rage Recovery",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/000820958.webp"
   },
   "820974": {
@@ -51668,7 +51673,7 @@
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00820979.webp"
   },
   "820980": {
-    "name": "Essence of Dawn - Black Spirit&amp;#39;s Rage",
+    "name": "Essence of Dawn - Black Spirit's Rage",
     "image": "https://bdocodex.com/items/new_icon/03_etc/07_productmaterial/00820980.webp"
   },
   "820981": {
