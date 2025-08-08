@@ -98,7 +98,7 @@
                                     <img src="{{ result.item_image }}" alt="" style="max-width:28px;">
                                 {% endif %}
                             </td>
-                            <td>{{ row.minEnhance }} to {{ row.maxEnhance }}</td>
+                            <td>{{ row.minEnhance|enh_name(row.maxEnhance, row.sid) }}</td>
                             <td>{{ row.basePrice|format_number }}</td>
                             <td>{{ row.currentStock|format_number }}</td>
                             <td>{{ row.lastSoldPrice|format_number }}</td>

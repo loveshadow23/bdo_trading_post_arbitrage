@@ -21,6 +21,32 @@ def format_number_filter(value):
     except (ValueError, TypeError):
         return value
 
+@app.template_filter('format_timestamp_ro')
+def format_timestamp_ro(timestamp):
+    """Format a UNIX timestamp to Europe/Bucharest time."""
+    try:
+        timestamp = int(timestamp)
+        tz = pytz.timezone('Europe/Bucharest')
+        dt = datetime.fromtimestamp(timestamp, tz)
+        return dt.strftime("%d-%m-%Y %H:%M:%S")
+    except Exception as e:
+        return f"Invalid timestamp: {timestamp}"
+
+@app.template_filter('enh_name')
+def enh_name(min_e, max_e, sid):
+    acc_labels = ["Base", "PRI", "DUO", "TRI", "TET", "PEN"]
+    gear_labels = ["+{}".format(i) for i in range(0, 16)] + ["PRI", "DUO", "TRI", "TET", "PEN"]
+    if min_e == max_e and min_e < len(acc_labels) and max_e <= 5:
+        return acc_labels[min_e]
+    elif min_e == max_e and min_e < len(gear_labels):
+        return gear_labels[min_e]
+    else:
+        return f"{min_e} to {max_e}"
+
+def sort_enhancements(market_list):
+    # Sort by minEnhance, then sid as fallback
+    return sorted(market_list, key=lambda x: (x.get("minEnhance", 0), x.get("sid", 0)))
+
 def load_cache():
     """Load the item cache from file."""
     with open(CACHE_FILE, "r", encoding="utf-8") as f:
@@ -39,17 +65,6 @@ def search_items_by_name(query, cache):
                 "image": info.get("image")
             })
     return results
-
-@app.template_filter('format_timestamp_ro')
-def format_timestamp_ro(timestamp):
-    """Format a UNIX timestamp to Europe/Bucharest time."""
-    try:
-        timestamp = int(timestamp)
-        tz = pytz.timezone('Europe/Bucharest')
-        dt = datetime.fromtimestamp(timestamp, tz)
-        return dt.strftime("%d-%m-%Y %H:%M:%S")
-    except Exception as e:
-        return f"Invalid timestamp: {timestamp}"
 
 def get_market_info(item_id, region="EU"):
     """Query arsha.io for market info for a given item_id."""
@@ -144,12 +159,12 @@ def index():
                 item_info = cache[item_id]
                 market_info = get_market_info(item_id)
                 market_info = ensure_market_list(market_info)
+                market_info = sort_enhancements(market_info)
                 if not market_info:
                     error = "Could not fetch market info."
                 else:
                     # Check if there's only one enhancement level with 0 to 0
                     if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
-                        # Directly get orders for this enhancement level
                         sid = market_info[0].get("sid")
                         orders = get_orders_from_garmoth_api(item_id, sid)
                         enhancement_details = {
@@ -160,7 +175,6 @@ def index():
                             "orders": orders
                         }
                     else:
-                        # Show the enhancement list as before
                         result = {
                             "item_id": item_id,
                             "item_name": item_info.get("name"),
@@ -176,12 +190,11 @@ def index():
                     item_info = cache[found_id]
                     market_info = get_market_info(found_id)
                     market_info = ensure_market_list(market_info)
+                    market_info = sort_enhancements(market_info)
                     if not market_info:
                         error = "Could not fetch market info."
                     else:
-                        # Check if there's only one enhancement level with 0 to 0
                         if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
-                            # Directly get orders for this enhancement level
                             sid = market_info[0].get("sid")
                             orders = get_orders_from_garmoth_api(found_id, sid)
                             enhancement_details = {
@@ -192,7 +205,6 @@ def index():
                                 "orders": orders
                             }
                         else:
-                            # Show the enhancement list as before
                             result = {
                                 "item_id": found_id,
                                 "item_name": item_info.get("name"),
@@ -212,7 +224,7 @@ def index():
             item_info = cache[item_id_param]
             market_info = get_market_info(item_id_param)
             market_info = ensure_market_list(market_info)
-            # Găsește enhancement-ul selectat
+            market_info = sort_enhancements(market_info)
             enhancement = None
             for entry in market_info:
                 if str(entry.get("sid")) == str(sid_param):
@@ -237,10 +249,8 @@ def index():
             item_info = cache[item_id_param]
             market_info = get_market_info(item_id_param)
             market_info = ensure_market_list(market_info)
-            
-            # Check if there's only one enhancement level with 0 to 0
+            market_info = sort_enhancements(market_info)
             if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
-                # Directly get orders for this enhancement level
                 sid = market_info[0].get("sid")
                 orders = get_orders_from_garmoth_api(item_id_param, sid)
                 enhancement_details = {
@@ -252,7 +262,6 @@ def index():
                 }
                 return render_template("index.html", enhancement_details=enhancement_details, error=error, query="", matches=None, total_items=total_items)
             else:
-                # Show the enhancement list as before
                 result = {
                     "item_id": item_id_param,
                     "item_name": item_info.get("name"),
