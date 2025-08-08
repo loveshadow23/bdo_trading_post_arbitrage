@@ -61,6 +61,22 @@ def get_market_info(item_id, region="EU"):
     except Exception as e:
         return None
 
+def get_orders_info(item_id, sid, region="EU"):
+    """Query arsha.io for orders info for a given item_id and sid."""
+    region_map = {
+        "EU": "eu",
+        "NA": "na"
+    }
+    region_api = region_map.get(region.upper(), "eu")
+    url = f"https://api.arsha.io/v2/{region_api}/orders?id={item_id}&sid={sid}&lang=en"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        return data
+    except Exception as e:
+        return None
+
 def ensure_market_list(market_info):
     """
     Always return a list of dicts, whether the API returned a dict or a list of dicts.
@@ -113,7 +129,9 @@ def index():
                                 "Price Cap (Min)": entry.get("priceMin", "N/A"),
                                 "Price Cap (Max)": entry.get("priceMax", "N/A"),
                                 "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
-                                "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A"
+                                "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
+                                "sid": entry.get("sid", "N/A"),
+                                "orders": get_orders_info(entry.get("id"), entry.get("sid"))
                             }
                             for entry in ensure_market_list(market_info)
                         ]
@@ -143,7 +161,9 @@ def index():
                                     "Price Cap (Min)": entry.get("priceMin", "N/A"),
                                     "Price Cap (Max)": entry.get("priceMax", "N/A"),
                                     "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
-                                    "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A"
+                                    "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
+                                    "sid": entry.get("sid", "N/A"),
+                                    "orders": get_orders_info(entry.get("id"), entry.get("sid"))
                                 }
                                 for entry in ensure_market_list(market_info)
                             ]
@@ -182,7 +202,9 @@ def index():
                             "Price Cap (Min)": entry.get("priceMin", "N/A"),
                             "Price Cap (Max)": entry.get("priceMax", "N/A"),
                             "Last Sale Price": entry.get("lastSoldPrice", "N/A"),
-                            "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A"
+                            "Last Sale Time": format_timestamp_ro(entry.get("lastSoldTime")) if entry.get("lastSoldTime") else "N/A",
+                            "sid": entry.get("sid", "N/A"),
+                            "orders": get_orders_info(entry.get("id"), entry.get("sid"))
                         }
                         for entry in ensure_market_list(market_info)
                     ]
