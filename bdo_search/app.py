@@ -17,11 +17,11 @@ app = Flask(__name__)
 
 @app.template_filter('format_number')
 def format_number_filter(value):
-    """Format numbers with thousands separator (comma)."""
     try:
-        return "{:,}".format(int(value)).replace(",", ",")
+        return "{:,}".format(int(value))
     except (ValueError, TypeError):
         return value
+
 
 @app.template_filter('format_timestamp_ro')
 def format_timestamp_ro(timestamp):
