@@ -5,8 +5,10 @@ from datetime import datetime
 import pytz
 import time
 import cloudscraper
+import os
 
-CACHE_FILE = "item_cache.json"
+# CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache.json")
+CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache_garmoth.json")
 
 # Cache local pentru orders (item_id_sid: {data, ts})
 garmoth_cache = {}
@@ -274,4 +276,4 @@ def index():
     return render_template("index.html", result=None, error=error, query=query, matches=matches, total_items=total_items)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8520, debug=True)
