@@ -11,7 +11,7 @@
         input[type="submit"] { padding: 10px 22px; font-size: 1.2em; }
         img { max-width: 48px; vertical-align: middle; }
         table.dataTable { width: 100% !important; margin-top: 20px; background: #222; }
-        th, td { padding: 12px 12px; border-bottom: 1px solid #444; text-align: center; font-size: 1.15em; }
+        th, td { padding: 12px; border-bottom: 1px solid #444; text-align: center; font-size: 1.15em; }
         th { background: #222; font-size: 1.2em; }
         ul { list-style-type: none; padding: 0; }
         li { margin: 8px 0; }
@@ -19,6 +19,13 @@
         a { color: #4af; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .dt-center { text-align: center; }
+        .market-info { background:#181818; border-radius:8px; padding:18px; margin-bottom:38px; box-shadow:0 2px 8px #0001; }
+        .info-title { font-weight:bold; color:#bdf; font-size:1.15em; margin-bottom:12px; }
+        .info-row { margin-bottom:7px; }
+        .price { color:#ff5555; font-weight:bold; }
+        .cache-info { margin:8px 0 0 0; color:#aaa; font-size:0.98em; }
+        .cache-hit { color:#6f6; }
+        .error { color:#f66; }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
@@ -30,9 +37,11 @@
             <input type="text" name="item_name" placeholder="Enter item name..." value="{{ query }}">
             <input type="submit" value="Search">
         </form>
+        
         {% if error %}
             <p style="color: #ff6666;">{{ error }}</p>
         {% endif %}
+        
         {% if matches %}
             <h3>Multiple items found:</h3>
             <div style="margin-bottom:10px;">
@@ -73,6 +82,7 @@
                 });
             </script>
         {% endif %}
+        
         {% if result %}
             <h3>Result for: {{ result.item_name }} (ID: {{ result.item_id }})</h3>
             {% if result.item_image %}
@@ -121,69 +131,66 @@
         {% if enhancement_details %}
             <h3>
                 {{ enhancement_details.item_name }} (ID: {{ enhancement_details.item_id }})<br>
-                Enhancement: {{ enhancement_details.enhancement.minEnhance }} to {{ enhancement_details.enhancement.maxEnhance }}
+                Enhancement: {{ enhancement_details.enhancement.minEnhance|enh_name(enhancement_details.enhancement.maxEnhance, enhancement_details.enhancement.sid) }}
             </h3>
             {% if enhancement_details.item_image %}
                 <img src="{{ enhancement_details.item_image }}" alt="Item image">
             {% endif %}
+            
             {% set info = enhancement_details.orders.info %}
-            <div style="margin-top:20px;">
-                <div style="background:#181818; border-radius:8px; padding:18px 18px 10px 18px; margin-bottom:38px; box-shadow:0 2px 8px #0001;">
-                    <div style="font-weight:bold; color:#bdf; font-size:1.15em; margin-bottom:12px;">
-                        Enhancement Range: <span style="color:#fff;">{{ enhancement_details.enhancement.minEnhance }} to {{ enhancement_details.enhancement.maxEnhance }}</span>
-                    </div>
-                    {% if info %}
-                        <div style="margin-bottom:7px;"><b>Base Price:</b> {{ info.price|format_number }}</div>
-                        <div style="margin-bottom:7px;"><b>Current Stock:</b> {{ info.stock|format_number }}</div>
-                        <div style="margin-bottom:7px;"><b>Total Trades:</b> {{ info.total_sold|format_number }}</div>
-                        <div style="margin-bottom:7px;"><b>Last Sale Price:</b> {{ info.last_sold_price|format_number }}</div>
-                        <div style="margin-bottom:7px;"><b>Last Sale Time:</b>
-                            {% if info.last_sold_time %}
-                                {{ info.last_sold_time|format_timestamp_ro }}
-                            {% else %}
-                                N/A
-                            {% endif %}
-                        </div>
-                    {% else %}
-                        <div style="margin-bottom:7px; color:#f66;">Market info unavailable.</div>
-                    {% endif %}
-                    {% if enhancement_details.orders and enhancement_details.orders.orders %}
-                        <div style="margin-top:12px;">
-                            <b>Orders:</b>
-                            <table style="width:100%; margin-top:6px; background:#222;">
-                                <thead>
-                                    <tr>
-                                        <th style="color:#bdf;">Sellers</th>
-                                        <th style="color:#bdf;">Prices</th>
-                                        <th style="color:#bdf;">Buyers</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                {% set sorted_orders = enhancement_details.orders.orders | sort(attribute='price', reverse=true) %}
-                                {% for order in sorted_orders %}
-                                    <tr>
-                                        <td>{{ order.sellers|format_number }}</td>
-                                        <td style="color:#ff5555; font-weight:bold;">{{ order.price|format_number }}</td>
-                                        <td>{{ order.buyers|format_number }}</td>
-                                    </tr>
-                                {% endfor %}
-                                </tbody>
-                            </table>
-                            {% if enhancement_details.orders.fetch_time is defined %}
-                                <div style="margin:8px 0 0 0; color:#aaa; font-size:0.98em;">
-                                    Fetch time: 
-                                    {% if enhancement_details.orders.fetch_time == 0 %}
-                                        <span style="color:#6f6;">(cache)</span>
-                                    {% elif enhancement_details.orders.fetch_time > 0 %}
-                                        {{ enhancement_details.orders.fetch_time }} sec
-                                    {% else %}
-                                        <span style="color:#f66;">(error)</span>
-                                    {% endif %}
-                                </div>
-                            {% endif %}
-                        </div>
-                    {% endif %}
+            <div class="market-info">
+                <div class="info-title">
+                    Enhancement: {{ enhancement_details.enhancement.minEnhance|enh_name(enhancement_details.enhancement.maxEnhance, enhancement_details.enhancement.sid) }}
                 </div>
+                
+                {% if info %}
+                    <div class="info-row"><b>Base Price:</b> {{ info.price|format_number }}</div>
+                    <div class="info-row"><b>Current Stock:</b> {{ info.stock|format_number }}</div>
+                    <div class="info-row"><b>Total Trades:</b> {{ info.total_sold|format_number }}</div>
+                    <div class="info-row"><b>Last Sale Price:</b> {{ info.last_sold_price|format_number }}</div>
+                    <div class="info-row"><b>Last Sale Time:</b>
+                        {{ info.last_sold_time|format_timestamp_ro if info.last_sold_time else "N/A" }}
+                    </div>
+                {% else %}
+                    <div class="info-row error">Market info unavailable.</div>
+                {% endif %}
+                
+                {% if enhancement_details.orders and enhancement_details.orders.orders %}
+                    <div style="margin-top:12px;">
+                        <b>Orders:</b>
+                        <table style="width:100%; margin-top:6px; background:#222;">
+                            <thead>
+                                <tr>
+                                    <th style="color:#bdf;">Sellers</th>
+                                    <th style="color:#bdf;">Prices</th>
+                                    <th style="color:#bdf;">Buyers</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for order in enhancement_details.orders.orders|sort(attribute='price', reverse=true) %}
+                                <tr>
+                                    <td>{{ order.sellers|format_number }}</td>
+                                    <td class="price">{{ order.price|format_number }}</td>
+                                    <td>{{ order.buyers|format_number }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        
+                        {% if enhancement_details.orders.fetch_time is defined %}
+                            <div class="cache-info">
+                                Fetch time: 
+                                {% if enhancement_details.orders.fetch_time == 0 %}
+                                    <span class="cache-hit">(cache)</span>
+                                {% elif enhancement_details.orders.fetch_time > 0 %}
+                                    {{ enhancement_details.orders.fetch_time }} sec
+                                {% else %}
+                                    <span class="error">(error)</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endif %}
             </div>
         {% endif %}
     </div>
