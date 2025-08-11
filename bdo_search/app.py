@@ -82,7 +82,7 @@ def search_items_by_name(query, cache):
         if query_lc in info.get("name", "").lower()
     ]
 
-def get_market_info(item_id, region="EU"):
+def get_market_info_from_arsha(item_id, region="EU"):
     """Query arsha.io for market info for a given item_id."""
     region_api = {"EU": "eu", "NA": "na"}.get(region.upper(), "eu")
     url = f"https://api.arsha.io/v2/{region_api}/item?id={item_id}&lang=en"
@@ -93,7 +93,7 @@ def get_market_info(item_id, region="EU"):
     except Exception:
         return None
 
-def get_orders_from_garmoth_api(item_id, sub_key, region="eu", cache_time=10):
+def get_market_orders_from_garmoth_api(item_id, sub_key, region="eu", cache_time=10):
     """Fetch orders from Garmoth API for a given item_id and sub_key."""
     key = f"{item_id}_{sub_key}"
     now = time.time()
@@ -140,7 +140,7 @@ def process_item_details(item_id, cache):
         return None, "Item not found in cache."
     
     item_info = cache[item_id]
-    market_info = get_market_info(item_id)
+    market_info = get_market_info_from_arsha(item_id)
     market_info = ensure_market_list(market_info)
     market_info = sorted(market_info, key=lambda x: (x.get("minEnhance", 0), x.get("sid", 0)))
     
@@ -150,7 +150,7 @@ def process_item_details(item_id, cache):
     # Check if there's only one enhancement level with 0 to 0
     if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
         sid = market_info[0].get("sid")
-        orders = get_orders_from_garmoth_api(item_id, sid)
+        orders = get_market_orders_from_garmoth_api(item_id, sid)
         return {
             "enhancement_details": {
                 "item_id": item_id,
@@ -216,14 +216,14 @@ def index():
     
     if item_id_param and sid_param and item_id_param in cache:
         item_info = cache[item_id_param]
-        market_info = get_market_info(item_id_param)
+        market_info = get_market_info_from_arsha(item_id_param)
         market_info = ensure_market_list(market_info)
         market_info = sorted(market_info, key=lambda x: (x.get("minEnhance", 0), x.get("sid", 0)))
         
         enhancement = next((entry for entry in market_info if str(entry.get("sid")) == str(sid_param)), None)
         
         if enhancement:
-            orders = get_orders_from_garmoth_api(item_id_param, int(sid_param))
+            orders = get_market_orders_from_garmoth_api(item_id_param, int(sid_param))
             enhancement_details = {
                 "item_id": item_id_param,
                 "item_name": item_info.get("name"),

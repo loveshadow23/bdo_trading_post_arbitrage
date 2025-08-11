@@ -258,7 +258,7 @@
         }
         
         .fade-in {
-            animation: fadeIn 0.5s ease-out;
+            animation: fadeIn 0.3s ease-out;
         }
         
         /* Footer */
@@ -422,16 +422,16 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Price</th>
                         <th>Sellers</th>
+                        <th>Price</th>
                         <th>Buyers</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for order in enhancement_details.orders.orders %}
                     <tr>
-                        <td class="price">{{ order.price|format_number }}</td>
                         <td>{{ order.sellers|format_number }}</td>
+                        <td class="price">{{ order.price|format_number }}</td>
                         <td>{{ order.buyers|format_number }}</td>
                     </tr>
                     {% endfor %}
