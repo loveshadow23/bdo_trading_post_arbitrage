@@ -176,6 +176,9 @@ def index():
                         for item in market_data:
                             sub_key = item["enhancement_max"]
                             item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+                            if item["bidding_info"]:
+                                item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
+
                         details = {
                             "id": item_id,
                             "name": item_info.get("name"),
@@ -203,18 +206,33 @@ def item_detail(item_id):
     if not item_info:
         return render_template("index.html", results="not_found", query="")
     market_data = fetch_market_data(item_id)
-    for item in market_data:
-        sub_key = item["enhancement_max"]
-        item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
-        if item["bidding_info"]:
-            item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
-    details = {
-        "id": item_id,
-        "name": item_info.get("name"),
-        "image": item_info.get("image"),
-        "market_data": market_data
-    }
-    return render_template("index.html", details=details, query=item_info.get("name", ""))
+    if len(market_data) > 1:
+        # Afișează lista de enhancement-uri
+        enh_list = []
+        for item in market_data:
+            enh_list.append({
+                "id": item_id,
+                "name": item_info.get("name"),
+                "image": item_info.get("image"),
+                "enhancement_min": item["enhancement_min"],
+                "enhancement_max": item["enhancement_max"]
+            })
+        return render_template("index.html", enh_list=enh_list, query=item_info.get("name", ""))
+    else:
+        # Un singur enhancement, mergi direct la detalii
+        for item in market_data:
+            sub_key = item["enhancement_max"]
+            item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+            if item["bidding_info"]:
+                item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
+        details = {
+            "id": item_id,
+            "name": item_info.get("name"),
+            "image": item_info.get("image"),
+            "market_data": market_data
+        }
+        return render_template("index.html", details=details, query=item_info.get("name", ""))
+
 
 @app.route("/item/<item_id>/<int:enh_min>/<int:enh_max>")
 def item_detail_enh(item_id, enh_min, enh_max):
@@ -228,6 +246,9 @@ def item_detail_enh(item_id, enh_min, enh_max):
     for item in market_data:
         sub_key = item["enhancement_max"]
         item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+        if item["bidding_info"]:
+            item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
+
     details = {
         "id": item_id,
         "name": item_info.get("name"),
