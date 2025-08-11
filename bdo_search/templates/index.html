@@ -26,13 +26,47 @@
         .cache-info { margin:8px 0 0 0; color:#aaa; font-size:0.98em; }
         .cache-hit { color:#6f6; }
         .error { color:#f66; }
+        
+        /* Stiluri pentru header și logo */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .home-button {
+            margin-bottom: 15px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .logo {
+            max-width: 280px;
+            height: auto;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        .header h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h2>BDO Item Market Search</h2>
+        <div class="header">
+            <a href="/" class="home-button">
+                <img src="{{ url_for('static', filename='bdo_home_icon.png') }}" alt="Home" class="logo">
+            </a>
+            <h2>BDO Item Market Search</h2>
+        </div>
+        
         <form method="post">
             <input type="text" name="item_name" placeholder="Enter item name..." value="{{ query }}">
             <input type="submit" value="Search">
