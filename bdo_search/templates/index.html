@@ -356,12 +356,14 @@
                         </td>
                         <td>{{ entry.basePrice|format_number }}</td>
                         <td>
-                            {% if 'inStock' in entry %}
-                            {{ entry.inStock|format_number }}
+                            {% if 'currentStock' in entry %}
+                                {{ entry.currentStock|format_number }}
+                            {% elif 'inStock' in entry %}
+                                {{ entry.inStock|format_number }}
                             {% elif 'count' in entry %}
-                            {{ entry.count|format_number }}
+                                {{ entry.count|format_number }}
                             {% else %}
-                            N/A
+                                N/A
                             {% endif %}
                         </td>
                         <td>
