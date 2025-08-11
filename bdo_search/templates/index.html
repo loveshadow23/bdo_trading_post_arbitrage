@@ -15,8 +15,8 @@
     </style>
 </head>
 <body>
-    <h1>BDO Item Search</h1>
-    <form method="post">
+    <h1><a href="{{ url_for('index') }}" style="color:inherit; text-decoration:none;">BDO Item Search</a></h1>
+    <form method="post" action="{{ url_for('index') }}">
         <input type="text" name="query" value="{{ query }}" placeholder="Item name or ID" required>
         <button type="submit">Search</button>
     </form>
@@ -47,7 +47,9 @@
 
         {% for item in details.market_data %}
         <div class="market-section">
-            <h3>Enhancement: {{ item.enhancement_min|format_number }} - {{ item.enhancement_max|format_number }}</h3>
+            <h3>
+                Enhancement: {{ item.enhancement_min|enh_name(item.enhancement_max, details.id) }}
+            </h3>
             <table class="market-table">
                 <tr>
                     <th>Base Price</th>

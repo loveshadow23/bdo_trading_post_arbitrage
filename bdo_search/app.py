@@ -42,6 +42,27 @@ def unix_to_ro_time(ts):
     except Exception:
         return None
 
+@app.template_filter('enh_name')
+def enh_name(min_e, max_e, sid):
+    """Format enhancement name in a more user-friendly way."""
+    # Pentru Base (0), nu afișăm nimic
+    if min_e == 0 and max_e == 0:
+        return ""
+    
+    # Pentru enhancement-uri de la +1 la +15
+    if min_e == max_e and 1 <= min_e <= 15:
+        return f"+{min_e}"
+    
+    # Pentru enhancement-uri PRI, DUO, TRI, TET, PEN
+    acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
+    if min_e == max_e and 16 <= min_e <= 20:
+        idx = min_e - 15
+        if 1 <= idx <= 5:
+            return acc_labels[idx]
+    
+    # Pentru alte cazuri (range-uri)
+    return f"{min_e} to {max_e}"
+
 def find_items(query, item_db):
     query = query.lower()
     results = []
