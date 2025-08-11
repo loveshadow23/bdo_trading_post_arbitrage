@@ -1,12 +1,9 @@
 
 {
-  "1": {
-    "name": "()",
-    "image": "https://s1.pearlcdn.com/NAEU/TradeMarket/Common/img/BDO/item/16001.png"
-  },
   "16001": {
     "name": "Black Stone",
-    "image": "https://assets.garmoth.com/img/new_icon/03_etc/11_enchant_material/00000008.webp"
+    "image": "https://assets.garmoth.com/img/new_icon/03_etc/11_enchant_material/00000008.webp",
+    "image2": "https://s1.pearlcdn.com/NAEU/TradeMarket/Common/img/BDO/item/16001.png"
   },
   "4902": {
     "name": "Alluvial Gold",
