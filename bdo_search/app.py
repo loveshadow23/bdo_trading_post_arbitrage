@@ -148,7 +148,6 @@ def parse_market_data(result_msg):
 def index():
     results = None
     details = None
-    enh_list = None
     query = ""
     if request.method == "POST":
         query = request.form.get("query", "").strip()
@@ -156,32 +155,19 @@ def index():
             item_db = load_item_db(CACHE_FILE)
             matches = find_items(query, item_db)
             if matches:
-                # Dacă e doar unul, verifică enhancement levels
+                # Dacă e doar unul, arată direct detaliile
                 if len(matches) == 1:
                     item_id, item_info = matches[0]
                     market_data = fetch_market_data(item_id)
-                    # Dacă sunt mai multe enhancement-uri, arată lista
-                    if len(market_data) > 1:
-                        enh_list = []
-                        for item in market_data:
-                            enh_list.append({
-                                "id": item_id,
-                                "name": item_info.get("name"),
-                                "image": item_info.get("image"),
-                                "enhancement_min": item["enhancement_min"],
-                                "enhancement_max": item["enhancement_max"]
-                            })
-                    else:
-                        # Un singur enhancement, mergi direct la detalii
-                        for item in market_data:
-                            sub_key = item["enhancement_max"]
-                            item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
-                        details = {
-                            "id": item_id,
-                            "name": item_info.get("name"),
-                            "image": item_info.get("image"),
-                            "market_data": market_data
-                        }
+                    for item in market_data:
+                        sub_key = item["enhancement_max"]
+                        item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+                    details = {
+                        "id": item_id,
+                        "name": item_info.get("name"),
+                        "image": item_info.get("image"),
+                        "market_data": market_data
+                    }
                 else:
                     # Returnează lista de rezultate pentru alegere
                     results = [
@@ -194,7 +180,7 @@ def index():
                     ]
             else:
                 results = "not_found"
-    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query)
+    return render_template("index.html", results=results, details=details, query=query)
 
 @app.route("/item/<item_id>")
 def item_detail(item_id):
@@ -215,27 +201,6 @@ def item_detail(item_id):
         "market_data": market_data
     }
     return render_template("index.html", details=details, query=item_info.get("name", ""))
-
-@app.route("/item/<item_id>/<int:enh_min>/<int:enh_max>")
-def item_detail_enh(item_id, enh_min, enh_max):
-    item_db = load_item_db(CACHE_FILE)
-    item_info = item_db.get(item_id)
-    if not item_info:
-        return render_template("index.html", results="not_found", query="")
-    market_data = fetch_market_data(item_id)
-    # Filtrare după enhancement level
-    market_data = [item for item in market_data if item["enhancement_min"] == enh_min and item["enhancement_max"] == enh_max]
-    for item in market_data:
-        sub_key = item["enhancement_max"]
-        item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
-    details = {
-        "id": item_id,
-        "name": item_info.get("name"),
-        "image": item_info.get("image"),
-        "market_data": market_data
-    }
-    return render_template("index.html", details=details, query=item_info.get("name", ""))
-
 
 
 if __name__ == "__main__":
