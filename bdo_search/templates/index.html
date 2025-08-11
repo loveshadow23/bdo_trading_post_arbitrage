@@ -10,7 +10,7 @@
         /* Base styles */
         body {
             font-family: 'Roboto', Arial, sans-serif;
-            background-color: #292929;
+            background-color: #222222;
             color: #eee;
             margin: 0;
             padding: 0;
@@ -294,6 +294,14 @@
         .item-header h2 {
             margin: 0;
         }
+        
+        .item-glow {
+            box-shadow: 0 0 4px 1px #e5c04d, 0 0 0px 0px #000;
+            border-radius: 8px;
+            background: rgba(0,255,231,0.09);
+            transition: box-shadow 0.3s;
+        }
+
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
@@ -343,7 +351,7 @@
                     <li>
                         <a href="{{ url_for('item_detail', item_id=item.id) }}">
                             {% if item.image %}
-                                <img src="{{ item.image }}" alt="icon">
+                                <img src="{{ item.image }}" alt="icon" class="item-glow">
                             {% endif %}
                             {{ item.name }} (ID: {{ item.id }})
                         </a>
@@ -355,63 +363,64 @@
             <div class="results-container">
                 <div class="item-header">
                     {% if details.image %}
-                        <img src="{{ details.image }}" alt="icon">
+                        <img src="{{ details.image }}" alt="icon" class="item-glow">
                     {% endif %}
                     <h2>{{ details.name }} (ID: {{ details.id }})</h2>
                 </div>
-
-                {% for item in details.market_data %}
-                <div class="market-section">
-                    <h3>
-                        Enhancement: <span class="enhancement">{{ item.enhancement_min|enh_name(item.enhancement_max, details.id) }}</span>
-                    </h3>
-                    <table class="market-table">
-                        <thead>
-                            <tr>
-                                <th>Base Price</th>
-                                <th>Current Stock</th>
-                                <th>Total Trades</th>
-                                <th>Price Min</th>
-                                <th>Price Max</th>
-                                <th>Last Sale Price</th>
-                                <th>Last Sale Time (RO)</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="price">{{ item.base_price|format_number }}</td>
-                                <td>{{ item.current_stock|format_number }}</td>
-                                <td>{{ item.total_trades|format_number }}</td>
-                                <td>{{ item.price_hardcap_min|format_number }}</td>
-                                <td>{{ item.price_hardcap_max|format_number }}</td>
-                                <td class="price">{{ item.last_sale_price|format_number }}</td>
-                                <td>{{ item.last_sale_time_ro }}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    {% if item.bidding_info %}
-                        <h4>Bidding Information</h4>
-                        <table class="bidding-table">
+                    {% for item in details.market_data %}
+                    <div class="market-section">
+                        {% if not (item.enhancement_min == 0 and item.enhancement_max == 0) %}
+                            <h3>
+                                Enhancement: <span class="enhancement">{{ item.enhancement_min|enh_name(item.enhancement_max, details.id) }}</span>
+                            </h3>
+                        {% endif %}
+                        <table class="market-table">
                             <thead>
                                 <tr>
-                                    <th>Sellers</th>
-                                    <th>Price</th>
-                                    <th>Buyers</th>
+                                    <th>Base Price</th>
+                                    <th>Current Stock</th>
+                                    <th>Total Trades</th>
+                                    <th>Price Min</th>
+                                    <th>Price Max</th>
+                                    <th>Last Sale Price</th>
+                                    <th>Last Sale Time (RO)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for bid in item.bidding_info %}
                                 <tr>
-                                    <td>{{ bid.sell_orders|format_number }}</td>
-                                    <td class="price">{{ bid.price|format_number }}</td>
-                                    <td>{{ bid.buy_orders|format_number }}</td>
+                                    <td class="price">{{ item.base_price|format_number }}</td>
+                                    <td>{{ item.current_stock|format_number }}</td>
+                                    <td>{{ item.total_trades|format_number }}</td>
+                                    <td>{{ item.price_hardcap_min|format_number }}</td>
+                                    <td>{{ item.price_hardcap_max|format_number }}</td>
+                                    <td class="price">{{ item.last_sale_price|format_number }}</td>
+                                    <td>{{ item.last_sale_time_ro }}</td>
                                 </tr>
-                                {% endfor %}
                             </tbody>
                         </table>
-                    {% endif %}
-                </div>
-                {% endfor %}
+                        {% if item.bidding_info %}
+                            <h4>Bidding Information</h4>
+                            <table class="bidding-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sellers</th>
+                                        <th>Price</th>
+                                        <th>Buyers</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for bid in item.bidding_info %}
+                                    <tr>
+                                        <td>{{ bid.sell_orders|format_number }}</td>
+                                        <td class="price">{{ bid.price|format_number }}</td>
+                                        <td>{{ bid.buy_orders|format_number }}</td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
             </div>
         {% elif enh_list %}
             <div class="results-container">
