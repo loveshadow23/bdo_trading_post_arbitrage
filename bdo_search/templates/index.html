@@ -1,463 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>BDO Item Market Search</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500&display=swap">
+    <title>BDO Item Search</title>
     <style>
-        /* Stiluri de bază */
-        body {
-            font-family: 'Roboto', Arial, sans-serif;
-            background-color: #292929;
-            color: #eee;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
-        
-        body.home-page {
-            background-image: url('{{ url_for("static", filename="bdo_home_background.jpg") }}');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        
-        /* Container principal */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            background-color: rgba(20, 20, 20, 0.85);
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        /* Container pentru pagina principală */
-        .home-container {
-            max-width: 800px;
-            width: 90%;
-        }
-        
-        /* Header și logo */
-        .header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .home-button {
-            margin-bottom: 15px;
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .logo {
-            max-width: 350px;
-            height: auto;
-            transition: transform 0.2s;
-        }
-        
-        .logo:hover {
-            transform: scale(1.05);
-        }
-        
-        h1, h2 {
-            font-family: 'Cinzel', serif;
-            color: #d4af37;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            letter-spacing: 1px;
-        }
-        
-        h1 {
-            font-size: 32px;
-            margin: 20px 0;
-        }
-        
-        h2 {
-            font-size: 24px;
-            margin: 15px 0;
-        }
-        
-        /* Formular de căutare */
-        .search-container {
-            position: relative;
-            margin: 20px 0;
-        }
-        
-        .search-input {
-            width: 100%;
-            padding: 15px 20px;
-            font-size: 18px;
-            background-color: rgba(30, 30, 30, 0.7);
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 6px;
-            box-sizing: border-box;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: #d4af37;
-            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-        }
-        
-        .search-button {
-            display: block;
-            margin: 20px auto 0;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, #d4af37, #aa8a29);
-            color: #000;
-            font-weight: 500;
-            font-size: 16px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .search-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-            background: linear-gradient(135deg, #e5c04d, #d4af37);
-        }
-        
-        .search-button:active {
-            transform: translateY(1px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* Stiluri pentru rezultate */
-        .results-container {
-            margin-top: 30px;
-        }
-        
-        .item-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        .item-list li {
-            margin: 10px 0;
-            padding: 15px;
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            transition: background-color 0.2s;
-        }
-        
-        .item-list li:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        .item-list img {
-            margin-right: 15px;
-            max-width: 32px;
-            height: auto;
-        }
-        
-        .item-list a {
-            color: #4af;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        
-        .item-list a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Stiluri pentru tabel */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-        
-        th, td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        th {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #d4af37;
-            font-weight: 500;
-        }
-        
-        tr:hover {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Stiluri pentru mesaje de eroare */
-        .error {
-            color: #ff6b6b;
-            background-color: rgba(255, 0, 0, 0.1);
-            padding: 15px;
-            border-radius: 6px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        /* Stiluri pentru market info */
-        .market-info {
-            background-color: rgba(0, 0, 0, 0.3);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .info-title {
-            font-weight: bold;
-            color: #bdf;
-            font-size: 1.15em;
-            margin-bottom: 12px;
-        }
-        
-        .info-row {
-            margin-bottom: 10px;
-        }
-        
-        .price {
-            color: #ff5555;
-            font-weight: bold;
-        }
-        
-        .cache-info {
-            margin: 8px 0 0 0;
-            color: #aaa;
-            font-size: 0.98em;
-        }
-        
-        .cache-hit {
-            color: #6f6;
-        }
-        
-        /* Animație pentru încărcare */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.3s ease-out;
-        }
-        
-        /* Footer */
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.5);
-        }
+        body { font-family: Arial, sans-serif; margin: 2em; background: #1b1c1d; color: #eee; }
+        img { max-height: 48px; vertical-align: middle; }
+        .market-section { margin-bottom: 2em; }
+        .bidding-table, .market-table { border-collapse: collapse; margin-top: 1em;}
+        .bidding-table th, .bidding-table td,
+        .market-table th, .market-table td { border: 1px solid #ccc; padding: 4px 8px; }
+        a { color: #aee; text-decoration: none; }
+        a:hover { text-decoration: underline; }
     </style>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 </head>
-<body {% if is_home_page %}class="home-page"{% endif %}>
-    {% if is_home_page %}
-    <div class="container home-container fade-in">
-        <div class="header">
-            <a href="/" class="home-button">
-                <img src="{{ url_for('static', filename='bdo_home_logo.png') }}" alt="Black Desert Online" class="logo">
-            </a>
-            <h1>Item Market Search</h1>
-        </div>
-        
-        <form method="post" action="/">
-            <div class="search-container">
-                <input type="text" name="item_name" class="search-input" placeholder="Enter item name..." value="{{ query }}" required>
-            </div>
-            <button type="submit" class="search-button">Search</button>
-        </form>
-        
-        <div class="footer">
-            <p>Find the best deals on the Black Desert Marketplace</p>
-            <p>Database contains {{ total_items }} items</p>
-        </div>
-    </div>
-    {% else %}
-    <div class="container fade-in">
-        <div class="header">
-            <a href="/" class="home-button">
-                <img src="{{ url_for('static', filename='bdo_home_logo.png') }}" alt="Black Desert Online" class="logo">
-            </a>
-            <h2>Item Market Search</h2>
-        </div>
-        
-        <form method="post" action="/">
-            <div class="search-container">
-                <input type="text" name="item_name" class="search-input" placeholder="Enter item name..." value="{{ query }}">
-            </div>
-            <button type="submit" class="search-button">Search</button>
-        </form>
-        
-        {% if error %}
-        <div class="error">{{ error }}</div>
+<body>
+    <h1>BDO Item Search</h1>
+    <form method="post">
+        <input type="text" name="query" value="{{ query }}" placeholder="Item name or ID" required>
+        <button type="submit">Search</button>
+    </form>
+    {% if results == "not_found" %}
+        <p style="color:red;">Item not found!</p>
+    {% elif results %}
+        <h2>Results:</h2>
+        <ul>
+        {% for item in results %}
+            <li>
+                <a href="{{ url_for('item_detail', item_id=item.id) }}">
+                    {% if item.image %}
+                        <img src="{{ item.image }}" alt="icon">
+                    {% endif %}
+                    {{ item.name }} (ID: {{ item.id }})
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    {% elif details %}
+        <h2>{{ details.name }} (ID: {{ details.id }})</h2>
+        {% if details.image %}
+            <img src="{{ details.image }}" alt="icon">
         {% endif %}
-        
-        {% if matches %}
-        <div class="results-container">
-            <h2>Search Results</h2>
-            <ul class="item-list">
-                {% for item in matches %}
-                <li>
-                    <img src="{{ item.image }}" alt="{{ item.name }}">
-                    <a href="/?item_id={{ item.id }}">{{ item.name }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
+        {% if details.image2 %}
+            <img src="{{ details.image2 }}" alt="icon2">
         {% endif %}
-        
-        {% if result %}
-        <div class="results-container">
-            <h2>{{ result.item_name }}</h2>
-            <img src="{{ result.item_image }}" alt="{{ result.item_name }}" style="max-width: 48px;">
-            
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Base Price</th>
-                        <th>In Stock</th>
-                        <th>Total Trades</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for entry in result.market %}
-                    <tr>
-                        <td>
-                            {% set enhancement = entry.minEnhance|enh_name(entry.maxEnhance, entry.sid) %}
-                            {% if enhancement %}
-                            <span style="color: #4af;">{{ enhancement }}</span> {{ result.item_name }}
-                            {% else %}
-                            {{ result.item_name }}
-                            {% endif %}
-                        </td>
-                        <td>{{ entry.basePrice|format_number }}</td>
-                        <td>
-                            {% if 'currentStock' in entry %}
-                                {{ entry.currentStock|format_number }}
-                            {% elif 'inStock' in entry %}
-                                {{ entry.inStock|format_number }}
-                            {% elif 'count' in entry %}
-                                {{ entry.count|format_number }}
-                            {% else %}
-                                N/A
-                            {% endif %}
-                        </td>
-                        <td>
-                            {% if 'totalTrades' in entry %}
-                            {{ entry.totalTrades|format_number }}
-                            {% else %}
-                            N/A
-                            {% endif %}
-                        </td>
-                        <td><a href="/?item_id={{ result.item_id }}&sid={{ entry.sid }}">View Details</a></td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
+
+        {% for item in details.market_data %}
+        <div class="market-section">
+            <h3>Enhancement: {{ item.enhancement_min|format_number }} - {{ item.enhancement_max|format_number }}</h3>
+            <table class="market-table">
+                <tr>
+                    <th>Base Price</th>
+                    <th>Current Stock</th>
+                    <th>Total Trades</th>
+                    <th>Price Min</th>
+                    <th>Price Max</th>
+                    <th>Last Sale Price</th>
+                    <th>Last Sale Time (RO)</th>
+                </tr>
+                <tr>
+                    <td>{{ item.base_price|format_number }}</td>
+                    <td>{{ item.current_stock|format_number }}</td>
+                    <td>{{ item.total_trades|format_number }}</td>
+                    <td>{{ item.price_hardcap_min|format_number }}</td>
+                    <td>{{ item.price_hardcap_max|format_number }}</td>
+                    <td>{{ item.last_sale_price|format_number }}</td>
+                    <td>{{ item.last_sale_time_ro }}</td>
+                </tr>
             </table>
-        </div>
-        {% endif %}
-
-
-        
-        {% if enhancement_details %}
-        <div class="results-container">
-            {% set enhancement = enhancement_details.enhancement.minEnhance|enh_name(enhancement_details.enhancement.maxEnhance, enhancement_details.enhancement.sid) %}
-            <h2>
-                {% if enhancement %}
-                <span style="color: #4af;">{{ enhancement }}</span> {{ enhancement_details.item_name }}
-                {% else %}
-                {{ enhancement_details.item_name }}
-                {% endif %}
-            </h2>
-            <img src="{{ enhancement_details.item_image }}" alt="{{ enhancement_details.item_name }}" style="max-width: 48px;">
-            
-            <div class="market-info">
-                <div class="info-title">Market Information</div>
-                <div class="info-row">Base Price: <span class="price">{{ enhancement_details.enhancement.basePrice|format_number }}</span> silver</div>
-                
-                <!-- Modificări pentru a verifica existența cheilor -->
-                {% if 'inStock' in enhancement_details.enhancement %}
-                <div class="info-row">In Stock: {{ enhancement_details.enhancement.inStock|format_number }}</div>
-                {% elif 'count' in enhancement_details.enhancement %}
-                <div class="info-row">In Stock: {{ enhancement_details.enhancement.count|format_number }}</div>
-                {% endif %}
-                
-                {% if 'totalTrades' in enhancement_details.enhancement %}
-                <div class="info-row">Total Trades: {{ enhancement_details.enhancement.totalTrades|format_number }}</div>
-                {% endif %}
-                
-                {% if enhancement_details.enhancement.lastSoldPrice %}
-                <div class="info-row">Last Sold Price: <span class="price">{{ enhancement_details.enhancement.lastSoldPrice|format_number }}</span> silver</div>
-                {% endif %}
-                
-                {% if enhancement_details.enhancement.lastSoldTime %}
-                <div class="info-row">Last Sold Time: {{ enhancement_details.enhancement.lastSoldTime|format_timestamp_ro }}</div>
-                {% endif %}
-            </div>
-            
-            {% if enhancement_details.orders.orders %}
-            <h3>Current Orders</h3>
-            <table>
-                <thead>
+            {% if item.bidding_info %}
+                <h4>Bidding Info</h4>
+                <table class="bidding-table">
                     <tr>
                         <th>Sellers</th>
                         <th>Price</th>
                         <th>Buyers</th>
                     </tr>
-                </thead>
-                <tbody>
-                    {% for order in enhancement_details.orders.orders %}
+                    {% for bid in item.bidding_info %}
                     <tr>
-                        <td>{{ order.sellers|format_number }}</td>
-                        <td class="price">{{ order.price|format_number }}</td>
-                        <td>{{ order.buyers|format_number }}</td>
+                        <td>{{ bid.sell_orders|format_number }}</td>
+                        <td>{{ bid.price|format_number }}</td>
+                        <td>{{ bid.buy_orders|format_number }}</td>
                     </tr>
                     {% endfor %}
-                </tbody>
-            </table>
-            
-            {% if enhancement_details.orders.fetch_time > 0 %}
-            <div class="cache-info">Data fetched in {{ enhancement_details.orders.fetch_time }} seconds</div>
-            {% elif enhancement_details.orders.fetch_time == 0 %}
-            <div class="cache-info cache-hit">Data loaded from cache</div>
-            {% else %}
-            <div class="cache-info error">Failed to fetch order data</div>
-            {% endif %}
-            {% else %}
-            <div class="error">No order data available</div>
+                </table>
             {% endif %}
         </div>
-        {% endif %}
-        
-        <div class="footer">
-            <p>Database contains {{ total_items }} items</p>
-        </div>
-    </div>
+        {% endfor %}
     {% endif %}
-    
 </body>
 </html>

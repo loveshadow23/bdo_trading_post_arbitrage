@@ -1,14 +1,13 @@
 import requests
-import sys
 import json
 import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from bdo_huffman import unpack  
+from flask import Flask, render_template, request
+from bdo_huffman import unpack
 
-
-CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache_codex.json")
-API_URL = "https://eu-trade.naeu.playblackdesert.com/Trademarket/GetWorldMarketSubList"
+CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache_garmoth.json")
+API_BASE_URL = "https://eu-trade.naeu.playblackdesert.com"
 FIELDS = [
     "item_id",
     "enhancement_min",
@@ -22,6 +21,16 @@ FIELDS = [
     "last_sale_time"
 ]
 
+app = Flask(__name__)
+
+@app.template_filter('format_number')
+def format_number_filter(value):
+    """Format numbers with thousands separator (comma)."""
+    try:
+        return "{:,}".format(int(value))
+    except (ValueError, TypeError):
+        return value
+        
 def load_item_db(cache_file):
     with open(cache_file, encoding="utf-8") as f:
         return json.load(f)
@@ -33,14 +42,21 @@ def unix_to_ro_time(ts):
     except Exception:
         return None
 
-def find_item(query, item_db):
+def find_items(query, item_db):
     query = query.lower()
+    results = []
+    # Caută după id exact
     if query in item_db:
-        return query, item_db[query]
+        results.append((query, item_db[query]))
+    # Caută după nume exact
     for k, v in item_db.items():
-        if v.get("name", "").lower() == query:
-            return k, v
-    return None, None
+        if v.get("name", "").lower() == query and (k, v) not in results:
+            results.append((k, v))
+    # Caută după potrivire parțială în nume
+    for k, v in item_db.items():
+        if query in v.get("name", "").lower() and (k, v) not in results:
+            results.append((k, v))
+    return results
 
 def fetch_market_data(item_id):
     headers = {
@@ -51,13 +67,12 @@ def fetch_market_data(item_id):
         "keyType": 0,
         "mainKey": int(item_id)
     }
-    response = requests.post(API_URL, headers=headers, json=payload)
+    response = requests.post(f"{API_BASE_URL}/Trademarket/GetWorldMarketSubList", headers=headers, json=payload)
     response.raise_for_status()
     data = response.json()
     return parse_market_data(data.get("resultMsg", ""))
 
 def fetch_bidding_info(item_id, sub_key):
-    url = "https://eu-trade.naeu.playblackdesert.com/Trademarket/GetBiddingInfoList"
     headers = {
         "Content-Type": "application/json",
         "User-Agent": "BlackDesert"
@@ -67,14 +82,12 @@ def fetch_bidding_info(item_id, sub_key):
         "mainKey": int(item_id),
         "subKey": int(sub_key)
     }
-    response = requests.post(url, headers=headers, json=payload)
+    response = requests.post(f"{API_BASE_URL}/Trademarket/GetBiddingInfoList", headers=headers, json=payload)
     response.raise_for_status()
-    # Dacă răspunsul este binar, decodifică-l
     try:
         decoded = unpack(response.content)
         return parse_bidding_info(decoded)
     except Exception as e:
-        # Dacă nu e binar, încearcă să tratezi ca text
         try:
             decoded = response.json().get("resultMsg", "")
             return parse_bidding_info(decoded)
@@ -83,9 +96,6 @@ def fetch_bidding_info(item_id, sub_key):
             return None
 
 def parse_bidding_info(decoded_str):
-    """
-    Primește un string de forma '60500000-0-5|62000000-0-1|66500000-0-1|...' și îl transformă în listă de dict-uri.
-    """
     result = []
     if not decoded_str:
         return result
@@ -100,7 +110,6 @@ def parse_bidding_info(decoded_str):
             })
     return result
 
-
 def parse_market_data(result_msg):
     items = []
     if not result_msg:
@@ -110,34 +119,68 @@ def parse_market_data(result_msg):
         values = entry.split("-")
         if len(values) == 10:
             item = {FIELDS[i]: int(values[i]) for i in range(10)}
-            # Adaugă timpul uman în Romania
             item["last_sale_time_ro"] = unix_to_ro_time(item["last_sale_time"])
             items.append(item)
     return items
 
+@app.route("/", methods=["GET", "POST"])
+def index():
+    results = None
+    details = None
+    query = ""
+    if request.method == "POST":
+        query = request.form.get("query", "").strip()
+        if query:
+            item_db = load_item_db(CACHE_FILE)
+            matches = find_items(query, item_db)
+            if matches:
+                # Dacă e doar unul, arată direct detaliile
+                if len(matches) == 1:
+                    item_id, item_info = matches[0]
+                    market_data = fetch_market_data(item_id)
+                    for item in market_data:
+                        sub_key = item["enhancement_max"]
+                        item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+                    details = {
+                        "id": item_id,
+                        "name": item_info.get("name"),
+                        "image": item_info.get("image"),
+                        "market_data": market_data
+                    }
+                else:
+                    # Returnează lista de rezultate pentru alegere
+                    results = [
+                        {
+                            "id": item_id,
+                            "name": item_info.get("name"),
+                            "image": item_info.get("image")
+                        }
+                        for item_id, item_info in matches
+                    ]
+            else:
+                results = "not_found"
+    return render_template("index.html", results=results, details=details, query=query)
 
-def main():
-    if len(sys.argv) < 2:
-        print("Usage: python app.py <item_id sau nume>")
-        sys.exit(1)
-    query = " ".join(sys.argv[1:]).strip()
+@app.route("/item/<item_id>")
+def item_detail(item_id):
     item_db = load_item_db(CACHE_FILE)
-    item_id, item_info = find_item(query, item_db)
-    if not item_id:
-        print("Item not found!")
-        sys.exit(1)
+    item_info = item_db.get(item_id)
+    if not item_info:
+        return render_template("index.html", results="not_found", query="")
     market_data = fetch_market_data(item_id)
-    # Pentru fiecare enhancement level, ia bidding info
     for item in market_data:
-        sub_key = item["enhancement_max"]  # sau enhancement_min, depinde de ce vrei
+        sub_key = item["enhancement_max"]
         item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
-    output = {
+        if item["bidding_info"]:
+            item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
+    details = {
         "id": item_id,
         "name": item_info.get("name"),
         "image": item_info.get("image"),
         "market_data": market_data
     }
-    print(json.dumps(output, indent=2, ensure_ascii=False))
+    return render_template("index.html", details=details, query=item_info.get("name", ""))
+
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=8520, debug=True)
