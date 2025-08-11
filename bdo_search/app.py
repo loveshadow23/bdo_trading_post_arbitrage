@@ -224,6 +224,9 @@ def index():
             result = data.get("result")
             enhancement_details = data.get("enhancement_details")
 
+    # Determină dacă trebuie să afișăm pagina principală sau rezultatele
+    is_home_page = not (result or matches or enhancement_details)
+
     return render_template(
         "index.html", 
         result=result, 
@@ -231,8 +234,13 @@ def index():
         query=query, 
         matches=matches, 
         total_items=total_items, 
-        enhancement_details=enhancement_details
+        enhancement_details=enhancement_details,
+        is_home_page=is_home_page  # Adăugat pentru a diferenția între pagina principală și rezultate
     )
+
+@app.route('/static/<path:filename>')
+def static_files(filename):
+    return app.send_static_file(filename)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8520, debug=True)
