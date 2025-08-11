@@ -21,6 +21,13 @@ def format_number_filter(value):
         return "{:,}".format(int(value))
     except (ValueError, TypeError):
         return value
+        
+@app.template_filter('get_dict_value')
+def get_dict_value(dictionary, key, default="N/A"):
+    """Safely get a value from a dictionary with a default."""
+    if isinstance(dictionary, dict) and key in dictionary:
+        return dictionary[key]
+    return default
 
 @app.template_filter('format_timestamp_ro')
 def format_timestamp_ro(timestamp):
@@ -34,15 +41,25 @@ def format_timestamp_ro(timestamp):
 
 @app.template_filter('enh_name')
 def enh_name(min_e, max_e, sid):
-    acc_labels = ["Base", "PRI", "DUO", "TRI", "TET", "PEN"]
-    gear_labels = [f"+{i}" for i in range(16)] + ["PRI", "DUO", "TRI", "TET", "PEN"]
+    """Format enhancement name in a more user-friendly way."""
+    # Pentru Base (0), nu afișăm nimic
+    if min_e == 0 and max_e == 0:
+        return ""
     
-    if min_e == max_e and min_e < len(acc_labels) and max_e <= 5:
-        return acc_labels[min_e]
-    elif min_e == max_e and min_e < len(gear_labels):
-        return gear_labels[min_e]
-    else:
-        return f"{min_e} to {max_e}"
+    # Pentru enhancement-uri de la +1 la +15
+    if min_e == max_e and 1 <= min_e <= 15:
+        return f"+{min_e}"
+    
+    # Pentru enhancement-uri PRI, DUO, TRI, TET, PEN
+    acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
+    if min_e == max_e and 16 <= min_e <= 20:
+        idx = min_e - 15
+        if 1 <= idx <= 5:
+            return acc_labels[idx]
+    
+    # Pentru alte cazuri (range-uri)
+    return f"{min_e} to {max_e}"
+
 
 def load_cache():
     """Load the item cache from file."""
