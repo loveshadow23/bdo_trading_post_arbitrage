@@ -90,5 +90,20 @@
         </div>
         {% endfor %}
     {% endif %}
+    {% elif enh_list %}
+    <h2>Enhancements for "{{ query }}"</h2>
+    <ul>
+    {% for enh in enh_list %}
+        <li>
+            <a href="{{ url_for('item_detail_enh', item_id=enh.id, enh_min=enh.enhancement_min, enh_max=enh.enhancement_max) }}">
+                {% if enh.image %}
+                    <img src="{{ enh.image }}" alt="icon">
+                {% endif %}
+                {{ enh.enhancement_min|enh_name(enh.enhancement_max, enh.id) }} {{ enh.name }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
 </body>
 </html>
