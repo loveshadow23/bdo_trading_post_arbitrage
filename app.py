@@ -4,7 +4,7 @@ import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from flask import Flask, render_template, request
-from bdo_huffman import unpack
+from huffman_binary_decode import unpack
 
 CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache_garmoth.json")
 API_BASE_URL = "https://eu-trade.naeu.playblackdesert.com"
