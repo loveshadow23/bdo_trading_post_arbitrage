@@ -163,31 +163,49 @@
             padding: 0;
         }
         
+        /* Modify the item-list li style */
         .item-list li {
             margin: 10px 0;
             padding: 15px;
-            background-color: rgba(0, 0, 0, 0.3);
+            background-color: rgba(0, 0, 0, 0.993);
             border-radius: 6px;
             display: flex;
             align-items: center;
             transition: background-color 0.2s;
+            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+        }
+
+        /* Make sure the link takes the full width */
+        .item-list li a {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            text-decoration: none;
+            font-size: 18px;
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
         }
         
         .item-list li:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(54, 54, 54, 0.5);
         }
         
         .item-list img {
             margin-right: 15px;
             max-width: 32px;
             height: auto;
+            vertical-align: middle; /* Add this to align vertically */
         }
-        
+
         .item-list a {
-            color: #4af;
+            display: flex;
+            align-items: center; /* This centers items vertically in the flex container */
             text-decoration: none;
-            font-size: 16px;
+            font-size: 18px;
+            font-family: 'Cinzel', serif;
+            color: #d4af37;
         }
+
         
         .item-list a:hover {
             text-decoration: underline;
@@ -447,21 +465,20 @@
     </div>
     
     <script>
-        // Add smooth scrolling
+        // Make entire list item clickable
         document.addEventListener('DOMContentLoaded', function() {
-            // Highlight active table rows on hover
-            const tableRows = document.querySelectorAll('tr');
-            tableRows.forEach(row => {
-                row.addEventListener('mouseenter', function() {
-                    this.style.transition = 'background-color 0.2s';
+            const listItems = document.querySelectorAll('.item-list li');
+            listItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    // Get the link inside this list item
+                    const link = this.querySelector('a');
+                    if (link) {
+                        // If the click wasn't on the link itself, trigger the link
+                        if (e.target !== link) {
+                            window.location.href = link.href;
+                        }
+                    }
                 });
-            });
-            
-            // Add fade-in effect to sections
-            const sections = document.querySelectorAll('.market-section');
-            sections.forEach((section, index) => {
-                section.style.animationDelay = (index * 0.1) + 's';
-                section.classList.add('fade-in');
             });
         });
     </script>
