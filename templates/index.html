@@ -28,7 +28,7 @@
             height: 100vh;
         }
         .container {
-            max-width: 1200px;
+            max-width: 1500px;
             margin: 40px auto;
             background-color: rgba(20, 20, 20, 0.85);
             border-radius: 10px;
@@ -38,7 +38,7 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .home-container {
-            max-width: 1100px;
+            max-width: 1400px;
             width: 95%;
         }
         .header {
@@ -161,6 +161,7 @@
         }
         table {
             width: 100%;
+            table-layout: fixed;
             border-collapse: collapse;
             margin-top: 20px;
             background-color: rgba(0, 0, 0, 0.3);
@@ -172,6 +173,14 @@
             text-align: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+        /* Set specific column widths */
+        th:first-child, td:first-child { width: 35%; } /* Item column */
+        th:nth-child(2), td:nth-child(2) { width: 12%; } /* Price column */
+        th:nth-child(3), td:nth-child(3) { width: 10%; } /* Stock column */
+        th:nth-child(4), td:nth-child(4) { width: 10%; } /* Trades column */
+        th:nth-child(5), td:nth-child(5) { width: 9%; } /* Delta column */
+        th:nth-child(6), td:nth-child(6) { width: 17%; } /* MIN/MAX column */
+        th:nth-child(7), td:nth-child(7) { width: 15%; } /* Last Sale column */
         th {
             background-color: rgba(0, 0, 0, 0.7);
             color: #d4af37;
