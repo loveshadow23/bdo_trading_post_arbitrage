@@ -1,263 +1,254 @@
-from flask import Flask, render_template, request, url_for
-import json
 import requests
-from datetime import datetime
-import pytz
-import time
-import cloudscraper
+import json
 import os
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from flask import Flask, render_template, request
+from bdo_huffman import unpack
 
 CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache_garmoth.json")
-
-# Cache for orders (item_id_sid: {data, ts})
-garmoth_cache = {}
+API_BASE_URL = "https://eu-trade.naeu.playblackdesert.com"
+FIELDS = [
+    "item_id", "enhancement_min", "enhancement_max", "base_price", "current_stock",
+    "total_trades", "price_hardcap_min", "price_hardcap_max", "last_sale_price", "last_sale_time"
+]
 
 app = Flask(__name__)
 
+# Cache la nivel de proces pentru baza de date iteme
+_item_db_cache = None
+def get_item_db():
+    global _item_db_cache
+    if _item_db_cache is None:
+        with open(CACHE_FILE, encoding="utf-8") as f:
+            _item_db_cache = json.load(f)
+    return _item_db_cache
+
 @app.template_filter('format_number')
 def format_number_filter(value):
-    """Format numbers with thousands separator (comma)."""
     try:
         return "{:,}".format(int(value))
-    except (ValueError, TypeError):
-        return value
-        
-@app.template_filter('get_dict_value')
-def get_dict_value(dictionary, key, default="N/A"):
-    """Safely get a value from a dictionary with a default."""
-    if isinstance(dictionary, dict) and key in dictionary:
-        return dictionary[key]
-    return default
-
-@app.template_filter('format_timestamp_ro')
-def format_timestamp_ro(timestamp):
-    """Format a UNIX timestamp to Europe/Bucharest time."""
-    try:
-        timestamp = int(timestamp)
-        dt = datetime.fromtimestamp(timestamp, pytz.timezone('Europe/Bucharest'))
-        return dt.strftime("%d-%m-%Y %H:%M:%S")
     except Exception:
-        return f"Invalid timestamp: {timestamp}"
+        return value
 
 @app.template_filter('enh_name')
-def enh_name(min_e, max_e, sid):
-    """Format enhancement name in a more user-friendly way."""
-    # Pentru Base (0), nu afișăm nimic
-    if min_e == 0 and max_e == 0:
-        return ""
-    
-    # Pentru enhancement-uri de la +1 la +15
-    if min_e == max_e and 1 <= min_e <= 15:
-        return f"+{min_e}"
-    
-    # Pentru enhancement-uri PRI, DUO, TRI, TET, PEN
-    acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
-    if min_e == max_e and 16 <= min_e <= 20:
-        idx = min_e - 15
-        if 1 <= idx <= 5:
-            return acc_labels[idx]
-    
-    # Pentru alte cazuri (range-uri)
+def enh_name(min_e, max_e, _):
+    if min_e == max_e:
+        if min_e == 0:
+            return ""
+        if 1 <= min_e <= 15:
+            return f"+{min_e}"
+        acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
+        if 16 <= min_e <= 20:
+            return acc_labels[min_e - 15]
     return f"{min_e} to {max_e}"
 
-
-def load_cache():
-    """Load the item cache from file."""
+def unix_to_ro_time(ts):
     try:
-        with open(CACHE_FILE, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        return {}
-
-def search_items_by_name(query, cache):
-    """Return items whose name contains the query (case-insensitive)."""
-    query_lc = query.strip().lower()
-    return [
-        {
-            "id": item_id,
-            "name": info.get("name", ""),
-            "image": info.get("image")
-        }
-        for item_id, info in cache.items()
-        if query_lc in info.get("name", "").lower()
-    ]
-
-def get_market_info_from_arsha(item_id, region="EU"):
-    """Query arsha.io for market info for a given item_id."""
-    region_api = {"EU": "eu", "NA": "na"}.get(region.upper(), "eu")
-    url = f"https://api.arsha.io/v2/{region_api}/item?id={item_id}&lang=en"
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.json()
+        return datetime.fromtimestamp(ts, tz=ZoneInfo("Europe/Bucharest")).strftime("%d-%m-%Y %H:%M:%S")
     except Exception:
-        return None
+        return "-"
 
-def get_market_orders_from_garmoth_api(item_id, sub_key, region="eu", cache_time=10):
-    """Fetch orders from Garmoth API for a given item_id and sub_key."""
-    key = f"{item_id}_{sub_key}"
-    now = time.time()
-    
-    # Check cache
-    if key in garmoth_cache and now - garmoth_cache[key]["ts"] < cache_time:
-        return {**garmoth_cache[key]["data"], "fetch_time": 0}
+def find_items(query, item_db):
+    q = query.lower()
+    results = []
+    # Caută după id exact
+    if q in item_db:
+        results.append((q, item_db[q]))
+    # Caută după nume exact sau parțial
+    for k, v in item_db.items():
+        name = v.get("name", "").lower()
+        if name == q or q in name:
+            if (k, v) not in results:
+                results.append((k, v))
+    return results
 
-    url = f"https://garmoth.com/api/market/bidding-info-list?region={region}&main_key={item_id}&sub_key={sub_key}"
-    scraper = cloudscraper.create_scraper()
-    t0 = time.time()
-    
+def fetch_market_data(item_id):
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    payload = {"keyType": 0, "mainKey": int(item_id)}
+    r = requests.post(f"{API_BASE_URL}/Trademarket/GetWorldMarketSubList", headers=headers, json=payload)
+    r.raise_for_status()
+    return parse_market_data(r.json().get("resultMsg", ""))
+
+def fetch_bidding_info(item_id, sub_key):
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    payload = {"keyType": 0, "mainKey": int(item_id), "subKey": int(sub_key)}
+    r = requests.post(f"{API_BASE_URL}/Trademarket/GetBiddingInfoList", headers=headers, json=payload)
+    r.raise_for_status()
     try:
-        response = scraper.get(url, timeout=10)
-        data = response.json()
+        decoded = unpack(r.content)
+        return parse_bidding_info(decoded)
     except Exception:
-        return {"orders": [], "fetch_time": -1, "info": None}
-    
-    t1 = time.time()
+        try:
+            return parse_bidding_info(r.json().get("resultMsg", ""))
+        except Exception:
+            return []
 
-    orders = []
-    if "bidding" in data and isinstance(data["bidding"], list):
-        for order in data["bidding"]:
-            if len(order) == 3:
-                sellers, price, buyers = order
-                orders.append({"sellers": sellers, "price": price, "buyers": buyers})
-    
-    result = {"orders": orders, "info": data.get("info")}
-    garmoth_cache[key] = {"data": result, "ts": now}
-    return {**result, "fetch_time": round(t1 - t0, 3)}
+def fetch_hotlist():
+    """
+    Fetch & parse hot items from BDO HotList API.
+    """
+    url = f"{API_BASE_URL}/Trademarket/GetWorldMarketHotList"
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    resp = requests.post(url, headers=headers, data="")
+    resp.raise_for_status()
+    decoded = unpack(resp.content)
+    if isinstance(decoded, bytes):
+        decoded = decoded.decode('utf-8')
+    items = []
+    for entry in decoded.strip("|").split("|"):
+        fields = entry.split("-")
+        if len(fields) == 12:
+            items.append({
+                "item_id": fields[0],
+                "enh_min": int(fields[1]),
+                "enh_max": int(fields[2]),
+                "base_price": int(fields[3]),
+                "stock": int(fields[4]),
+                "total_trades": int(fields[5]),
+                "price_dir": int(fields[6]),   # 1 = down, 2 = up
+                "price_change": int(fields[7]),
+                "price_min": int(fields[8]),
+                "price_max": int(fields[9]),
+                "last_sale_price": int(fields[10]),
+                "last_sale_time": int(fields[11]),
+                "last_sale_time_ro": unix_to_ro_time(int(fields[11])),
+            })
+    return items
 
-def ensure_market_list(market_info):
-    """Always return a list of dicts from market info."""
-    if isinstance(market_info, dict):
-        return [market_info]
-    elif isinstance(market_info, list):
-        return [x for x in market_info if isinstance(x, dict)]
-    else: 
+def parse_bidding_info(decoded_str):
+    if not decoded_str:
         return []
+    result = []
+    for entry in decoded_str.strip("|").split("|"):
+        values = entry.split("-")
+        if len(values) == 3:
+            result.append({
+                "price": int(values[0]),
+                "sell_orders": int(values[1]),
+                "buy_orders": int(values[2])
+            })
+    return result
 
-def process_item_details(item_id, cache):
-    """Process item details and market info."""
-    if item_id not in cache:
-        return None, "Item not found in cache."
-    
-    item_info = cache[item_id]
-    market_info = get_market_info_from_arsha(item_id)
-    market_info = ensure_market_list(market_info)
-    market_info = sorted(market_info, key=lambda x: (x.get("minEnhance", 0), x.get("sid", 0)))
-    
-    if not market_info:
-        return None, "Could not fetch market info."
-    
-    # Check if there's only one enhancement level with 0 to 0
-    if len(market_info) == 1 and market_info[0].get("minEnhance") == 0 and market_info[0].get("maxEnhance") == 0:
-        sid = market_info[0].get("sid")
-        orders = get_market_orders_from_garmoth_api(item_id, sid)
-        return {
-            "enhancement_details": {
-                "item_id": item_id,
-                "item_name": item_info.get("name"),
-                "item_image": item_info.get("image"),
-                "enhancement": market_info[0],
-                "orders": orders
-            }
-        }, None
-    else:
-        return {
-            "result": {
-                "item_id": item_id,
-                "item_name": item_info.get("name"),
-                "item_image": item_info.get("image"),
-                "market": market_info
-            }
-        }, None
+def parse_market_data(result_msg):
+    if not result_msg:
+        return []
+    items = []
+    for entry in result_msg.strip("|").split("|"):
+        values = entry.split("-")
+        if len(values) == 10:
+            item = {FIELDS[i]: int(values[i]) for i in range(10)}
+            item["last_sale_time_ro"] = unix_to_ro_time(item["last_sale_time"])
+            items.append(item)
+    return items
+
+def get_market_and_bidding(item_id, enh_min=None, enh_max=None):
+    market_data = fetch_market_data(item_id)
+    if enh_min is not None and enh_max is not None:
+        market_data = [item for item in market_data if item["enhancement_min"] == enh_min and item["enhancement_max"] == enh_max]
+    for item in market_data:
+        sub_key = item["enhancement_max"]
+        item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+        if item["bidding_info"]:
+            item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
+    return market_data
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    result = None
-    error = None
+    results = details = enh_list = None
     query = ""
-    matches = None
-    enhancement_details = None
-    
-    cache = load_cache()
-    total_items = len(cache)
-    
-    if not cache:
-        error = "Item cache not found! Please generate or copy it first."
-        return render_template("index.html", error=error, total_items=0)
-
-    # Handle POST request (search)
+    hotlist = None
     if request.method == "POST":
-        query = request.form.get("item_name", "").strip()
-        if not query:
-            error = "Please enter an item name."
-        else:
-            # Direct ID lookup
-            if query.isdigit() and query in cache:
-                data, error = process_item_details(query, cache)
-                if data:
-                    result = data.get("result")
-                    enhancement_details = data.get("enhancement_details")
-            else:
-                # Name search
-                found_items = search_items_by_name(query, cache)
-                if not found_items:
-                    error = f"Item '{query}' not found in cache."
-                elif len(found_items) == 1:
-                    data, error = process_item_details(found_items[0]["id"], cache)
-                    if data:
-                        result = data.get("result")
-                        enhancement_details = data.get("enhancement_details")
+        query = request.form.get("query", "").strip()
+        if query:
+            item_db = get_item_db()
+            matches = find_items(query, item_db)
+            if matches:
+                if len(matches) == 1:
+                    item_id, item_info = matches[0]
+                    market_data = fetch_market_data(item_id)
+                    if len(market_data) > 1:
+                        enh_list = [
+                            {
+                                "id": item_id,
+                                "name": item_info.get("name"),
+                                "image": item_info.get("image"),
+                                "enhancement_min": item["enhancement_min"],
+                                "enhancement_max": item["enhancement_max"]
+                            }
+                            for item in market_data
+                        ]
+                    else:
+                        details = {
+                            "id": item_id,
+                            "name": item_info.get("name"),
+                            "image": item_info.get("image"),
+                            "market_data": get_market_and_bidding(item_id)
+                        }
                 else:
-                    matches = found_items
+                    results = [
+                        {
+                            "id": item_id,
+                            "name": item_info.get("name"),
+                            "image": item_info.get("image")
+                        }
+                        for item_id, item_info in matches
+                    ]
+            else:
+                results = "not_found"
+    # Dacă nu e căutare, afișează hotlist pe landing page
+    if not query and not results and not details and not enh_list:
+        item_db = get_item_db()
+        hotlist = fetch_hotlist()
+        for item in hotlist:
+            info = item_db.get(str(item["item_id"]), {})
+            item["name"] = info.get("name", f"ID {item['item_id']}")
+            item["image"] = info.get("image", "")
+        hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist)
 
-    # Handle GET with item_id and sid
-    item_id_param = request.args.get("item_id")
-    sid_param = request.args.get("sid")
-    
-    if item_id_param and sid_param and item_id_param in cache:
-        item_info = cache[item_id_param]
-        market_info = get_market_info_from_arsha(item_id_param)
-        market_info = ensure_market_list(market_info)
-        market_info = sorted(market_info, key=lambda x: (x.get("minEnhance", 0), x.get("sid", 0)))
-        
-        enhancement = next((entry for entry in market_info if str(entry.get("sid")) == str(sid_param)), None)
-        
-        if enhancement:
-            orders = get_market_orders_from_garmoth_api(item_id_param, int(sid_param))
-            enhancement_details = {
-                "item_id": item_id_param,
-                "item_name": item_info.get("name"),
-                "item_image": item_info.get("image"),
-                "enhancement": enhancement,
-                "orders": orders
+
+@app.route("/item/<item_id>")
+def item_detail(item_id):
+    item_db = get_item_db()
+    item_info = item_db.get(item_id)
+    if not item_info:
+        return render_template("index.html", results="not_found", query="")
+    market_data = fetch_market_data(item_id)
+    if len(market_data) > 1:
+        enh_list = [
+            {
+                "id": item_id,
+                "name": item_info.get("name"),
+                "image": item_info.get("image"),
+                "enhancement_min": item["enhancement_min"],
+                "enhancement_max": item["enhancement_max"]
             }
-        else:
-            error = "Enhancement level not found."
-    
-    # Handle GET with only item_id
-    elif item_id_param and item_id_param in cache:
-        data, error = process_item_details(item_id_param, cache)
-        if data:
-            result = data.get("result")
-            enhancement_details = data.get("enhancement_details")
+            for item in market_data
+        ]
+        return render_template("index.html", enh_list=enh_list, query=item_info.get("name", ""))
+    else:
+        details = {
+            "id": item_id,
+            "name": item_info.get("name"),
+            "image": item_info.get("image"),
+            "market_data": get_market_and_bidding(item_id)
+        }
+        return render_template("index.html", details=details, query=item_info.get("name", ""))
 
-    # Determină dacă trebuie să afișăm pagina principală sau rezultatele
-    is_home_page = not (result or matches or enhancement_details)
-
-    return render_template(
-        "index.html", 
-        result=result, 
-        error=error, 
-        query=query, 
-        matches=matches, 
-        total_items=total_items, 
-        enhancement_details=enhancement_details,
-        is_home_page=is_home_page  # Adăugat pentru a diferenția între pagina principală și rezultate
-    )
-
-@app.route('/static/<path:filename>')
-def static_files(filename):
-    return app.send_static_file(filename)
+@app.route("/item/<item_id>/<int:enh_min>/<int:enh_max>")
+def item_detail_enh(item_id, enh_min, enh_max):
+    item_db = get_item_db()
+    item_info = item_db.get(item_id)
+    if not item_info:
+        return render_template("index.html", results="not_found", query="")
+    details = {
+        "id": item_id,
+        "name": item_info.get("name"),
+        "image": item_info.get("image"),
+        "market_data": get_market_and_bidding(item_id, enh_min, enh_max)
+    }
+    return render_template("index.html", details=details, query=item_info.get("name", ""))
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8520, debug=True)
