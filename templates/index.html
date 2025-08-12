@@ -262,7 +262,11 @@
         .hotlist-scroll {
             margin-bottom: 20px;
         }
-        
+
+        .hotlist-scroll thead tr th {
+            margin-bottom: 20px;
+            text-align: center;
+        }        
         /* Make table header sticky when scrolling */
         /* Sticky table header */
         th {
@@ -648,7 +652,7 @@
                         <th class="sortable" data-sort="stock">STOCK <span class="sort-icon">↕</span></th>
                         <th class="sortable" data-sort="trades">TRADES <span class="sort-icon">↕</span></th>
                         <th class="sortable" data-sort="delta">Δ <span class="sort-icon">↕</span></th>
-                        <th class="sortable" data-sort="cap">CAP <span class="sort-icon">↕</span></th>
+                        <th class="sortable" data-sort="min_max">MIN/MAX <span class="sort-icon">↕</span></th>
                         <th class="sortable" data-sort="last-sale">LAST SALE <span class="sort-icon">↕</span></th>
                     </tr>
                 </thead>
@@ -785,7 +789,7 @@
                         case 'stock':
                         case 'trades':
                         case 'delta':
-                        case 'cap':
+                        case 'min_max':
                             // Get index based on column name
                             let colIndex;
                             switch(sortBy) {
@@ -793,7 +797,7 @@
                                 case 'stock': colIndex = 2; break;
                                 case 'trades': colIndex = 3; break;
                                 case 'delta': colIndex = 4; break;
-                                case 'cap': colIndex = 5; break;
+                                case 'min_max': colIndex = 5; break;
                                 default: colIndex = 0;
                             }
                             
