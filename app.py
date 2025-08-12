@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 from flask import Flask, render_template, request
 from huffman_binary_decode import unpack
 
-CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/bdo_search/item_cache_garmoth.json")
+CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/item_cache_garmoth.json")
 API_BASE_URL = "https://eu-trade.naeu.playblackdesert.com"
 FIELDS = [
     "item_id", "enhancement_min", "enhancement_max", "base_price", "current_stock",
