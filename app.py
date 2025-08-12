@@ -45,7 +45,7 @@ def enh_name(min_e, max_e, _):
 
 def unix_to_ro_time(ts):
     try:
-        return datetime.fromtimestamp(ts, tz=ZoneInfo("Europe/Bucharest")).strftime("%d-%m-%Y %H:%M:%S")
+        return datetime.fromtimestamp(ts, tz=ZoneInfo("Europe/Bucharest")).strftime("%d.%m.%Y %H:%M")
     except Exception:
         return "-"
 
