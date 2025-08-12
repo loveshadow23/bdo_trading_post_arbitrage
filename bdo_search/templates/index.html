@@ -207,9 +207,9 @@
         }
 
         
-        .item-list a:hover {
+        /* .item-list a:hover {
             text-decoration: underline;
-        }
+        } */
         
         /* Table styles */
         table {
@@ -262,6 +262,7 @@
         
         .market-table, .bidding-table {
             width: 100%;
+            /* text-align: left; */
             border-collapse: collapse;
             margin-top: 15px;
             background-color: rgba(0, 0, 0, 0.3);
@@ -269,8 +270,22 @@
             overflow: hidden;
         }
         
+        .market-table thead tr th {
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .bidding-table thead tr th {
+            text-align: center;
+            font-size: 15px;
+        }
+        
         .price {
             color: #ff5555;
+            font-weight: bold;
+        }
+
+        .price_bold {
             font-weight: bold;
         }
         
@@ -320,6 +335,40 @@
             background: rgba(0,255,231,0.09);
             transition: box-shadow 0.3s;
         }
+
+        .codex-link {
+            color: inherit;
+            text-decoration: none;
+            cursor: pointer;
+            transition: 
+                color 0.2s,
+                transform 0.2s;
+            display: inline-block;
+        }
+
+        .codex-link:visited {
+            color: inherit;
+        }
+
+        .codex-link:focus {
+            outline: none;
+        }
+
+        .codex-link:hover {
+            color: #ffe066; /* sau orice alt galben mai luminos */
+            transform: scale(1.02);
+            text-decoration: none;
+        }
+
+        a:focus .codex-link {
+            outline: none;
+        }
+
+        a:hover .codex-link {
+            color: #ffe066;
+            transform: scale(1.02);
+            text-decoration: none;
+        }   
 
     </style>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -372,7 +421,7 @@
                             {% if item.image %}
                                 <img src="{{ item.image }}" alt="icon" class="item-glow">
                             {% endif %}
-                            {{ item.name }} (ID: {{ item.id }})
+                            <span class="codex-link">{{ item.name }} (ID: {{ item.id }})</span>
                         </a>
                     </li>
                 {% endfor %}
@@ -384,7 +433,11 @@
                     {% if details.image %}
                         <img src="{{ details.image }}" alt="icon" class="item-glow">
                     {% endif %}
-                    <h2>{{ details.name }} (ID: {{ details.id }})</h2>
+                    <h2>
+                        <a href="https://bdocodex.com/us/item/{{ details.id }}/" target="_blank" class="codex-link">
+                            {{ details.name }} (ID: {{ details.id }})
+                        </a>
+                    </h2>
                 </div>
                     {% for item in details.market_data %}
                     <div class="market-section">
@@ -408,7 +461,7 @@
                             <tbody>
                                 <tr>
                                     <td class="price">{{ item.base_price|format_number }}</td>
-                                    <td>{{ item.current_stock|format_number }}</td>
+                                    <td >{{ item.current_stock|format_number }}</td>
                                     <td>{{ item.total_trades|format_number }}</td>
                                     <td>{{ item.price_hardcap_min|format_number }}</td>
                                     <td>{{ item.price_hardcap_max|format_number }}</td>
@@ -430,9 +483,9 @@
                                 <tbody>
                                     {% for bid in item.bidding_info %}
                                     <tr>
-                                        <td>{{ bid.sell_orders|format_number }}</td>
+                                        <td class="price_bold">{{ bid.sell_orders|format_number }}</td>
                                         <td class="price">{{ bid.price|format_number }}</td>
-                                        <td>{{ bid.buy_orders|format_number }}</td>
+                                        <td class="price_bold">{{ bid.buy_orders|format_number }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
@@ -444,18 +497,19 @@
         {% elif enh_list %}
             <div class="results-container">
                 <h2>Enhancements for "{{ query }}"</h2>
-                <ul class="item-list">
-                {% for enh in enh_list %}
-                    <li>
-                        <a href="{{ url_for('item_detail_enh', item_id=enh.id, enh_min=enh.enhancement_min, enh_max=enh.enhancement_max) }}">
-                            {% if enh.image %}
-                                <img src="{{ enh.image }}" alt="icon">
-                            {% endif %}
-                            <span class="enhancement">{{ enh.enhancement_min|enh_name(enh.enhancement_max, enh.id) }}</span> {{ enh.name }}
-                        </a>
-                    </li>
-                {% endfor %}
-                </ul>
+                    <ul class="item-list">
+                        {% for enh in enh_list %}
+                            <li>
+                                <a href="{{ url_for('item_detail_enh', item_id=enh.id, enh_min=enh.enhancement_min, enh_max=enh.enhancement_max) }}">
+                                    {% if enh.image %}
+                                        <img src="{{ enh.image }}" alt="icon" class="item-glow">
+                                    {% endif %}
+                                    <span class="enhancement">{{ enh.enhancement_min|enh_name(enh.enhancement_max, enh.id) }}</span>&nbsp;
+                                    <span class="codex-link">{{ enh.name }}</span>
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
             </div>
         {% endif %}
         
