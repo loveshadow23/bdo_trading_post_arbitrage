@@ -84,6 +84,38 @@ def fetch_bidding_info(item_id, sub_key):
         except Exception:
             return []
 
+def fetch_hotlist():
+    """
+    Fetch & parse hot items from BDO HotList API.
+    """
+    url = f"{API_BASE_URL}/Trademarket/GetWorldMarketHotList"
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    resp = requests.post(url, headers=headers, data="")
+    resp.raise_for_status()
+    decoded = unpack(resp.content)
+    if isinstance(decoded, bytes):
+        decoded = decoded.decode('utf-8')
+    items = []
+    for entry in decoded.strip("|").split("|"):
+        fields = entry.split("-")
+        if len(fields) == 12:
+            items.append({
+                "item_id": fields[0],
+                "enh_min": int(fields[1]),
+                "enh_max": int(fields[2]),
+                "base_price": int(fields[3]),
+                "stock": int(fields[4]),
+                "total_trades": int(fields[5]),
+                "price_dir": int(fields[6]),   # 1 = down, 2 = up
+                "price_change": int(fields[7]),
+                "price_min": int(fields[8]),
+                "price_max": int(fields[9]),
+                "last_sale_price": int(fields[10]),
+                "last_sale_time": int(fields[11]),
+                "last_sale_time_ro": unix_to_ro_time(int(fields[11])),
+            })
+    return items
+
 def parse_bidding_info(decoded_str):
     if not decoded_str:
         return []
@@ -125,6 +157,7 @@ def get_market_and_bidding(item_id, enh_min=None, enh_max=None):
 def index():
     results = details = enh_list = None
     query = ""
+    hotlist = None
     if request.method == "POST":
         query = request.form.get("query", "").strip()
         if query:
@@ -163,7 +196,17 @@ def index():
                     ]
             else:
                 results = "not_found"
-    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query)
+    # Dacă nu e căutare, afișează hotlist pe landing page
+    if not query and not results and not details and not enh_list:
+        item_db = get_item_db()
+        hotlist = fetch_hotlist()
+        for item in hotlist:
+            info = item_db.get(str(item["item_id"]), {})
+            item["name"] = info.get("name", f"ID {item['item_id']}")
+            item["image"] = info.get("image", "")
+        hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist)
+
 
 @app.route("/item/<item_id>")
 def item_detail(item_id):
