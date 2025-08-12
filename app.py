@@ -158,6 +158,9 @@ def index():
     results = details = enh_list = None
     query = ""
     hotlist = None
+    page = request.args.get('page', 1, type=int)
+    items_per_page = 15  # You can adjust this number as needed
+    
     if request.method == "POST":
         query = request.form.get("query", "").strip()
         if query:
@@ -199,12 +202,34 @@ def index():
     # Dacă nu e căutare, afișează hotlist pe landing page
     if not query and not results and not details and not enh_list:
         item_db = get_item_db()
-        hotlist = fetch_hotlist()
-        for item in hotlist:
+        all_hotlist = fetch_hotlist()
+        for item in all_hotlist:
             info = item_db.get(str(item["item_id"]), {})
             item["name"] = info.get("name", f"ID {item['item_id']}")
             item["image"] = info.get("image", "")
-        hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+        all_hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+        
+        # Calculate pagination
+        total_items = len(all_hotlist)
+        total_pages = (total_items + items_per_page - 1) // items_per_page
+        page = min(max(page, 1), total_pages)  # Ensure page is within valid range
+        
+        # Get items for current page
+        start_idx = (page - 1) * items_per_page
+        end_idx = min(start_idx + items_per_page, total_items)
+        hotlist = all_hotlist[start_idx:end_idx]
+        
+        return render_template(
+            "index.html",
+            results=results,
+            details=details,
+            enh_list=enh_list,
+            query=query,
+            hotlist=hotlist,
+            page=page,
+            total_pages=total_pages
+        )
+    
     return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist)
 
 
