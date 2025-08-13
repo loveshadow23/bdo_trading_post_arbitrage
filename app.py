@@ -153,13 +153,16 @@ def get_market_and_bidding(item_id, enh_min=None, enh_max=None):
             item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
     return market_data
 
+# Set a default items per page for the application
+app.config["ITEMS_PER_PAGE"] = 25
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     results = details = enh_list = None
     query = ""
     hotlist = None
     page = request.args.get('page', 1, type=int)
-    items_per_page = 15  # You can adjust this number as needed
+    items_per_page = app.config["ITEMS_PER_PAGE"]  # Get from app config
     
     if request.method == "POST":
         query = request.form.get("query", "").strip()
@@ -227,10 +230,11 @@ def index():
             query=query,
             hotlist=hotlist,
             page=page,
-            total_pages=total_pages
+            total_pages=total_pages,
+            items_per_page=items_per_page
         )
     
-    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist)
+    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist, items_per_page=items_per_page)
 
 
 @app.route("/api/hotlist")
@@ -243,7 +247,10 @@ def api_hotlist():
         item["name"] = info.get("name", f"ID {item['item_id']}")
         item["image"] = info.get("image", "")
     all_hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
-    return jsonify(all_hotlist)
+    return jsonify({
+        "items": all_hotlist,
+        "items_per_page": app.config.get("ITEMS_PER_PAGE", 25)
+    })
 
 
 @app.route("/item/<item_id>")

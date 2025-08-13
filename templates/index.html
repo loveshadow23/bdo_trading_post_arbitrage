@@ -147,7 +147,7 @@
         }
         .item-list img {
             margin-right: 15px;
-            max-width: 32px;
+            max-width: 40px;
             height: auto;
             vertical-align: middle;
         }
@@ -207,6 +207,7 @@
             padding: 20px;
             margin-bottom: 30px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            overflow-x: auto; /* Add horizontal scrolling for small screens */
         }
         .market-table, .bidding-table {
             width: 100%;
@@ -215,10 +216,34 @@
             background-color: rgba(0, 0, 0, 0.3);
             border-radius: 6px;
             overflow: hidden;
+            table-layout: fixed; /* Fixed table layout for better control */
         }
         .market-table thead tr th, .bidding-table thead tr th {
             text-align: center;
             font-size: 14px;
+            padding: 12px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        /* Set specific widths for market table columns */
+        .market-table th:nth-child(1), .market-table td:nth-child(1) { width: 14%; } /* Base Price */
+        .market-table th:nth-child(2), .market-table td:nth-child(2) { width: 13%; } /* Current Stock */
+        .market-table th:nth-child(3), .market-table td:nth-child(3) { width: 14%; } /* Total Trades */
+        .market-table th:nth-child(4), .market-table td:nth-child(4) { width: 12%; } /* Price Min */
+        .market-table th:nth-child(5), .market-table td:nth-child(5) { width: 12%; } /* Price Max */
+        .market-table th:nth-child(6), .market-table td:nth-child(6) { width: 15%; } /* Last Sale Price */
+        .market-table th:nth-child(7), .market-table td:nth-child(7) { width: 20%; } /* Last Sale Time */
+        
+        /* Set specific widths for bidding table columns */
+        .bidding-table th:nth-child(1), .bidding-table td:nth-child(1) { width: 33%; } /* Sellers */
+        .bidding-table th:nth-child(2), .bidding-table td:nth-child(2) { width: 34%; } /* Price */
+        .bidding-table th:nth-child(3), .bidding-table td:nth-child(3) { width: 33%; } /* Buyers */
+        
+        /* Ensure all cells have consistent padding and alignment */
+        .market-table td, .bidding-table td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         .price { color: #ff5555; font-weight: bold; }
         .price_bold { font-weight: bold; }
@@ -671,7 +696,7 @@
                         <td class="hotlist-item-cell">
                             <div class="hotlist-item-flex">
                                 {% if item.image %}
-                                    <img src="{{ item.image }}" width="40"  alt="icon" class="item-glow">
+                                    <img src="{{ item.image }}" width="40" height="40" alt="icon" class="item-glow">
                                 {% endif %}
                                 <a href="{% if item.enh_min != 0 or item.enh_max != 0 %}{{ url_for('item_detail_enh', item_id=item.item_id, enh_min=item.enh_min, enh_max=item.enh_max) }}{% else %}{{ url_for('item_detail', item_id=item.item_id) }}{% endif %}" class="hotlist-item-link">
                                     {% if item.enh_min != 0 or item.enh_max != 0 %}
@@ -708,11 +733,15 @@
     </div>
     
     <script>
+        // Set global variable from backend
+        var SERVER_ITEMS_PER_PAGE = parseInt("{{ items_per_page|default(25) }}");
+        
         document.addEventListener('DOMContentLoaded', function() {
             // Global variables to store all items and pagination state
             let allItems = [];
             let currentPage = 1;
-            const itemsPerPage = 15;
+            // Use the server-provided value
+            const itemsPerPage = SERVER_ITEMS_PER_PAGE;
             let currentSortColumn = 'trades';
             let currentSortDirection = 'desc';
             
@@ -753,7 +782,7 @@
                 fetch('/api/hotlist')
                     .then(response => response.json())
                     .then(data => {
-                        allItems = data;
+                        allItems = data.items; // Updated API response structure
                         sortItems(); // Initial sort by trades desc
                         displayItems(); // Display first page
                         setupPagination(); // Setup pagination
@@ -842,6 +871,7 @@
                         const img = document.createElement('img');
                         img.src = item.image;
                         img.width = 40;
+                        img.height = 40;
                         img.alt = 'icon';
                         img.className = 'item-glow';
                         flexDiv.appendChild(img);
