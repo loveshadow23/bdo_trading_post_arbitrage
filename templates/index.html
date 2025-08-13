@@ -174,7 +174,7 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         /* Set specific column widths */
-        th:first-child, td:first-child { width: 30%; } /* Item column */
+        th:first-child, td:first-child { width: 32%; } /* Item column */
         th:nth-child(2), td:nth-child(2) { width: 12%; } /* Price column */
         th:nth-child(3), td:nth-child(3) { width: 8%; } /* Stock column */
         th:nth-child(4), td:nth-child(4) { width: 10%; } /* Trades column */
@@ -641,9 +641,9 @@
                 <h2 style="margin: 0;">🔥 Hot Items on Marketplace</h2>
                 {% if total_pages and total_pages > 1 %}
                 <div class="page-jump">
-                    <form method="get" action="{{ url_for('index') }}" class="page-jump-form" id="pageSelectForm">
+                    <form class="page-jump-form" id="pageSelectForm">
                         <label for="page-select">GO TO PAGE:</label>
-                        <select id="page-select" name="page" class="page-select" onchange="this.form.submit()">
+                        <select id="page-select" class="page-select">
                             {% for i in range(1, total_pages + 1) %}
                             <option value="{{ i }}" {% if i == page %}selected{% endif %}>{{ i }}</option>
                             {% endfor %}
@@ -673,7 +673,7 @@
                                 {% if item.image %}
                                     <img src="{{ item.image }}" width="40"  alt="icon" class="item-glow">
                                 {% endif %}
-                                <a href="{{ url_for('item_detail', item_id=item.item_id) }}" class="hotlist-item-link">
+                                <a href="{% if item.enh_min != 0 or item.enh_max != 0 %}{{ url_for('item_detail_enh', item_id=item.item_id, enh_min=item.enh_min, enh_max=item.enh_max) }}{% else %}{{ url_for('item_detail', item_id=item.item_id) }}{% endif %}" class="hotlist-item-link">
                                     {% if item.enh_min != 0 or item.enh_max != 0 %}
                                         <span class="enhancement">{{ item.enh_min|enh_name(item.enh_max, item.item_id) }} </span>
                                     {% endif %}
@@ -715,6 +715,14 @@
             const itemsPerPage = 15;
             let currentSortColumn = 'trades';
             let currentSortDirection = 'desc';
+            
+            // Setup page select dropdown event listener
+            const pageSelect = document.getElementById('page-select');
+            if (pageSelect) {
+                pageSelect.addEventListener('change', function() {
+                    changePage(this.value);
+                });
+            }
             
             // Fetch all hotlist items
             fetchAllItems();
@@ -840,7 +848,12 @@
                     }
                     
                     const link = document.createElement('a');
-                    link.href = `/item/${item.item_id}`;
+                    // Create the correct URL based on enhancement level
+                    if (item.enh_min !== 0 || item.enh_max !== 0) {
+                        link.href = `/item/${item.item_id}/${item.enh_min}/${item.enh_max}`;
+                    } else {
+                        link.href = `/item/${item.item_id}`;
+                    }
                     link.className = 'hotlist-item-link';
                     
                     // Add enhancement if applicable
@@ -953,10 +966,8 @@
                 link.textContent = pageNum;
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
-                    currentPage = pageNum;
-                    displayItems();
-                    setupPagination();
-                    window.scrollTo(0, 0);
+                    // For bottom links, we do want to scroll to top
+                    changePage(pageNum, true);
                 });
                 container.appendChild(link);
             }
@@ -967,6 +978,35 @@
                 ellipsis.className = 'page-ellipsis';
                 ellipsis.textContent = '...';
                 container.appendChild(ellipsis);
+            }
+            
+            // Handle page changes with fade effect
+            function changePage(pageNum, scrollToTop = false) {
+                const resultsContainer = document.querySelector('.results-container');
+                
+                // Fade out
+                resultsContainer.style.opacity = '0';
+                resultsContainer.style.transition = 'opacity 0.3s ease';
+                
+                setTimeout(() => {
+                    // Update page
+                    currentPage = parseInt(pageNum);
+                    displayItems();
+                    setupPagination();
+                    
+                    // Only scroll to top if explicitly requested
+                    if (scrollToTop) {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Fade in
+                    setTimeout(() => {
+                        resultsContainer.style.opacity = '1';
+                    }, 100);
+                }, 100);
             }
             
             // Make entire list item clickable
