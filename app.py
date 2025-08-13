@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from huffman_binary_decode import unpack
 
 CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/item_cache_garmoth.json")
@@ -231,6 +231,19 @@ def index():
         )
     
     return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist)
+
+
+@app.route("/api/hotlist")
+def api_hotlist():
+    """API endpoint to get all hotlist items as JSON without pagination"""
+    item_db = get_item_db()
+    all_hotlist = fetch_hotlist()
+    for item in all_hotlist:
+        info = item_db.get(str(item["item_id"]), {})
+        item["name"] = info.get("name", f"ID {item['item_id']}")
+        item["image"] = info.get("image", "")
+    all_hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+    return jsonify(all_hotlist)
 
 
 @app.route("/item/<item_id>")

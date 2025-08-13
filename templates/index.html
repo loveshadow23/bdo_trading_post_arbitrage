@@ -174,13 +174,13 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
         /* Set specific column widths */
-        th:first-child, td:first-child { width: 35%; } /* Item column */
+        th:first-child, td:first-child { width: 30%; } /* Item column */
         th:nth-child(2), td:nth-child(2) { width: 12%; } /* Price column */
-        th:nth-child(3), td:nth-child(3) { width: 10%; } /* Stock column */
+        th:nth-child(3), td:nth-child(3) { width: 8%; } /* Stock column */
         th:nth-child(4), td:nth-child(4) { width: 10%; } /* Trades column */
         th:nth-child(5), td:nth-child(5) { width: 9%; } /* Delta column */
         th:nth-child(6), td:nth-child(6) { width: 17%; } /* MIN/MAX column */
-        th:nth-child(7), td:nth-child(7) { width: 15%; } /* Last Sale column */
+        th:nth-child(7), td:nth-child(7) { width: 19%; } /* Last Sale column */
         th {
             background-color: rgba(0, 0, 0, 0.7);
             color: #d4af37;
@@ -251,7 +251,7 @@
             color: inherit;
             text-decoration: none;
             cursor: pointer;
-            transition: color 0.2s, transform 0.2s;
+            transition: color 0.2s, transform 400ms ease;
             display: inline-block;
         }
         .codex-link:visited { color: inherit; }
@@ -347,7 +347,7 @@
             font-size: 16px;
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.2s, transform 400ms ease;
         }
 
         .hotlist-item-link:hover {
@@ -367,7 +367,7 @@
         th, td { font-size: 18px; }
         .search-input { font-size: 21px; padding: 18px 24px; }
         .search-button { font-size: 19px; padding: 15px 36px; }
-        .hotlist-item-link { font-size: 16px; }
+        .hotlist-item-link { font-size: 18px; }
         
         /* Pagination styling */
         .pagination-controls {
@@ -665,13 +665,13 @@
                         <th class="sortable" data-sort="last-sale">LAST SALE <span class="sort-icon">↕</span></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="hotlist-tbody">
                     {% for item in hotlist %}
                     <tr>
                         <td class="hotlist-item-cell">
                             <div class="hotlist-item-flex">
                                 {% if item.image %}
-                                    <img src="{{ item.image }}" width="32"  alt="icon" class="item-glow">
+                                    <img src="{{ item.image }}" width="40"  alt="icon" class="item-glow">
                                 {% endif %}
                                 <a href="{{ url_for('item_detail', item_id=item.item_id) }}" class="hotlist-item-link">
                                     {% if item.enh_min != 0 or item.enh_max != 0 %}
@@ -693,37 +693,10 @@
             </table>
             </div>
             
-            {% if total_pages and total_pages > 1 %}
+            <!-- Client-side pagination will be generated here -->
             <div class="pagination" style="margin-top: 20px; text-align: center;">
-                <div class="pagination-controls">
-                    {% if page > 1 %}
-                    <a href="{{ url_for('index', page=1) }}" class="page-link">1</a>
-                    {% endif %}
-                    
-                    {% if page > 3 %}
-                    <span class="page-ellipsis">...</span>
-                    {% endif %}
-                    
-                    {% if page > 2 %}
-                    <a href="{{ url_for('index', page=page-1) }}" class="page-link">{{ page - 1 }}</a>
-                    {% endif %}
-                    
-                    <span class="page-current">{{ page }}</span>
-                    
-                    {% if page < total_pages - 1 %}
-                    <a href="{{ url_for('index', page=page+1) }}" class="page-link">{{ page + 1 }}</a>
-                    {% endif %}
-                    
-                    {% if page < total_pages - 2 %}
-                    <span class="page-ellipsis">...</span>
-                    {% endif %}
-                    
-                    {% if page < total_pages %}
-                    <a href="{{ url_for('index', page=total_pages) }}" class="page-link">{{ total_pages }}</a>
-                    {% endif %}
-                </div>
+                <div class="pagination-controls" id="client-pagination"></div>
             </div>
-            {% endif %}
 
         <div class="footer">
             <p>Find the best deals on the Black Desert Marketplace</p>
@@ -736,94 +709,264 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Table sorting functionality
-            const sortableHeaders = document.querySelectorAll('.sortable');
-            let currentSortColumn = null;
-            let currentSortDirection = 'asc';
+            // Global variables to store all items and pagination state
+            let allItems = [];
+            let currentPage = 1;
+            const itemsPerPage = 15;
+            let currentSortColumn = 'trades';
+            let currentSortDirection = 'desc';
             
-            sortableHeaders.forEach(header => {
-                header.addEventListener('click', function() {
+            // Fetch all hotlist items
+            fetchAllItems();
+            
+            // Table sorting functionality
+            document.querySelectorAll('.sortable').forEach(headerCell => {
+                headerCell.addEventListener('click', function() {
                     const sortBy = this.getAttribute('data-sort');
-                    
-                    // Toggle sort direction if same column clicked again
-                    if (currentSortColumn === sortBy) {
-                        currentSortDirection = currentSortDirection === 'asc' ? 'desc' : 'asc';
-                    } else {
-                        currentSortDirection = 'asc';
-                    }
-                    
-                    // Reset all headers
-                    sortableHeaders.forEach(h => {
-                        h.classList.remove('sorting-asc', 'sorting-desc');
-                    });
-                    
-                    // Set active sort header
-                    this.classList.add(currentSortDirection === 'asc' ? 'sorting-asc' : 'sorting-desc');
+                    currentSortDirection = this.classList.contains('sorting-asc') ? 'desc' : 'asc';
                     currentSortColumn = sortBy;
                     
-                    // Get the table
-                    const table = this.closest('table');
-                    const tbody = table.querySelector('tbody');
-                    const rows = Array.from(tbody.querySelectorAll('tr'));
-                    
-                    // Sort the rows
-                    const sortedRows = sortTableRows(rows, sortBy, currentSortDirection);
-                    
-                    // Remove existing rows
-                    while (tbody.firstChild) {
-                        tbody.removeChild(tbody.firstChild);
-                    }
-                    
-                    // Append sorted rows
-                    sortedRows.forEach(row => {
-                        tbody.appendChild(row);
+                    // Remove sorting classes from all headers
+                    document.querySelectorAll('.sortable').forEach(cell => {
+                        cell.classList.remove('sorting-asc', 'sorting-desc');
                     });
+                    
+                    // Add sorting class to clicked header
+                    this.classList.add(`sorting-${currentSortDirection}`);
+                    
+                    // Sort and display items
+                    sortItems();
+                    displayItems();
                 });
             });
             
-            function sortTableRows(rows, sortBy, direction) {
-                return rows.sort((a, b) => {
+            // Function to fetch all items from API
+            function fetchAllItems() {
+                fetch('/api/hotlist')
+                    .then(response => response.json())
+                    .then(data => {
+                        allItems = data;
+                        sortItems(); // Initial sort by trades desc
+                        displayItems(); // Display first page
+                        setupPagination(); // Setup pagination
+                        
+                        // Set initial sort indicator on trades column
+                        document.querySelector('[data-sort="trades"]').classList.add('sorting-desc');
+                    })
+                    .catch(error => console.error('Error fetching hotlist data:', error));
+            }
+            
+            // Function to sort all items
+            function sortItems() {
+                allItems.sort((a, b) => {
                     let aValue, bValue;
                     
                     // Extract the values to compare based on column
-                    switch(sortBy) {
+                    switch(currentSortColumn) {
                         case 'item':
-                            // Get just the item name without enhancement level
-                            aValue = a.cells[0].querySelector('.item-name')?.textContent || a.cells[0].textContent;
-                            bValue = b.cells[0].querySelector('.item-name')?.textContent || b.cells[0].textContent;
-                            return direction === 'asc' 
-                                ? aValue.localeCompare(bValue)
-                                : bValue.localeCompare(aValue);
+                            aValue = a.name.toLowerCase();
+                            bValue = b.name.toLowerCase();
+                            break;
                         case 'price':
+                            aValue = a.base_price;
+                            bValue = b.base_price;
+                            break;
                         case 'stock':
+                            aValue = a.stock;
+                            bValue = b.stock;
+                            break;
                         case 'trades':
+                            aValue = a.total_trades;
+                            bValue = b.total_trades;
+                            break;
                         case 'delta':
+                            aValue = a.price_change;
+                            bValue = b.price_change;
+                            break;
                         case 'min_max':
-                            // Get index based on column name
-                            let colIndex;
-                            switch(sortBy) {
-                                case 'price': colIndex = 1; break;
-                                case 'stock': colIndex = 2; break;
-                                case 'trades': colIndex = 3; break;
-                                case 'delta': colIndex = 4; break;
-                                case 'min_max': colIndex = 5; break;
-                                default: colIndex = 0;
-                            }
-                            
-                            aValue = parseInt(a.cells[colIndex].textContent.replace(/[^0-9.-]+/g, '')) || 0;
-                            bValue = parseInt(b.cells[colIndex].textContent.replace(/[^0-9.-]+/g, '')) || 0;
-                            return direction === 'asc' ? aValue - bValue : bValue - aValue;
+                            aValue = a.price_min;
+                            bValue = a.price_min;
+                            break;
                         case 'last-sale':
-                            // Sort by date
-                            aValue = a.cells[6].textContent;
-                            bValue = b.cells[6].textContent;
-                            return direction === 'asc' 
-                                ? aValue.localeCompare(bValue)
-                                : bValue.localeCompare(aValue);
+                            aValue = a.last_sale_time;
+                            bValue = b.last_sale_time;
+                            break;
                         default:
-                            return 0;
+                            aValue = a.total_trades;
+                            bValue = b.total_trades;
+                    }
+                    
+                    // Return comparison based on direction
+                    if (typeof aValue === 'string') {
+                        return currentSortDirection === 'asc' 
+                            ? aValue.localeCompare(bValue)
+                            : bValue.localeCompare(aValue);
+                    } else {
+                        return currentSortDirection === 'asc' 
+                            ? aValue - bValue 
+                            : bValue - aValue;
                     }
                 });
+            }
+            
+            // Function to display items for current page
+            function displayItems() {
+                const tbody = document.getElementById('hotlist-tbody');
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = Math.min(startIndex + itemsPerPage, allItems.length);
+                const pageItems = allItems.slice(startIndex, endIndex);
+                
+                // Clear current table rows
+                tbody.innerHTML = '';
+                
+                // Create rows for current page items
+                pageItems.forEach(item => {
+                    const row = document.createElement('tr');
+                    
+                    // Item name cell with image
+                    const nameCell = document.createElement('td');
+                    nameCell.className = 'hotlist-item-cell';
+                    
+                    const flexDiv = document.createElement('div');
+                    flexDiv.className = 'hotlist-item-flex';
+                    
+                    if (item.image) {
+                        const img = document.createElement('img');
+                        img.src = item.image;
+                        img.width = 40;
+                        img.alt = 'icon';
+                        img.className = 'item-glow';
+                        flexDiv.appendChild(img);
+                    }
+                    
+                    const link = document.createElement('a');
+                    link.href = `/item/${item.item_id}`;
+                    link.className = 'hotlist-item-link';
+                    
+                    // Add enhancement if applicable
+                    if (item.enh_min !== 0 || item.enh_max !== 0) {
+                        const enhSpan = document.createElement('span');
+                        enhSpan.className = 'enhancement';
+                        const enhText = item.enh_min === item.enh_max ? 
+                            (item.enh_min <= 15 ? `+${item.enh_min}` : 
+                             ["PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"][item.enh_min - 16]) : 
+                            `${item.enh_min} to ${item.enh_max}`;
+                        enhSpan.textContent = enhText + ' ';
+                        link.appendChild(enhSpan);
+                    }
+                    
+                    // Add item name
+                    const nameSpan = document.createElement('span');
+                    nameSpan.className = 'item-name';
+                    nameSpan.textContent = item.name;
+                    link.appendChild(nameSpan);
+                    
+                    flexDiv.appendChild(link);
+                    nameCell.appendChild(flexDiv);
+                    row.appendChild(nameCell);
+                    
+                    // Add other cells
+                    const priceCell = document.createElement('td');
+                    priceCell.textContent = formatNumber(item.base_price);
+                    row.appendChild(priceCell);
+                    
+                    const stockCell = document.createElement('td');
+                    stockCell.textContent = item.stock;
+                    row.appendChild(stockCell);
+                    
+                    const tradesCell = document.createElement('td');
+                    tradesCell.textContent = item.total_trades;
+                    row.appendChild(tradesCell);
+                    
+                    const deltaCell = document.createElement('td');
+                    deltaCell.textContent = formatNumber(item.price_change);
+                    row.appendChild(deltaCell);
+                    
+                    const minMaxCell = document.createElement('td');
+                    minMaxCell.textContent = `${formatNumber(item.price_min)} - ${formatNumber(item.price_max)}`;
+                    row.appendChild(minMaxCell);
+                    
+                    const lastSaleCell = document.createElement('td');
+                    lastSaleCell.innerHTML = `${formatNumber(item.last_sale_price)}<br>${item.last_sale_time_ro}`;
+                    row.appendChild(lastSaleCell);
+                    
+                    tbody.appendChild(row);
+                });
+            }
+            
+            // Helper function to format numbers with commas
+            function formatNumber(num) {
+                return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+            
+            // Set up pagination controls
+            function setupPagination() {
+                const totalPages = Math.ceil(allItems.length / itemsPerPage);
+                const paginationElement = document.getElementById('client-pagination');
+                paginationElement.innerHTML = '';
+                
+                // Don't show pagination if only one page
+                if (totalPages <= 1) return;
+                
+                // First page link
+                if (currentPage > 1) {
+                    appendPageLink(paginationElement, 1);
+                }
+                
+                // Ellipsis after first page if needed
+                if (currentPage > 3) {
+                    appendEllipsis(paginationElement);
+                }
+                
+                // Previous page link
+                if (currentPage > 2) {
+                    appendPageLink(paginationElement, currentPage - 1);
+                }
+                
+                // Current page (not a link)
+                const currentPageSpan = document.createElement('span');
+                currentPageSpan.className = 'page-current';
+                currentPageSpan.textContent = currentPage;
+                paginationElement.appendChild(currentPageSpan);
+                
+                // Next page link
+                if (currentPage < totalPages - 1) {
+                    appendPageLink(paginationElement, currentPage + 1);
+                }
+                
+                // Ellipsis before last page if needed
+                if (currentPage < totalPages - 2) {
+                    appendEllipsis(paginationElement);
+                }
+                
+                // Last page link
+                if (currentPage < totalPages) {
+                    appendPageLink(paginationElement, totalPages);
+                }
+            }
+            
+            // Helper function to append a page link to pagination
+            function appendPageLink(container, pageNum) {
+                const link = document.createElement('a');
+                link.href = '#';
+                link.className = 'page-link';
+                link.textContent = pageNum;
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    currentPage = pageNum;
+                    displayItems();
+                    setupPagination();
+                    window.scrollTo(0, 0);
+                });
+                container.appendChild(link);
+            }
+            
+            // Helper function to append ellipsis to pagination
+            function appendEllipsis(container) {
+                const ellipsis = document.createElement('span');
+                ellipsis.className = 'page-ellipsis';
+                ellipsis.textContent = '...';
+                container.appendChild(ellipsis);
             }
             
             // Make entire list item clickable
