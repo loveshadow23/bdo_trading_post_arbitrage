@@ -32,15 +32,29 @@ def format_number_filter(value):
         return value
 
 @app.template_filter('enh_name')
-def enh_name(min_e, max_e, _):
+def enh_name(min_e, max_e, item_id=None):
+    # Determine if this is an accessory (only uses PRI-PEN system)
+    # Accessories typically have enhancement levels from 0-5 or 1-5
+    is_accessory = max_e <= 5 
+    
     if min_e == max_e:
         if min_e == 0:
             return ""
+            
+        # For accessories that only use PRI-PEN system, map directly
+        if is_accessory and 1 <= min_e <= 5:
+            acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
+            return acc_labels[min_e]
+        
+        # For standard items that use +1 to +15 system
         if 1 <= min_e <= 15:
             return f"+{min_e}"
+            
+        # For standard items that continue to PRI-PEN after +15
         acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
         if 16 <= min_e <= 20:
             return acc_labels[min_e - 15]
+    
     return f"{min_e} to {max_e}"
 
 def unix_to_ro_time(ts):

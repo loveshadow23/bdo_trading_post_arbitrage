@@ -890,10 +890,33 @@
                     if (item.enh_min !== 0 || item.enh_max !== 0) {
                         const enhSpan = document.createElement('span');
                         enhSpan.className = 'enhancement';
-                        const enhText = item.enh_min === item.enh_max ? 
-                            (item.enh_min <= 15 ? `+${item.enh_min}` : 
-                             ["PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"][item.enh_min - 16]) : 
-                            `${item.enh_min} to ${item.enh_max}`;
+                        
+                        // Determine if this is an accessory (only uses PRI-PEN system)
+                        const isAccessory = item.enh_max <= 5;
+                        
+                        let enhText;
+                        if (item.enh_min === item.enh_max) {
+                            // For accessories that only use PRI-PEN system
+                            if (isAccessory && item.enh_min >= 1 && item.enh_min <= 5) {
+                                const accLabels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"];
+                                enhText = accLabels[item.enh_min];
+                            }
+                            // For standard items that use +1 to +15 system
+                            else if (item.enh_min >= 1 && item.enh_min <= 15) {
+                                enhText = `+${item.enh_min}`;
+                            }
+                            // For standard items that continue to PRI-PEN after +15
+                            else if (item.enh_min >= 16 && item.enh_min <= 20) {
+                                const accLabels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"];
+                                enhText = accLabels[item.enh_min - 15];
+                            }
+                            else {
+                                enhText = item.enh_min.toString();
+                            }
+                        } else {
+                            enhText = `${item.enh_min} to ${item.enh_max}`;
+                        }
+                        
                         enhSpan.textContent = enhText + ' ';
                         link.appendChild(enhSpan);
                     }
