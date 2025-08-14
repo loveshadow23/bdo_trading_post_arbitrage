@@ -53,18 +53,26 @@ _item_db_cache = None
 # Logging Configuration
 # =============================================================================
 def setup_logging():
-    """Configure application logging with rotation"""
+    """Configure application logging with rotation and stdout output"""
     log_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    log_handler = RotatingFileHandler(
+    
+    # File handler with rotation
+    file_handler = RotatingFileHandler(
         CONFIG["LOG_FILE"], 
         maxBytes=1024 * 1024 * 5,  # 5MB
         backupCount=3
     )
-    log_handler.setFormatter(log_formatter)
+    file_handler.setFormatter(log_formatter)
     
+    # Console (stdout) handler
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(log_formatter)
+    
+    # Configure logger
     logger = logging.getLogger('bdo_market')
     logger.setLevel(CONFIG["LOG_LEVEL"])
-    logger.addHandler(log_handler)
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
     
     return logger
 

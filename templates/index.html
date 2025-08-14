@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;500&display=swap">
+    <link rel="preload" href="{{ url_for('static', filename='bdo_home_logo.png') }}" as="image">
     <style>
 
 
@@ -54,12 +55,22 @@
             width: 100%;
             text-align: center;
         }
-        .logo {
-            max-width: 350px;
-            height: auto;
+        .logo-container {
+            display: block;
+            width: 350px;
+            height: 80px;
+            margin: 0 auto;
             transition: transform 0.2s;
         }
-        .logo:hover {
+        .logo {
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ url_for("static", filename="bdo_home_logo.png") }}');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .logo-container:hover {
             transform: scale(1.05);
         }
         h1, h2, h3, h4 {
@@ -541,10 +552,11 @@
     </style>
     <div class="container fade-in">
         <div class="header">
-            <a href="{{ url_for('index') }}" class="home-button">
-                <img src="{{ url_for('static', filename='bdo_home_logo.png', _external=True) }}" 
-                     onerror="this.src='https://i.imgur.com/8KbJBlj.png'" 
-                     alt="Black Desert Online" class="logo">
+            <a href="{{ url_for('index') }}" class="home-button" id="home-button">
+                <!-- Use base64 encoded image to prevent loading flash -->
+                <div class="logo-container">
+                    <div class="logo"></div>
+                </div>
             </a>
             <h1>Item Market Search</h1>
         </div>
@@ -707,8 +719,8 @@
                             </div>
                         </td>
                         <td>{{ item.base_price|format_number }}</td>
-                        <td>{{ item.stock }}</td>
-                        <td>{{ item.total_trades }}</td>
+                        <td>{{ item.stock|format_number }}</td>
+                        <td>{{ item.total_trades|format_number }}</td>
                         <td>{{ item.price_change|format_number }}</td>
                         <td>{{ item.price_min|format_number }} - {{ item.price_max|format_number }}</td>
                         <td>{{ item.last_sale_price|format_number }}<br>{{ item.last_sale_time_ro }}</td>
@@ -967,8 +979,8 @@
                 
                 // Add other cells
                 appendCell(row, formatNumber(item.base_price));
-                appendCell(row, item.stock);
-                appendCell(row, item.total_trades);
+                appendCell(row, formatNumber(item.stock));
+                appendCell(row, formatNumber(item.total_trades));
                 appendCell(row, formatNumber(item.price_change));
                 appendCell(row, `${formatNumber(item.price_min)} - ${formatNumber(item.price_max)}`);
                 
