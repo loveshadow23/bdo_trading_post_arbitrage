@@ -1,0 +1,313 @@
+import requests
+import json
+import os
+from datetime import datetime
+from zoneinfo import ZoneInfo
+from flask import Flask, render_template, request, jsonify
+from huffman_binary_decode import unpack
+
+CACHE_FILE = os.path.expanduser("~/bdo_trading_post_arbitrage/item_cache_garmoth.json")
+API_BASE_URL = "https://eu-trade.naeu.playblackdesert.com"
+FIELDS = [
+    "item_id", "enhancement_min", "enhancement_max", "base_price", "current_stock",
+    "total_trades", "price_hardcap_min", "price_hardcap_max", "last_sale_price", "last_sale_time"
+]
+
+app = Flask(__name__)
+
+# Cache la nivel de proces pentru baza de date iteme
+_item_db_cache = None
+def get_item_db():
+    global _item_db_cache
+    if _item_db_cache is None:
+        with open(CACHE_FILE, encoding="utf-8") as f:
+            _item_db_cache = json.load(f)
+    return _item_db_cache
+
+@app.template_filter('format_number')
+def format_number_filter(value):
+    try:
+        return "{:,}".format(int(value))
+    except Exception:
+        return value
+
+@app.template_filter('enh_name')
+def enh_name(min_e, max_e, item_id=None):
+    # Determine if this is an accessory (only uses PRI-PEN system)
+    # Accessories typically have enhancement levels from 0-5 or 1-5
+    is_accessory = max_e <= 5 
+    
+    if min_e == max_e:
+        if min_e == 0:
+            return ""
+            
+        # For accessories that only use PRI-PEN system, map directly
+        if is_accessory and 1 <= min_e <= 5:
+            acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
+            return acc_labels[min_e]
+        
+        # For standard items that use +1 to +15 system
+        if 1 <= min_e <= 15:
+            return f"+{min_e}"
+            
+        # For standard items that continue to PRI-PEN after +15
+        acc_labels = ["", "PRI (I)", "DUO (II)", "TRI (III)", "TET (IV)", "PEN (V)"]
+        if 16 <= min_e <= 20:
+            return acc_labels[min_e - 15]
+    
+    return f"{min_e} to {max_e}"
+
+def unix_to_ro_time(ts):
+    try:
+        return datetime.fromtimestamp(ts, tz=ZoneInfo("Europe/Bucharest")).strftime("%d.%m.%Y %H:%M")
+    except Exception:
+        return "-"
+
+def find_items(query, item_db):
+    q = query.lower()
+    results = []
+    # Caută după id exact
+    if q in item_db:
+        results.append((q, item_db[q]))
+    # Caută după nume exact sau parțial
+    for k, v in item_db.items():
+        name = v.get("name", "").lower()
+        if name == q or q in name:
+            if (k, v) not in results:
+                results.append((k, v))
+    return results
+
+def fetch_market_data(item_id):
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    payload = {"keyType": 0, "mainKey": int(item_id)}
+    r = requests.post(f"{API_BASE_URL}/Trademarket/GetWorldMarketSubList", headers=headers, json=payload)
+    r.raise_for_status()
+    return parse_market_data(r.json().get("resultMsg", ""))
+
+def fetch_bidding_info(item_id, sub_key):
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    payload = {"keyType": 0, "mainKey": int(item_id), "subKey": int(sub_key)}
+    r = requests.post(f"{API_BASE_URL}/Trademarket/GetBiddingInfoList", headers=headers, json=payload)
+    r.raise_for_status()
+    try:
+        decoded = unpack(r.content)
+        return parse_bidding_info(decoded)
+    except Exception:
+        try:
+            return parse_bidding_info(r.json().get("resultMsg", ""))
+        except Exception:
+            return []
+
+def fetch_hotlist():
+    """
+    Fetch & parse hot items from BDO HotList API.
+    """
+    url = f"{API_BASE_URL}/Trademarket/GetWorldMarketHotList"
+    headers = {"Content-Type": "application/json", "User-Agent": "BlackDesert"}
+    resp = requests.post(url, headers=headers, data="")
+    resp.raise_for_status()
+    decoded = unpack(resp.content)
+    if isinstance(decoded, bytes):
+        decoded = decoded.decode('utf-8')
+    items = []
+    for entry in decoded.strip("|").split("|"):
+        fields = entry.split("-")
+        if len(fields) == 12:
+            items.append({
+                "item_id": fields[0],
+                "enh_min": int(fields[1]),
+                "enh_max": int(fields[2]),
+                "base_price": int(fields[3]),
+                "stock": int(fields[4]),
+                "total_trades": int(fields[5]),
+                "price_dir": int(fields[6]),   # 1 = down, 2 = up
+                "price_change": int(fields[7]),
+                "price_min": int(fields[8]),
+                "price_max": int(fields[9]),
+                "last_sale_price": int(fields[10]),
+                "last_sale_time": int(fields[11]),
+                "last_sale_time_ro": unix_to_ro_time(int(fields[11])),
+            })
+    return items
+
+def parse_bidding_info(decoded_str):
+    if not decoded_str:
+        return []
+    result = []
+    for entry in decoded_str.strip("|").split("|"):
+        values = entry.split("-")
+        if len(values) == 3:
+            result.append({
+                "price": int(values[0]),
+                "sell_orders": int(values[1]),
+                "buy_orders": int(values[2])
+            })
+    return result
+
+def parse_market_data(result_msg):
+    if not result_msg:
+        return []
+    items = []
+    for entry in result_msg.strip("|").split("|"):
+        values = entry.split("-")
+        if len(values) == 10:
+            item = {FIELDS[i]: int(values[i]) for i in range(10)}
+            item["last_sale_time_ro"] = unix_to_ro_time(item["last_sale_time"])
+            items.append(item)
+    return items
+
+def get_market_and_bidding(item_id, enh_min=None, enh_max=None):
+    market_data = fetch_market_data(item_id)
+    if enh_min is not None and enh_max is not None:
+        market_data = [item for item in market_data if item["enhancement_min"] == enh_min and item["enhancement_max"] == enh_max]
+    for item in market_data:
+        sub_key = item["enhancement_max"]
+        item["bidding_info"] = fetch_bidding_info(item_id, sub_key)
+        if item["bidding_info"]:
+            item["bidding_info"].sort(key=lambda x: x["price"], reverse=True)
+    return market_data
+
+# Set a default items per page for the application
+app.config["ITEMS_PER_PAGE"] = 25
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+    results = details = enh_list = None
+    query = ""
+    hotlist = None
+    page = request.args.get('page', 1, type=int)
+    items_per_page = app.config["ITEMS_PER_PAGE"]  # Get from app config
+    
+    if request.method == "POST":
+        query = request.form.get("query", "").strip()
+        if query:
+            item_db = get_item_db()
+            matches = find_items(query, item_db)
+            if matches:
+                if len(matches) == 1:
+                    item_id, item_info = matches[0]
+                    market_data = fetch_market_data(item_id)
+                    if len(market_data) > 1:
+                        enh_list = [
+                            {
+                                "id": item_id,
+                                "name": item_info.get("name"),
+                                "image": item_info.get("image"),
+                                "enhancement_min": item["enhancement_min"],
+                                "enhancement_max": item["enhancement_max"]
+                            }
+                            for item in market_data
+                        ]
+                    else:
+                        details = {
+                            "id": item_id,
+                            "name": item_info.get("name"),
+                            "image": item_info.get("image"),
+                            "market_data": get_market_and_bidding(item_id)
+                        }
+                else:
+                    results = [
+                        {
+                            "id": item_id,
+                            "name": item_info.get("name"),
+                            "image": item_info.get("image")
+                        }
+                        for item_id, item_info in matches
+                    ]
+            else:
+                results = "not_found"
+    # Dacă nu e căutare, afișează hotlist pe landing page
+    if not query and not results and not details and not enh_list:
+        item_db = get_item_db()
+        all_hotlist = fetch_hotlist()
+        for item in all_hotlist:
+            info = item_db.get(str(item["item_id"]), {})
+            item["name"] = info.get("name", f"ID {item['item_id']}")
+            item["image"] = info.get("image", "")
+        all_hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+        
+        # Calculate pagination
+        total_items = len(all_hotlist)
+        total_pages = (total_items + items_per_page - 1) // items_per_page
+        page = min(max(page, 1), total_pages)  # Ensure page is within valid range
+        
+        # Get items for current page
+        start_idx = (page - 1) * items_per_page
+        end_idx = min(start_idx + items_per_page, total_items)
+        hotlist = all_hotlist[start_idx:end_idx]
+        
+        return render_template(
+            "index.html",
+            results=results,
+            details=details,
+            enh_list=enh_list,
+            query=query,
+            hotlist=hotlist,
+            page=page,
+            total_pages=total_pages,
+            items_per_page=items_per_page
+        )
+    
+    return render_template("index.html", results=results, details=details, enh_list=enh_list, query=query, hotlist=hotlist, items_per_page=items_per_page)
+
+
+@app.route("/api/hotlist")
+def api_hotlist():
+    """API endpoint to get all hotlist items as JSON without pagination"""
+    item_db = get_item_db()
+    all_hotlist = fetch_hotlist()
+    for item in all_hotlist:
+        info = item_db.get(str(item["item_id"]), {})
+        item["name"] = info.get("name", f"ID {item['item_id']}")
+        item["image"] = info.get("image", "")
+    all_hotlist.sort(key=lambda x: x["total_trades"], reverse=True)
+    return jsonify({
+        "items": all_hotlist,
+        "items_per_page": app.config.get("ITEMS_PER_PAGE", 25)
+    })
+
+
+@app.route("/item/<item_id>")
+def item_detail(item_id):
+    item_db = get_item_db()
+    item_info = item_db.get(item_id)
+    if not item_info:
+        return render_template("index.html", results="not_found", query="")
+    market_data = fetch_market_data(item_id)
+    if len(market_data) > 1:
+        enh_list = [
+            {
+                "id": item_id,
+                "name": item_info.get("name"),
+                "image": item_info.get("image"),
+                "enhancement_min": item["enhancement_min"],
+                "enhancement_max": item["enhancement_max"]
+            }
+            for item in market_data
+        ]
+        return render_template("index.html", enh_list=enh_list, query=item_info.get("name", ""))
+    else:
+        details = {
+            "id": item_id,
+            "name": item_info.get("name"),
+            "image": item_info.get("image"),
+            "market_data": get_market_and_bidding(item_id)
+        }
+        return render_template("index.html", details=details, query=item_info.get("name", ""))
+
+@app.route("/item/<item_id>/<int:enh_min>/<int:enh_max>")
+def item_detail_enh(item_id, enh_min, enh_max):
+    item_db = get_item_db()
+    item_info = item_db.get(item_id)
+    if not item_info:
+        return render_template("index.html", results="not_found", query="")
+    details = {
+        "id": item_id,
+        "name": item_info.get("name"),
+        "image": item_info.get("image"),
+        "market_data": get_market_and_bidding(item_id, enh_min, enh_max)
+    }
+    return render_template("index.html", details=details, query=item_info.get("name", ""))
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8520, debug=True)
